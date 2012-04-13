@@ -1,0 +1,992 @@
+2012/04/09 04:20:53 [warning] [application] Failed to set unsafe attribute "firmregions" of "Firm".
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (17)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 04:20:53 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `firm` (`name`, `user_id`, `firmtype_id`, `description`, `website`, `id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (37)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 04:20:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '5' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `firm` (`name`, `user_id`, `firmtype_id`, `description`, `website`, `id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5)' in C:\wamp\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\yii\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 C:\wamp\yii\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php(37): CActiveRecord->save()
+#3 C:\wamp\yii\framework\web\actions\CInlineAction.php(50): FirmController->actionCreate()
+#4 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\wamp\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#8 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/create')
+#9 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm/create
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=firm/create
+---
+2012/04/09 04:30:45 [warning] [application] Failed to set unsafe attribute "firmregions" of "Firm".
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (17)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 04:31:54 [warning] [application] Failed to set unsafe attribute "firmregions" of "Firm".
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (17)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 04:33:24 [warning] [application] Failed to set unsafe attribute "firmregions" of "Firm".
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (17)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 04:40:36 [error] [php] get_class() expects parameter 1 to be object, null given (C:\wamp\yii\framework\web\helpers\CHtml.php:2009)
+Stack trace:
+#0 C:\wamp\www\athos\athospartners\protected\extensions\giix-components\GxHtml.php(39): resolveNameID()
+#1 C:\wamp\www\athos\athospartners\protected\extensions\giix-components\GxActiveForm.php(35): activeCheckBoxList()
+#2 C:\wamp\www\athos\athospartners\protected\views\firm\_form.php(43): GxActiveForm->checkBoxList()
+#3 C:\wamp\yii\framework\web\CBaseController.php(127): require()
+#4 C:\wamp\yii\framework\web\CBaseController.php(96): FirmController->renderInternal()
+#5 C:\wamp\yii\framework\web\CController.php(870): FirmController->renderFile()
+#6 C:\wamp\www\athos\athospartners\protected\views\firm\create.php(19): FirmController->renderPartial()
+#7 C:\wamp\yii\framework\web\CBaseController.php(127): require()
+#8 C:\wamp\yii\framework\web\CBaseController.php(96): FirmController->renderInternal()
+#9 C:\wamp\yii\framework\web\CController.php(870): FirmController->renderFile()
+#10 C:\wamp\yii\framework\web\CController.php(783): FirmController->renderPartial()
+#11 C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php(46): FirmController->render()
+#12 C:\wamp\yii\framework\web\actions\CInlineAction.php(50): FirmController->actionCreate()
+#13 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#14 C:\wamp\yii\framework\web\CController.php(287): FirmController->runAction()
+#15 C:\wamp\yii\framework\web\CController.php(266): FirmController->runActionWithFilters()
+#16 C:\wamp\yii\framework\web\CWebApplication.php(276): FirmController->run()
+#17 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#18 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 C:\wamp\www\athos\athospartners\index.php(13): CWebApplication->run()
+REQUEST_URI=/athos/athospartners/index.php?r=firm/create
+in C:\wamp\www\athos\athospartners\protected\extensions\giix-components\GxHtml.php (39)
+in C:\wamp\www\athos\athospartners\protected\extensions\giix-components\GxActiveForm.php (35)
+in C:\wamp\www\athos\athospartners\protected\views\firm\_form.php (43)
+2012/04/09 04:57:08 [error] [php] Missing argument 2 for CHtml::listData(), called in C:\wamp\www\athos\athospartners\protected\views\firm\_form.php on line 45 and defined (C:\wamp\yii\framework\web\helpers\CHtml.php:1652)
+Stack trace:
+#0 C:\wamp\yii\framework\web\CBaseController.php(96): FirmController->renderInternal()
+#1 C:\wamp\yii\framework\web\CController.php(870): FirmController->renderFile()
+#2 C:\wamp\www\athos\athospartners\protected\views\firm\create.php(19): FirmController->renderPartial()
+#3 C:\wamp\yii\framework\web\CBaseController.php(127): require()
+#4 C:\wamp\yii\framework\web\CBaseController.php(96): FirmController->renderInternal()
+#5 C:\wamp\yii\framework\web\CController.php(870): FirmController->renderFile()
+#6 C:\wamp\yii\framework\web\CController.php(783): FirmController->renderPartial()
+#7 C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php(46): FirmController->render()
+#8 C:\wamp\yii\framework\web\actions\CInlineAction.php(50): FirmController->actionCreate()
+#9 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#10 C:\wamp\yii\framework\web\CController.php(287): FirmController->runAction()
+#11 C:\wamp\yii\framework\web\CController.php(266): FirmController->runActionWithFilters()
+#12 C:\wamp\yii\framework\web\CWebApplication.php(276): FirmController->run()
+#13 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#14 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\wamp\www\athos\athospartners\index.php(13): CWebApplication->run()
+REQUEST_URI=/athos/athospartners/index.php?r=firm/create
+in C:\wamp\www\athos\athospartners\protected\views\firm\_form.php (45)
+in C:\wamp\www\athos\athospartners\protected\views\firm\create.php (19)
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (46)
+2012/04/09 05:02:02 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'firm_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `region` `t` WHERE firm_id = :firm_id.
+in C:\wamp\www\athos\athospartners\protected\views\firm\_form.php (48)
+in C:\wamp\www\athos\athospartners\protected\views\firm\create.php (19)
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (46)
+2012/04/09 05:02:02 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'firm_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `region` `t` WHERE firm_id = :firm_id' in C:\wamp\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\wamp\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\wamp\yii\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 C:\wamp\yii\framework\db\ar\CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\wamp\www\athos\athospartners\protected\views\firm\_form.php(48): CActiveRecord->findAll('firm_id = :firm...', Array)
+#4 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\ath...')
+#5 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\ath...', Array, true)
+#6 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\ath...', Array, true)
+#7 C:\wamp\www\athos\athospartners\protected\views\firm\create.php(19): CController->renderPartial('_form', Array)
+#8 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\ath...')
+#9 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\ath...', Array, true)
+#10 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\ath...', Array, true)
+#11 C:\wamp\yii\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#12 C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php(46): CController->render('create', Array)
+#13 C:\wamp\yii\framework\web\actions\CInlineAction.php(50): FirmController->actionCreate()
+#14 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#15 C:\wamp\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#16 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#18 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/create')
+#19 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#20 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm/create
+---
+2012/04/09 05:09:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "firmregion/view".' in C:\wamp\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firmregion/view')
+#1 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firmregion/view&id=2
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=firm/view&id=9
+---
+2012/04/09 05:12:38 [error] [php] Invalid argument supplied for foreach() (C:\wamp\yii\framework\web\helpers\CHtml.php:1657)
+Stack trace:
+#0 C:\wamp\yii\framework\web\CBaseController.php(96): FirmController->renderInternal()
+#1 C:\wamp\yii\framework\web\CController.php(870): FirmController->renderFile()
+#2 C:\wamp\www\athos\athospartners\protected\views\firm\update.php(21): FirmController->renderPartial()
+#3 C:\wamp\yii\framework\web\CBaseController.php(127): require()
+#4 C:\wamp\yii\framework\web\CBaseController.php(96): FirmController->renderInternal()
+#5 C:\wamp\yii\framework\web\CController.php(870): FirmController->renderFile()
+#6 C:\wamp\yii\framework\web\CController.php(783): FirmController->renderPartial()
+#7 C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php(59): FirmController->render()
+#8 unknown(0): FirmController->actionUpdate()
+#9 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#10 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#11 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#12 C:\wamp\yii\framework\web\CController.php(287): FirmController->runAction()
+#13 C:\wamp\yii\framework\web\CController.php(266): FirmController->runActionWithFilters()
+#14 C:\wamp\yii\framework\web\CWebApplication.php(276): FirmController->run()
+#15 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#16 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\wamp\www\athos\athospartners\index.php(13): CWebApplication->run()
+REQUEST_URI=/athos/athospartners/index.php?r=firm/update&id=9
+in C:\wamp\www\athos\athospartners\protected\views\firm\_form.php (44)
+in C:\wamp\www\athos\athospartners\protected\views\firm\update.php (21)
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (59)
+2012/04/09 05:13:28 [error] [exception.CException] exception 'CException' with message 'Property "Firmregion.name" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\wamp\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('name')
+#1 C:\wamp\yii\framework\web\helpers\CHtml.php(1696): CActiveRecord->__get('name')
+#2 C:\wamp\yii\framework\web\helpers\CHtml.php(1660): CHtml::value(Object(Firmregion), 'name')
+#3 C:\wamp\www\athos\athospartners\protected\views\firm\_form.php(44): CHtml::listData(Array, 'id', 'name')
+#4 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\ath...')
+#5 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\ath...', Array, true)
+#6 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\ath...', Array, true)
+#7 C:\wamp\www\athos\athospartners\protected\views\firm\update.php(21): CController->renderPartial('_form', Array)
+#8 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\ath...')
+#9 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\ath...', Array, true)
+#10 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\ath...', Array, true)
+#11 C:\wamp\yii\framework\web\CController.php(783): CController->renderPartial('update', Array, true)
+#12 C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php(59): CController->render('update', Array)
+#13 [internal function]: FirmController->actionUpdate('9')
+#14 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FirmController), Array)
+#15 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FirmController), Object(ReflectionMethod), Array)
+#16 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#17 C:\wamp\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#18 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#20 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/update')
+#21 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm/update&id=9
+---
+2012/04/09 05:13:45 [error] [php] Missing argument 3 for CHtml::listData(), called in C:\wamp\www\athos\athospartners\protected\views\firm\_form.php on line 44 and defined (C:\wamp\yii\framework\web\helpers\CHtml.php:1652)
+Stack trace:
+#0 C:\wamp\yii\framework\web\CBaseController.php(96): FirmController->renderInternal()
+#1 C:\wamp\yii\framework\web\CController.php(870): FirmController->renderFile()
+#2 C:\wamp\www\athos\athospartners\protected\views\firm\update.php(21): FirmController->renderPartial()
+#3 C:\wamp\yii\framework\web\CBaseController.php(127): require()
+#4 C:\wamp\yii\framework\web\CBaseController.php(96): FirmController->renderInternal()
+#5 C:\wamp\yii\framework\web\CController.php(870): FirmController->renderFile()
+#6 C:\wamp\yii\framework\web\CController.php(783): FirmController->renderPartial()
+#7 C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php(59): FirmController->render()
+#8 unknown(0): FirmController->actionUpdate()
+#9 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#10 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#11 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#12 C:\wamp\yii\framework\web\CController.php(287): FirmController->runAction()
+#13 C:\wamp\yii\framework\web\CController.php(266): FirmController->runActionWithFilters()
+#14 C:\wamp\yii\framework\web\CWebApplication.php(276): FirmController->run()
+#15 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#16 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\wamp\www\athos\athospartners\index.php(13): CWebApplication->run()
+REQUEST_URI=/athos/athospartners/index.php?r=firm/update&id=9
+in C:\wamp\www\athos\athospartners\protected\views\firm\_form.php (44)
+in C:\wamp\www\athos\athospartners\protected\views\firm\update.php (21)
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (59)
+2012/04/09 05:24:21 [error] [php] include(Firmregions.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\wamp\yii\framework\YiiBase.php:418)
+Stack trace:
+#0 C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php(53): spl_autoload_call()
+#1 unknown(0): FirmController->actionUpdate()
+#2 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#3 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#4 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\wamp\yii\framework\web\CController.php(287): FirmController->runAction()
+#6 C:\wamp\yii\framework\web\CController.php(266): FirmController->runActionWithFilters()
+#7 C:\wamp\yii\framework\web\CWebApplication.php(276): FirmController->run()
+#8 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\athos\athospartners\index.php(13): CWebApplication->run()
+REQUEST_URI=/athos/athospartners/index.php?r=firm/update&id=11
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (53)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 05:24:47 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.firm_id" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\wamp\yii\framework\db\schema\CDbCriteria.php(153): CComponent->__set('firm_id', '11')
+#1 C:\wamp\yii\framework\db\schema\CDbCommandBuilder.php(462): CDbCriteria->__construct(Array)
+#2 C:\wamp\yii\framework\db\ar\CActiveRecord.php(1749): CDbCommandBuilder->createCriteria(Array, Array)
+#3 C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php(53): CActiveRecord->deleteAll(Array)
+#4 [internal function]: FirmController->actionUpdate('11')
+#5 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FirmController), Array)
+#6 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FirmController), Object(ReflectionMethod), Array)
+#7 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#11 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/update')
+#12 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm/update&id=11
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=firm/update&id=11
+---
+2012/04/09 05:30:41 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.firm_id" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\wamp\yii\framework\db\schema\CDbCriteria.php(153): CComponent->__set('firm_id', '11')
+#1 C:\wamp\yii\framework\db\schema\CDbCommandBuilder.php(462): CDbCriteria->__construct(Array)
+#2 C:\wamp\yii\framework\db\ar\CActiveRecord.php(1405): CDbCommandBuilder->createCriteria(Array, Array)
+#3 C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php(53): CActiveRecord->findAll(Array)
+#4 [internal function]: FirmController->actionUpdate('11')
+#5 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FirmController), Array)
+#6 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FirmController), Object(ReflectionMethod), Array)
+#7 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#11 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/update')
+#12 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm/update&id=11
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=firm/update&id=11
+---
+2012/04/09 05:34:45 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.firm" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\wamp\yii\framework\db\schema\CDbCriteria.php(153): CComponent->__set('firm', '11')
+#1 C:\wamp\yii\framework\db\schema\CDbCommandBuilder.php(462): CDbCriteria->__construct(Array)
+#2 C:\wamp\yii\framework\db\ar\CActiveRecord.php(1405): CDbCommandBuilder->createCriteria(Array, Array)
+#3 C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php(53): CActiveRecord->findAll(Array)
+#4 [internal function]: FirmController->actionUpdate('11')
+#5 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FirmController), Array)
+#6 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FirmController), Object(ReflectionMethod), Array)
+#7 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#11 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/update')
+#12 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm/update&id=11
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=firm/update&id=11
+---
+2012/04/09 05:40:41 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.firm_id" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\wamp\yii\framework\db\schema\CDbCriteria.php(153): CComponent->__set('firm_id', '11')
+#1 C:\wamp\yii\framework\db\schema\CDbCommandBuilder.php(462): CDbCriteria->__construct(Array)
+#2 C:\wamp\yii\framework\db\ar\CActiveRecord.php(1405): CDbCommandBuilder->createCriteria(Array, Array)
+#3 C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php(53): CActiveRecord->findAll(Array)
+#4 [internal function]: FirmController->actionUpdate('11')
+#5 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FirmController), Array)
+#6 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FirmController), Object(ReflectionMethod), Array)
+#7 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#11 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/update')
+#12 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm/update&id=11
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=firm/update&id=11
+---
+2012/04/09 05:41:19 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.firm_id" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\wamp\yii\framework\db\schema\CDbCriteria.php(153): CComponent->__set('firm_id', 1)
+#1 C:\wamp\yii\framework\db\schema\CDbCommandBuilder.php(462): CDbCriteria->__construct(Array)
+#2 C:\wamp\yii\framework\db\ar\CActiveRecord.php(1405): CDbCommandBuilder->createCriteria(Array, Array)
+#3 C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php(53): CActiveRecord->findAll(Array)
+#4 [internal function]: FirmController->actionUpdate('11')
+#5 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FirmController), Array)
+#6 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FirmController), Object(ReflectionMethod), Array)
+#7 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#11 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/update')
+#12 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm/update&id=11
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=firm/update&id=11
+---
+2012/04/09 05:41:31 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.id" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\wamp\yii\framework\db\schema\CDbCriteria.php(153): CComponent->__set('id', 1)
+#1 C:\wamp\yii\framework\db\schema\CDbCommandBuilder.php(462): CDbCriteria->__construct(Array)
+#2 C:\wamp\yii\framework\db\ar\CActiveRecord.php(1405): CDbCommandBuilder->createCriteria(Array, Array)
+#3 C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php(53): CActiveRecord->findAll(Array)
+#4 [internal function]: FirmController->actionUpdate('11')
+#5 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FirmController), Array)
+#6 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FirmController), Object(ReflectionMethod), Array)
+#7 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#11 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/update')
+#12 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm/update&id=11
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=firm/update&id=11
+---
+2012/04/09 05:45:57 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.criteria" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\wamp\yii\framework\db\schema\CDbCriteria.php(153): CComponent->__set('criteria', Array)
+#1 C:\wamp\yii\framework\db\schema\CDbCommandBuilder.php(462): CDbCriteria->__construct(Array)
+#2 C:\wamp\yii\framework\db\ar\CActiveRecord.php(1405): CDbCommandBuilder->createCriteria(Array, Array)
+#3 C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php(57): CActiveRecord->findAll(Array)
+#4 [internal function]: FirmController->actionUpdate('11')
+#5 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FirmController), Array)
+#6 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FirmController), Object(ReflectionMethod), Array)
+#7 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 C:\wamp\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#11 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/update')
+#12 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm/update&id=11
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=firm/update&id=11
+---
+2012/04/09 05:51:46 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`athos`.`firmregion`, CONSTRAINT `firm_firmregion_fk_1` FOREIGN KEY (`firm_id`) REFERENCES `firm` (`id`)). The SQL statement executed was: DELETE FROM `firm` WHERE `firm`.`id`='11'.
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (76)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 05:51:46 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`athos`.`firmregion`, CONSTRAINT `firm_firmregion_fk_1` FOREIGN KEY (`firm_id`) REFERENCES `firm` (`id`)). The SQL statement executed was: DELETE FROM `firm` WHERE `firm`.`id`='11'' in C:\wamp\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\yii\framework\db\ar\CActiveRecord.php(1735): CDbCommand->execute()
+#1 C:\wamp\yii\framework\db\ar\CActiveRecord.php(1159): CActiveRecord->deleteByPk('11')
+#2 C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php(76): CActiveRecord->delete()
+#3 [internal function]: FirmController->actionDelete('11')
+#4 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FirmController), Array)
+#5 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FirmController), Object(ReflectionMethod), Array)
+#6 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 C:\wamp\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#8 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('delete')
+#10 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/delete')
+#11 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm%2Fdelete&id=11&ajax=firm-grid
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=firm/admin
+---
+2012/04/09 06:04:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user/view".' in C:\wamp\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/view')
+#1 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=user/view&id=2
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=firm/view&id=12
+---
+2012/04/09 07:02:17 [warning] [application] Failed to set unsafe attribute "employees" of "Firm".
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (80)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 07:02:17 [warning] [application] Failed to set unsafe attribute "firmcontinents" of "Firm".
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (80)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 07:02:17 [warning] [application] Failed to set unsafe attribute "firmdocuments" of "Firm".
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (80)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 07:02:23 [warning] [application] Failed to set unsafe attribute "employees" of "Firm".
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (80)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 07:02:23 [warning] [application] Failed to set unsafe attribute "firmcontinents" of "Firm".
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (80)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 07:02:23 [warning] [application] Failed to set unsafe attribute "firmdocuments" of "Firm".
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (80)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 07:02:28 [warning] [application] Failed to set unsafe attribute "employees" of "Firm".
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (80)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 07:02:28 [warning] [application] Failed to set unsafe attribute "firmcontinents" of "Firm".
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (80)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 07:02:28 [warning] [application] Failed to set unsafe attribute "firmdocuments" of "Firm".
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (80)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 07:41:16 [warning] [application] Failed to set unsafe attribute "files" of "Firm".
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (91)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 07:48:30 [warning] [application] Failed to set unsafe attribute "files" of "Firm".
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (55)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 07:48:30 [error] [php] Invalid argument supplied for foreach() (C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php:81)
+Stack trace:
+#0 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): FirmController->runAction()
+#1 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\wamp\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): FirmController->filterAccessControl()
+#4 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\yii\framework\web\CController.php(266): FirmController->runActionWithFilters()
+#7 C:\wamp\yii\framework\web\CWebApplication.php(276): FirmController->run()
+#8 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\athos\athospartners\index.php(13): CWebApplication->run()
+REQUEST_URI=/athos/athospartners/index.php?r=firm/create
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (81)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 07:49:35 [warning] [application] Failed to set unsafe attribute "files" of "Firm".
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (55)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 07:49:35 [error] [php] Invalid argument supplied for foreach() (C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php:81)
+Stack trace:
+#0 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): FirmController->runAction()
+#1 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 C:\wamp\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): FirmController->filterAccessControl()
+#4 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\yii\framework\web\CController.php(266): FirmController->runActionWithFilters()
+#7 C:\wamp\yii\framework\web\CWebApplication.php(276): FirmController->run()
+#8 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\athos\athospartners\index.php(13): CWebApplication->run()
+REQUEST_URI=/athos/athospartners/index.php?r=firm/create
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (81)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 07:50:47 [warning] [application] Failed to set unsafe attribute "files" of "Firm".
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (55)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 08:02:50 [error] [exception.CException] exception 'CException' with message 'CMultiFileUpload must specify "model" and "attribute" or "name" property values.' in C:\wamp\yii\framework\web\widgets\CInputWidget.php:61
+Stack trace:
+#0 C:\wamp\yii\framework\web\widgets\CMultiFileUpload.php(88): CInputWidget->resolveNameID()
+#1 C:\wamp\yii\framework\web\CBaseController.php(174): CMultiFileUpload->run()
+#2 C:\wamp\www\athos\athospartners\protected\views\firm\_form.php(73): CBaseController->widget('CMultiFileUploa...', Array)
+#3 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\ath...')
+#4 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\ath...', Array, true)
+#5 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\ath...', Array, true)
+#6 C:\wamp\www\athos\athospartners\protected\views\firm\create.php(19): CController->renderPartial('_form', Array)
+#7 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\ath...')
+#8 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\ath...', Array, true)
+#9 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\ath...', Array, true)
+#10 C:\wamp\yii\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#11 C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php(96): CController->render('create', Array)
+#12 C:\wamp\yii\framework\web\actions\CInlineAction.php(50): FirmController->actionCreate()
+#13 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#14 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#15 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#16 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#20 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#22 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/create')
+#23 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm/create
+---
+2012/04/09 08:16:14 [error] [php] move_uploaded_file(upload/Koala.jpg) [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: failed to open stream: No such file or directory (C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php:59)
+Stack trace:
+#0 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): FirmController->runAction()
+#2 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\wamp\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#4 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): FirmController->filterAccessControl()
+#5 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#6 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\wamp\yii\framework\web\CController.php(266): FirmController->runActionWithFilters()
+#8 C:\wamp\yii\framework\web\CWebApplication.php(276): FirmController->run()
+#9 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#10 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\wamp\www\athos\athospartners\index.php(13): CWebApplication->run()
+REQUEST_URI=/athos/athospartners/index.php?r=firm/create
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (59)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 08:16:40 [error] [php] move_uploaded_file(upload/Koala.jpg) [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: failed to open stream: No such file or directory (C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php:59)
+Stack trace:
+#0 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): FirmController->runAction()
+#2 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\wamp\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#4 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): FirmController->filterAccessControl()
+#5 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#6 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\wamp\yii\framework\web\CController.php(266): FirmController->runActionWithFilters()
+#8 C:\wamp\yii\framework\web\CWebApplication.php(276): FirmController->run()
+#9 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#10 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\wamp\www\athos\athospartners\index.php(13): CWebApplication->run()
+REQUEST_URI=/athos/athospartners/index.php?r=firm/create
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (59)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 08:17:17 [error] [php] move_uploaded_file(../upload/Koala.jpg) [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: failed to open stream: No such file or directory (C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php:59)
+Stack trace:
+#0 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): FirmController->runAction()
+#2 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\wamp\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#4 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): FirmController->filterAccessControl()
+#5 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#6 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\wamp\yii\framework\web\CController.php(266): FirmController->runActionWithFilters()
+#8 C:\wamp\yii\framework\web\CWebApplication.php(276): FirmController->run()
+#9 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#10 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\wamp\www\athos\athospartners\index.php(13): CWebApplication->run()
+REQUEST_URI=/athos/athospartners/index.php?r=firm/create
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (59)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 08:17:28 [error] [php] move_uploaded_file(/upload/Koala.jpg) [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: failed to open stream: No such file or directory (C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php:59)
+Stack trace:
+#0 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): FirmController->runAction()
+#2 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\wamp\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#4 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): FirmController->filterAccessControl()
+#5 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#6 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\wamp\yii\framework\web\CController.php(266): FirmController->runActionWithFilters()
+#8 C:\wamp\yii\framework\web\CWebApplication.php(276): FirmController->run()
+#9 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#10 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\wamp\www\athos\athospartners\index.php(13): CWebApplication->run()
+REQUEST_URI=/athos/athospartners/index.php?r=firm/create
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (59)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 08:18:29 [error] [php] move_uploaded_file(/athos/athospartners/upload/Koala.jpg) [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: failed to open stream: No such file or directory (C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php:59)
+Stack trace:
+#0 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): FirmController->runAction()
+#2 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\wamp\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#4 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): FirmController->filterAccessControl()
+#5 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#6 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\wamp\yii\framework\web\CController.php(266): FirmController->runActionWithFilters()
+#8 C:\wamp\yii\framework\web\CWebApplication.php(276): FirmController->run()
+#9 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#10 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\wamp\www\athos\athospartners\index.php(13): CWebApplication->run()
+REQUEST_URI=/athos/athospartners/index.php?r=firm/create
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (59)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 08:18:55 [error] [php] move_uploaded_file(/athospartners/upload/Koala.jpg) [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: failed to open stream: No such file or directory (C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php:59)
+Stack trace:
+#0 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): FirmController->runAction()
+#2 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\wamp\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#4 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): FirmController->filterAccessControl()
+#5 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#6 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\wamp\yii\framework\web\CController.php(266): FirmController->runActionWithFilters()
+#8 C:\wamp\yii\framework\web\CWebApplication.php(276): FirmController->run()
+#9 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#10 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\wamp\www\athos\athospartners\index.php(13): CWebApplication->run()
+REQUEST_URI=/athos/athospartners/index.php?r=firm/create
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (59)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 08:20:18 [error] [php] move_uploaded_file(../../upload/Koala.jpg) [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: failed to open stream: No such file or directory (C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php:59)
+Stack trace:
+#0 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): FirmController->runAction()
+#2 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\wamp\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#4 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): FirmController->filterAccessControl()
+#5 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#6 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\wamp\yii\framework\web\CController.php(266): FirmController->runActionWithFilters()
+#8 C:\wamp\yii\framework\web\CWebApplication.php(276): FirmController->run()
+#9 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#10 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\wamp\www\athos\athospartners\index.php(13): CWebApplication->run()
+REQUEST_URI=/athos/athospartners/index.php?r=firm/create
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (59)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 09:37:31 [error] [exception.CException] exception 'CException' with message 'Property "Officeregion.firm_id" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\wamp\yii\framework\db\ar\CActiveRecord.php(160): CComponent->__set('firm_id', '1')
+#1 C:\wamp\www\athos\athospartners\protected\controllers\OfficeController.php(100): CActiveRecord->__set('firm_id', '1')
+#2 [internal function]: OfficeController->actionUpdate('1')
+#3 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(OfficeController), Array)
+#4 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfficeController), Object(ReflectionMethod), Array)
+#5 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#12 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#14 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('office/update')
+#15 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=office/update&id=1
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=office/update&id=1
+---
+2012/04/09 09:53:19 [warning] [application] Failed to set unsafe attribute "employeescontinents" of "Employees".
+in C:\wamp\www\athos\athospartners\protected\controllers\EmployeesController.php (17)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 09:53:19 [warning] [application] Failed to set unsafe attribute "employeesregions" of "Employees".
+in C:\wamp\www\athos\athospartners\protected\controllers\EmployeesController.php (17)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 09:53:19 [warning] [application] Failed to set unsafe attribute "employeessectors" of "Employees".
+in C:\wamp\www\athos\athospartners\protected\controllers\EmployeesController.php (17)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 09:54:25 [warning] [application] Failed to set unsafe attribute "employeescontinents" of "Employees".
+in C:\wamp\www\athos\athospartners\protected\controllers\EmployeesController.php (17)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 09:54:25 [warning] [application] Failed to set unsafe attribute "employeesregions" of "Employees".
+in C:\wamp\www\athos\athospartners\protected\controllers\EmployeesController.php (17)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 09:54:25 [warning] [application] Failed to set unsafe attribute "employeessectors" of "Employees".
+in C:\wamp\www\athos\athospartners\protected\controllers\EmployeesController.php (17)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 10:20:08 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-1' for key 'employees_employeesregion_fk_1'. The SQL statement executed was: INSERT INTO `employeesregion` (`employees_id`, `region_id`) VALUES (:yp0, :yp1).
+in C:\wamp\www\athos\athospartners\protected\controllers\EmployeesController.php (117)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 10:20:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-1' for key 'employees_employeesregion_fk_1'. The SQL statement executed was: INSERT INTO `employeesregion` (`employees_id`, `region_id`) VALUES (:yp0, :yp1)' in C:\wamp\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\yii\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 C:\wamp\yii\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\athos\athospartners\protected\controllers\EmployeesController.php(117): CActiveRecord->save()
+#3 [internal function]: EmployeesController->actionUpdate('1')
+#4 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(EmployeesController), Array)
+#5 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(EmployeesController), Object(ReflectionMethod), Array)
+#6 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#13 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#15 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('employees/updat...')
+#16 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=employees/update&id=1
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=employees/update&id=1
+---
+2012/04/09 14:01:10 [error] [exception.CException] exception 'CException' with message 'Property "Firmdocument.document_id" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\wamp\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('document_id')
+#1 C:\wamp\yii\framework\web\helpers\CHtml.php(1696): CActiveRecord->__get('document_id')
+#2 C:\wamp\yii\framework\web\helpers\CHtml.php(1660): CHtml::value(Object(Firmdocument), 'document_id')
+#3 C:\wamp\www\athos\athospartners\protected\views\firm\_form.php(90): CHtml::listData(Array, 'id', 'document_id')
+#4 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\ath...')
+#5 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\ath...', Array, true)
+#6 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\ath...', Array, true)
+#7 C:\wamp\www\athos\athospartners\protected\views\firm\update.php(21): CController->renderPartial('_form', Array)
+#8 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\ath...')
+#9 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\ath...', Array, true)
+#10 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\ath...', Array, true)
+#11 C:\wamp\yii\framework\web\CController.php(783): CController->renderPartial('update', Array, true)
+#12 C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php(138): CController->render('update', Array)
+#13 [internal function]: FirmController->actionUpdate('21')
+#14 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FirmController), Array)
+#15 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FirmController), Object(ReflectionMethod), Array)
+#16 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#17 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#18 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#19 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#20 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#23 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#25 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/update')
+#26 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm/update&id=21
+---
+2012/04/09 15:26:41 [error] [php] Function split() is deprecated (C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php:133)
+Stack trace:
+#0 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#1 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#2 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#3 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): FirmController->runAction()
+#4 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 C:\wamp\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#6 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): FirmController->filterAccessControl()
+#7 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#8 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\wamp\yii\framework\web\CController.php(266): FirmController->runActionWithFilters()
+#10 C:\wamp\yii\framework\web\CWebApplication.php(276): FirmController->run()
+#11 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#12 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\wamp\www\athos\athospartners\index.php(13): CWebApplication->run()
+REQUEST_URI=/athos/athospartners/index.php?r=firm/update&id=21
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (133)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 17:10:06 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`athos`.`firmcontinent`, CONSTRAINT `firm_firmcontinent_fk_1` FOREIGN KEY (`firm_id`) REFERENCES `firm` (`id`)). The SQL statement executed was: DELETE FROM `firm` WHERE `firm`.`id`='9'.
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (161)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 17:10:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`athos`.`firmcontinent`, CONSTRAINT `firm_firmcontinent_fk_1` FOREIGN KEY (`firm_id`) REFERENCES `firm` (`id`)). The SQL statement executed was: DELETE FROM `firm` WHERE `firm`.`id`='9'' in C:\wamp\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\yii\framework\db\ar\CActiveRecord.php(1735): CDbCommand->execute()
+#1 C:\wamp\yii\framework\db\ar\CActiveRecord.php(1159): CActiveRecord->deleteByPk('9')
+#2 C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php(161): CActiveRecord->delete()
+#3 [internal function]: FirmController->actionDelete('9')
+#4 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FirmController), Array)
+#5 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FirmController), Object(ReflectionMethod), Array)
+#6 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#13 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('delete')
+#15 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/delete')
+#16 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm%2Fdelete&id=9&ajax=firm-grid
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=firm/admin
+---
+2012/04/09 17:12:30 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`athos`.`employees`, CONSTRAINT `firm_fk_1` FOREIGN KEY (`firm_id`) REFERENCES `firm` (`id`)). The SQL statement executed was: DELETE FROM `firm` WHERE `firm`.`id`='9'.
+in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php (165)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 17:12:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`athos`.`employees`, CONSTRAINT `firm_fk_1` FOREIGN KEY (`firm_id`) REFERENCES `firm` (`id`)). The SQL statement executed was: DELETE FROM `firm` WHERE `firm`.`id`='9'' in C:\wamp\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\yii\framework\db\ar\CActiveRecord.php(1735): CDbCommand->execute()
+#1 C:\wamp\yii\framework\db\ar\CActiveRecord.php(1159): CActiveRecord->deleteByPk('9')
+#2 C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php(165): CActiveRecord->delete()
+#3 [internal function]: FirmController->actionDelete('9')
+#4 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FirmController), Array)
+#5 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FirmController), Object(ReflectionMethod), Array)
+#6 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#13 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('delete')
+#15 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/delete')
+#16 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm%2Fdelete&id=9&ajax=firm-grid
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=firm/admin
+---
+2012/04/09 17:33:32 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your delete is invalid.' in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php:164
+Stack trace:
+#0 [internal function]: FirmController->actionDelete('9')
+#1 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FirmController), Array)
+#2 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FirmController), Object(ReflectionMethod), Array)
+#3 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('delete')
+#12 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/delete')
+#13 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm%2Fdelete&id=9&ajax=firm-grid
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=firm/admin
+---
+2012/04/09 17:50:04 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.firm" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\wamp\yii\framework\base\CModule.php(106): CComponent->__get('firm')
+#1 C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php(164): CModule->__get('firm')
+#2 [internal function]: FirmController->actionDelete('9')
+#3 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FirmController), Array)
+#4 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FirmController), Object(ReflectionMethod), Array)
+#5 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#12 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('delete')
+#14 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/delete')
+#15 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm%2Fdelete&id=9&ajax=firm-grid
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=firm/admin
+---
+2012/04/09 17:56:07 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'ERROR.' in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php:164
+Stack trace:
+#0 [internal function]: FirmController->actionDelete('9')
+#1 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FirmController), Array)
+#2 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FirmController), Object(ReflectionMethod), Array)
+#3 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('delete')
+#12 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/delete')
+#13 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm%2Fdelete&id=9&ajax=firm-grid
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=firm/admin
+---
+2012/04/09 17:58:16 [error] [exception.CHttpException.0] exception 'CHttpException' with message 'Your request is invalid.' in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php:164
+Stack trace:
+#0 [internal function]: FirmController->actionDelete('9')
+#1 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FirmController), Array)
+#2 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FirmController), Object(ReflectionMethod), Array)
+#3 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('delete')
+#12 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/delete')
+#13 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm%2Fdelete&id=9&ajax=firm-grid
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=firm/admin
+---
+2012/04/09 18:02:47 [error] [exception.CHttpException.207] exception 'CHttpException' with message 'The firm is being used in the employees table.' in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php:164
+Stack trace:
+#0 [internal function]: FirmController->actionDelete('9')
+#1 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FirmController), Array)
+#2 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FirmController), Object(ReflectionMethod), Array)
+#3 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('delete')
+#12 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/delete')
+#13 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm%2Fdelete&id=9&ajax=firm-grid
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=firm/admin
+---
+2012/04/09 18:02:52 [error] [exception.CHttpException.207] exception 'CHttpException' with message 'The firm is being used in the employees table.' in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php:164
+Stack trace:
+#0 [internal function]: FirmController->actionDelete('9')
+#1 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FirmController), Array)
+#2 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FirmController), Object(ReflectionMethod), Array)
+#3 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('delete')
+#12 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/delete')
+#13 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm%2Fdelete&id=9&ajax=firm-grid
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=firm/admin
+---
+2012/04/09 18:03:06 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'The firm is being used in the employees table.' in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php:164
+Stack trace:
+#0 [internal function]: FirmController->actionDelete('9')
+#1 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FirmController), Array)
+#2 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FirmController), Object(ReflectionMethod), Array)
+#3 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('delete')
+#12 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/delete')
+#13 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm%2Fdelete&id=9&ajax=firm-grid
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=firm/admin
+---
+2012/04/09 18:04:00 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'The firm is being used in the employees table.' in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php:164
+Stack trace:
+#0 [internal function]: FirmController->actionDelete('9')
+#1 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FirmController), Array)
+#2 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FirmController), Object(ReflectionMethod), Array)
+#3 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('delete')
+#12 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/delete')
+#13 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm%2Fdelete&id=9&ajax=firm-grid
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=firm/admin
+---
+2012/04/09 18:09:12 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`athos`.`officecontinent`, CONSTRAINT `office_officecontinent_fk_1` FOREIGN KEY (`office_id`) REFERENCES `office` (`id`)). The SQL statement executed was: DELETE FROM `Office` WHERE `Office`.`id`='2'.
+in C:\wamp\www\athos\athospartners\protected\controllers\OfficeController.php (128)
+in C:\wamp\www\athos\athospartners\index.php (13)
+2012/04/09 18:09:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`athos`.`officecontinent`, CONSTRAINT `office_officecontinent_fk_1` FOREIGN KEY (`office_id`) REFERENCES `office` (`id`)). The SQL statement executed was: DELETE FROM `Office` WHERE `Office`.`id`='2'' in C:\wamp\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\wamp\yii\framework\db\ar\CActiveRecord.php(1735): CDbCommand->execute()
+#1 C:\wamp\yii\framework\db\ar\CActiveRecord.php(1159): CActiveRecord->deleteByPk('2')
+#2 C:\wamp\www\athos\athospartners\protected\controllers\OfficeController.php(128): CActiveRecord->delete()
+#3 [internal function]: OfficeController->actionDelete('2')
+#4 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(OfficeController), Array)
+#5 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(OfficeController), Object(ReflectionMethod), Array)
+#6 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#13 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('delete')
+#15 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('office/delete')
+#16 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=office%2Fdelete&id=2&ajax=office-grid
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=office/admin
+---
+2012/04/12 06:35:44 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'The firm name is being used.' in C:\wamp\www\athos\athospartners\protected\controllers\FirmController.php:52
+Stack trace:
+#0 C:\wamp\www\athos\athospartners\protected\framework\web\actions\CInlineAction.php(50): FirmController->actionCreate()
+#1 C:\wamp\www\athos\athospartners\protected\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#2 C:\wamp\www\athos\athospartners\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#3 C:\wamp\www\athos\athospartners\protected\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 C:\wamp\www\athos\athospartners\protected\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#5 C:\wamp\www\athos\athospartners\protected\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\wamp\www\athos\athospartners\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\wamp\www\athos\athospartners\protected\framework\web\CController.php(292): CFilterChain->run()
+#8 C:\wamp\www\athos\athospartners\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\wamp\www\athos\athospartners\protected\framework\web\CWebApplication.php(276): CController->run('create')
+#10 C:\wamp\www\athos\athospartners\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/create')
+#11 C:\wamp\www\athos\athospartners\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\wamp\www\athos\athospartners\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/athos/athospartners/index.php?r=firm/create
+HTTP_REFERER=http://localhost/athos/athospartners/index.php?r=firm/create
+---
