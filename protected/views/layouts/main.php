@@ -22,7 +22,7 @@
 <div class="container" id="page">
 
 	<div id="header">
-		<div id="logo"><!--<?php echo CHtml::encode(Yii::app()->name); ?>--><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/athos.jpg"></div>
+		<div id="logo"><!--<?php echo CHtml::encode(Yii::app()->name); ?>--><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.jpg"></div>
 	</div><!-- header -->
 
 	<div id="mainmenu">
@@ -50,7 +50,7 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Footer. Copyrigth Athos Partners
+		Placement Agent
 	</div><!-- footer -->
 
 </div><!-- page -->
