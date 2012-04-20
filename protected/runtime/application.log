@@ -1018,3 +1018,78 @@ Stack trace:
 REQUEST_URI=/placement_agent/web001/index.php?r=firm
 HTTP_REFERER=http://localhost/placement_agent/web001/index.php
 ---
+2012/04/20 04:52:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\wamp\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('gii')
+#1 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=gii
+---
+2012/04/20 04:52:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\wamp\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('gii')
+#1 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=gii
+---
+2012/04/20 04:52:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\wamp\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('gii')
+#1 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=gii
+---
+2012/04/20 04:53:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\wamp\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('gii')
+#1 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=gii
+---
+2012/04/20 05:34:09 [error] [php] move_uploaded_file(upload/2_20120420053409_1.jpg) [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: failed to open stream: No such file or directory (C:\wamp\www\placement_agent\web001\protected\controllers\GpController.php:159)
+Stack trace:
+#0 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#1 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#2 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#3 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): GpController->runAction()
+#4 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 C:\wamp\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#6 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): GpController->filterAccessControl()
+#7 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#8 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\wamp\yii\framework\web\CController.php(266): GpController->runActionWithFilters()
+#10 C:\wamp\yii\framework\web\CWebApplication.php(276): GpController->run()
+#11 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#12 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\wamp\www\placement_agent\web001\index.php(13): CWebApplication->run()
+REQUEST_URI=/placement_agent/web001/index.php?r=gp/update&id=2
+in C:\wamp\www\placement_agent\web001\protected\controllers\GpController.php (159)
+in C:\wamp\www\placement_agent\web001\index.php (13)
+2012/04/20 06:06:11 [warning] [application] Failed to set unsafe attribute "lpcontinents" of "Lp".
+in C:\wamp\www\placement_agent\web001\protected\controllers\LpController.php (17)
+in C:\wamp\www\placement_agent\web001\index.php (13)
+2012/04/20 06:06:11 [warning] [application] Failed to set unsafe attribute "lpdocuments" of "Lp".
+in C:\wamp\www\placement_agent\web001\protected\controllers\LpController.php (17)
+in C:\wamp\www\placement_agent\web001\index.php (13)
+2012/04/20 06:06:11 [warning] [application] Failed to set unsafe attribute "lpregions" of "Lp".
+in C:\wamp\www\placement_agent\web001\protected\controllers\LpController.php (17)
+in C:\wamp\www\placement_agent\web001\index.php (13)
+2012/04/20 06:06:11 [warning] [application] Failed to set unsafe attribute "lpsectors" of "Lp".
+in C:\wamp\www\placement_agent\web001\protected\controllers\LpController.php (17)
+in C:\wamp\www\placement_agent\web001\index.php (13)
+2012/04/20 06:06:11 [warning] [application] Failed to set unsafe attribute "lptargets" of "Lp".
+in C:\wamp\www\placement_agent\web001\protected\controllers\LpController.php (17)
+in C:\wamp\www\placement_agent\web001\index.php (13)
+2012/04/20 06:41:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "target".' in C:\wamp\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('target')
+#1 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=target
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php
+---

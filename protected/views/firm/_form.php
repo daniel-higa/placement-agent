@@ -47,11 +47,11 @@
 		<div class="row">
 		<?php echo $form->labelEx($model,'rank'); ?>
 		
-		<input type="radio" id="Firm_rank" name="Firm[rank]" value="A" checked="checked" />A
-		<input type="radio" id="Firm_rank" name="Firm[rank]" value="B" />B
-		<input type="radio" id="Firm_rank" name="Firm[rank]" value="C" />C
-		<input type="radio" id="Firm_rank" name="Firm[rank]" value="D" />D
-		<input type="radio" id="Firm_rank" name="Firm[rank]" value="E" />E
+		<input type="radio" id="Firm_rank" name="Firm[rank]" value="A" <?php echo $model->rank == 'A' ? 'checked="checked"' : ''; ?> />A
+		<input type="radio" id="Firm_rank" name="Firm[rank]" value="B" <?php echo $model->rank == 'B' ? 'checked="checked"' : ''; ?> />B
+		<input type="radio" id="Firm_rank" name="Firm[rank]" value="C" <?php echo $model->rank == 'C' ? 'checked="checked"' : ''; ?> />C
+		<input type="radio" id="Firm_rank" name="Firm[rank]" value="D" <?php echo $model->rank == 'D' ? 'checked="checked"' : ''; ?> />D
+		<input type="radio" id="Firm_rank" name="Firm[rank]" value="E" <?php echo $model->rank == 'E' ? 'checked="checked"' : ''; ?> />E
 		
 		<?php echo $form->error($model,'rank'); ?>
 		</div><!-- row -->
