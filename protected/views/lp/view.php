@@ -20,18 +20,16 @@ $this->menu=array(
 	'data' => $model,
 	'attributes' => array(
 'id',
-'name',
-'description',
-'website',
-'rank',
 array(
 			'name' => 'firm',
 			'type' => 'raw',
 			'value' => $model->firm !== null ? GxHtml::link(GxHtml::encode(GxHtml::valueEx($model->firm)), array('firm/view', 'id' => GxActiveRecord::extractPkValue($model->firm, true))) : null,
 			),
+'rank',
+
 'assets_umgmt',
 'assets_umgmt_ori',
-'top_interests',
+'top_interests:boolean',
 	),
 )); ?>
 

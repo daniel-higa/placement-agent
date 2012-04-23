@@ -47,6 +47,12 @@ class GpController extends GxController {
 
 		if (isset($_POST['Gp'])) {
 			$model->setAttributes($_POST['Gp']);
+			
+			$f = Firm::model()->findByPk($_POST['Gp']['firm_id']);
+			
+			$model->name = $f->name;
+			$model->description = $f->description;
+			$model->website = $f->website;
 
 			if ($model->save()) {
 			

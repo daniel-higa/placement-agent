@@ -15,7 +15,6 @@
  * @property string $website
  * @property string $rank
  * @property string $firm_id
- * @property string $top_interests
  *
  * @property Firm $firm
  * @property Gpcontinent[] $gpcontinents
@@ -43,14 +42,14 @@ abstract class BaseGp extends GxActiveRecord {
 
 	public function rules() {
 		return array(
-			array('name, website, rank, firm_id, top_interests', 'required'),
+			array('rank, firm_id', 'required'),
 			array('name', 'length', 'max'=>50),
-			array('website, top_interests', 'length', 'max'=>100),
+			array('website', 'length', 'max'=>100),
 			array('rank', 'length', 'max'=>1),
 			array('firm_id', 'length', 'max'=>10),
 			array('description', 'safe'),
 			array('description', 'default', 'setOnEmpty' => true, 'value' => null),
-			array('id, name, description, website, rank, firm_id, top_interests', 'safe', 'on'=>'search'),
+			array('id, name, description, website, rank, firm_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -77,7 +76,6 @@ abstract class BaseGp extends GxActiveRecord {
 			'website' => Yii::t('app', 'Website'),
 			'rank' => Yii::t('app', 'Rank'),
 			'firm_id' => null,
-			'top_interests' => Yii::t('app', 'Top Interests'),
 			'firm' => null,
 			'gpcontinents' => null,
 			'gpdocuments' => null,
@@ -95,7 +93,6 @@ abstract class BaseGp extends GxActiveRecord {
 		$criteria->compare('website', $this->website, true);
 		$criteria->compare('rank', $this->rank, true);
 		$criteria->compare('firm_id', $this->firm_id);
-		$criteria->compare('top_interests', $this->top_interests, true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

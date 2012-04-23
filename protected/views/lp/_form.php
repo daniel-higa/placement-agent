@@ -15,27 +15,28 @@
 	<?php echo $form->errorSummary($model); ?>
 	
 		<div class="row"><h2>Description</h2></div>
-
-		<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model, 'name', array('maxlength' => 50)); ?>
-		<?php echo $form->error($model,'name'); ?>
-		</div><!-- row -->
+		
 		<div class="row">
 		<?php echo $form->labelEx($model,'firm_id'); ?>
 		<?php echo $form->dropDownList($model, 'firm_id', GxHtml::listDataEx(Firm::model()->findAllAttributes(null, true))); ?>
 		<?php echo $form->error($model,'firm_id'); ?>
-		</div><!-- row -->
+		</div>
+<!--
+		<div class="row">
+		<?php echo $form->labelEx($model,'name'); ?>
+		<?php echo $form->textField($model, 'name', array('maxlength' => 50)); ?>
+		<?php echo $form->error($model,'name'); ?>
+		</div>
 		<div class="row">
 		<?php echo $form->labelEx($model,'description'); ?>
 		<?php echo $form->textArea($model, 'description'); ?>
 		<?php echo $form->error($model,'description'); ?>
-		</div><!-- row -->
+		
 		<div class="row">
 		<?php echo $form->labelEx($model,'website'); ?>
 		<?php echo $form->textField($model, 'website', array('maxlength' => 100)); ?>
 		<?php echo $form->error($model,'website'); ?>
-		</div><!-- row -->
+		</div>-->
 		
 		<br />
 		
@@ -139,7 +140,7 @@
 		
 		<div class="row">
 		<?php echo $form->labelEx($model,'top_interests'); ?>
-		<?php echo $form->textField($model, 'top_interests', array('maxlength' => 100)); ?>
+		<?php echo $form->checkBox($model, 'top_interests'); ?>
 		<?php echo $form->error($model,'top_interests'); ?>
 		</div><!-- row -->
 		

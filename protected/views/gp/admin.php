@@ -42,17 +42,13 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 	'dataProvider' => $model->search(),
 	'columns' => array(
 		'id',
-		'name',
-		'website',
-		'rank',
+		
 		array(
 				'name'=>'firm_id',
 				'value'=>'GxHtml::valueEx($data->firm)',
 				'filter'=>GxHtml::listDataEx(Firm::model()->findAllAttributes(null, true)),
 				),
-		/*
-		'top_interests',
-		*/
+		'rank',
 		array(
 			'class' => 'CButtonColumn',
 		),

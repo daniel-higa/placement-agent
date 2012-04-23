@@ -17,7 +17,7 @@
  * @property string $firm_id
  * @property double $assets_umgmt
  * @property double $assets_umgmt_ori
- * @property string $top_interests
+ * @property integer $top_interests
  *
  * @property Firm $firm
  * @property Lpcontinent[] $lpcontinents
@@ -47,9 +47,10 @@ abstract class BaseLp extends GxActiveRecord {
 	public function rules() {
 		return array(
 			array('name, website, rank, firm_id, assets_umgmt, assets_umgmt_ori, top_interests', 'required'),
+			array('top_interests', 'numerical', 'integerOnly'=>true),
 			array('assets_umgmt, assets_umgmt_ori', 'numerical'),
 			array('name', 'length', 'max'=>50),
-			array('website, top_interests', 'length', 'max'=>100),
+			array('website', 'length', 'max'=>100),
 			array('rank', 'length', 'max'=>1),
 			array('firm_id', 'length', 'max'=>10),
 			array('description', 'safe'),
@@ -105,7 +106,7 @@ abstract class BaseLp extends GxActiveRecord {
 		$criteria->compare('firm_id', $this->firm_id);
 		$criteria->compare('assets_umgmt', $this->assets_umgmt);
 		$criteria->compare('assets_umgmt_ori', $this->assets_umgmt_ori);
-		$criteria->compare('top_interests', $this->top_interests, true);
+		$criteria->compare('top_interests', $this->top_interests);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

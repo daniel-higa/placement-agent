@@ -47,6 +47,12 @@ class LpController extends GxController {
 
 		if (isset($_POST['Lp'])) {
 			$model->setAttributes($_POST['Lp']);
+			
+			$f = Firm::model()->findByPk($_POST['Lp']['firm_id']);
+			
+			$model->name = $f->name;
+			$model->description = $f->description;
+			$model->website = $f->website;
 
 			if ($model->save()) {
 			
@@ -132,7 +138,7 @@ class LpController extends GxController {
                 {
 					$model_regions=$_POST['lpregions'];
 					for ($i=0;$i<count($model_regions);$i++){
-						$model_r=new Gpregion;
+						$model_r=new Lpregion;
 						$model_r->lp_id = $model->id;
 						$model_r->region_id = $model_regions[$i];
 						$model_r->save();
@@ -157,7 +163,7 @@ class LpController extends GxController {
 					$model_sectors=$_POST['lpsectors'];
 					for ($i=0;$i<count($model_sectors);$i++){
 						$model_c=new Lpsector;
-						$model_c->gp_id = $model->id;
+						$model_c->lp_id = $model->id;
 						$model_c->sector_id = $model_sectors[$i];
 						$model_c->save();
 					}

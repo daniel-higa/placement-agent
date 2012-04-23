@@ -42,19 +42,22 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 	'dataProvider' => $model->search(),
 	'columns' => array(
 		'id',
-		'name',
-		'website',
-		'rank',
 		array(
 				'name'=>'firm_id',
 				'value'=>'GxHtml::valueEx($data->firm)',
 				'filter'=>GxHtml::listDataEx(Firm::model()->findAllAttributes(null, true)),
 				),
+		'rank',
+		
 		/*
 		'assets_umgmt',
-		'assets_umgmt_ori',
-		'top_interests',
-		*/
+		'assets_umgmt_ori',*/
+		array(
+					'name' => 'top_interests',
+					'value' => '($data->top_interests === 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
+					'filter' => array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')),
+					),
+		
 		array(
 			'class' => 'CButtonColumn',
 		),

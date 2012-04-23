@@ -1093,3 +1093,102 @@ Stack trace:
 REQUEST_URI=/placement_agent/web001/index.php?r=target
 HTTP_REFERER=http://localhost/placement_agent/web001/index.php
 ---
+2012/04/23 02:21:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "show".' in C:\wamp\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\yii\framework\web\CController.php(271): CController->missingAction('show')
+#1 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('show')
+#2 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('gp/show')
+#3 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=gp/show
+---
+2012/04/23 03:17:33 [error] [exception.CException] exception 'CException' with message 'Property "CDetailView.0" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\wamp\yii\framework\web\CWidgetFactory.php(162): CComponent->__set('0', 'rank')
+#1 C:\wamp\yii\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(GpController), 'zii.widgets.CDe...', Array)
+#2 C:\wamp\yii\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CDe...', Array)
+#3 C:\wamp\www\placement_agent\web001\protected\views\gp\view.php(30): CBaseController->widget('zii.widgets.CDe...', Array)
+#4 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#5 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#6 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#7 C:\wamp\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#8 C:\wamp\www\placement_agent\web001\protected\controllers\GpController.php(41): CController->render('view', Array)
+#9 [internal function]: GpController->actionView('4')
+#10 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(GpController), Array)
+#11 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(GpController), Object(ReflectionMethod), Array)
+#12 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#13 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#14 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#15 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#16 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#19 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('view')
+#21 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('gp/view')
+#22 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=gp/view&id=4
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=gp/create
+---
+2012/04/23 03:17:54 [error] [exception.CException] exception 'CException' with message 'Property "CDetailView.0" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\wamp\yii\framework\web\CWidgetFactory.php(162): CComponent->__set('0', 'name')
+#1 C:\wamp\yii\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(GpController), 'zii.widgets.CDe...', Array)
+#2 C:\wamp\yii\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CDe...', Array)
+#3 C:\wamp\www\placement_agent\web001\protected\views\gp\view.php(33): CBaseController->widget('zii.widgets.CDe...', Array)
+#4 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#5 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#6 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#7 C:\wamp\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#8 C:\wamp\www\placement_agent\web001\protected\controllers\GpController.php(41): CController->render('view', Array)
+#9 [internal function]: GpController->actionView('4')
+#10 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(GpController), Array)
+#11 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(GpController), Object(ReflectionMethod), Array)
+#12 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#13 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#14 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#15 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#16 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#19 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('view')
+#21 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('gp/view')
+#22 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=gp/view&id=4
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=gp/create
+---
+2012/04/23 03:17:56 [error] [exception.CException] exception 'CException' with message 'Property "CDetailView.0" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\wamp\yii\framework\web\CWidgetFactory.php(162): CComponent->__set('0', 'name')
+#1 C:\wamp\yii\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(GpController), 'zii.widgets.CDe...', Array)
+#2 C:\wamp\yii\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CDe...', Array)
+#3 C:\wamp\www\placement_agent\web001\protected\views\gp\view.php(33): CBaseController->widget('zii.widgets.CDe...', Array)
+#4 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#5 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#6 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#7 C:\wamp\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#8 C:\wamp\www\placement_agent\web001\protected\controllers\GpController.php(41): CController->render('view', Array)
+#9 [internal function]: GpController->actionView('4')
+#10 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(GpController), Array)
+#11 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(GpController), Object(ReflectionMethod), Array)
+#12 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#13 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#14 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#15 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#16 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#19 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('view')
+#21 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('gp/view')
+#22 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=gp/view&id=4
+---
