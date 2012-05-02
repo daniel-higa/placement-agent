@@ -12,10 +12,10 @@ public function accessRules() {
 	return array(
 			array('allow',
 				'actions'=>array('index','view'),
-				'users'=>array('*'),
+				'users'=>array('@'),
 				),
 			array('allow', 
-				'actions'=>array('minicreate', 'create','update'),
+				'actions'=>array('minicreate', 'create','update', 'admin'),
 				'users'=>array('@'),
 				),
 			array('allow', 
