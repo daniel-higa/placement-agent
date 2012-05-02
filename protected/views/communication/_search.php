@@ -21,8 +21,23 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model, 'firm_id'); ?>
+		<?php echo $form->textField($model, 'firm_id'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model, 'gp_id'); ?>
 		<?php echo $form->textField($model, 'gp_id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model, 'lp_id'); ?>
+		<?php echo $form->textField($model, 'lp_id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model, 'status_id'); ?>
+		<?php echo $form->textField($model, 'status_id'); ?>
 	</div>
 
 	<div class="row">

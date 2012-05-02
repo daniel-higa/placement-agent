@@ -41,6 +41,7 @@ abstract class BaseTag extends GxActiveRecord {
 
 	public function relations() {
 		return array(
+            'communications' => array(self::MANY_MANY, 'Communication', 'communication_tag(tag_id, communication_id)'),
 		);
 	}
 

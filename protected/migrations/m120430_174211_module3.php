@@ -44,6 +44,7 @@ class m120430_174211_module3 extends CDbMigration
         ));
 
         $this->createTable('communication_tag', array(
+            'id' => 'pk',
             'tag_id' => 'int',
             'communication_id' => 'int',
         ));

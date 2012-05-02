@@ -47,8 +47,8 @@ abstract class BaseClientMandate extends GxActiveRecord {
 	public function relations() {
 		return array(
             'gp' => array(self::BELONGS_TO, 'Gp', 'gp_id'),
-            'client_mandate_lps' => array(self::HAS_MANY, 'ClientMandateLp', 'lp_id'),
-            'lps' => array(self::HAS_MANY, 'Lp', 'client_mandate_lp(client_mandate_id, lp_id)'),
+            'client_mandate_lps' => array(self::HAS_MANY, 'ClientMandateLp', 'client_mandate_id'),
+            'lps' => array(self::MANY_MANY, 'Lp', 'client_mandate_lp(client_mandate_id, lp_id)'),
 		);
 	}
 

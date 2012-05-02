@@ -18,6 +18,15 @@ class ClientMandate extends BaseClientMandate
         return $list;
     }
     
+    public function LpItems($lps) {
+        $list =  array();
+        foreach ($lps as $lp) {
+            $list[$lp->id] = $lp->firm->name;
+        }
+        natcasesort($list);
+        return $list;
+    }
+    
     public function findLps($rank, $continent_ids, $region_ids, $sector_ids) {
         $lps = array();
         
@@ -53,5 +62,21 @@ class ClientMandate extends BaseClientMandate
 
         return Lp::model()->findAllByPk($lps);
         //return $lps;
+    }
+    
+    public function addLps($lps) {
+        foreach ($lps as $lp) {
+            $search = array('lp_id' => $lp, 'client_mandate_id' => $this->id);
+            $exist = ClientMandateLp::model()->findAllByAttributes($search);
+            if ( empty($exist)) {
+                $cmlp = new ClientMandateLp();
+                $cmlp->lp_id = $lp;
+                $cmlp->client_mandate_id = $this->id;
+                $cmlp->status = 1;
+                if (!$cmlp->save()) {
+                    throw new Exception('Error on add lp to client mandate.');
+                }
+            }
+        }
     }
 }

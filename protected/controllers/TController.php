@@ -1,6 +1,6 @@
 <?php
 
-class CommunicationController extends GxController {
+class TController extends GxController {
 
 public function filters() {
 	return array(
@@ -30,21 +30,18 @@ public function accessRules() {
 
 	public function actionView($id) {
 		$this->render('view', array(
-			'model' => $this->loadModel($id, 'Communication'),
+			'model' => $this->loadModel($id, 'Todo'),
 		));
 	}
 
 	public function actionCreate() {
-		$model = new Communication;
+		$model = new Todo;
 
 
-		if (isset($_POST['Communication'])) {
-			$model->setAttributes($_POST['Communication']);
-			$relatedData = array(
-				'tags' => $_POST['Communication']['tags'] === '' ? null : $_POST['Communication']['tags'],
-				);
+		if (isset($_POST['Todo'])) {
+			$model->setAttributes($_POST['Todo']);
 
-			if ($model->saveWithRelated($relatedData)) {
+			if ($model->save()) {
 				if (Yii::app()->getRequest()->getIsAjaxRequest())
 					Yii::app()->end();
 				else
@@ -56,16 +53,13 @@ public function accessRules() {
 	}
 
 	public function actionUpdate($id) {
-		$model = $this->loadModel($id, 'Communication');
+		$model = $this->loadModel($id, 'Todo');
 
 
-		if (isset($_POST['Communication'])) {
-			$model->setAttributes($_POST['Communication']);
-			$relatedData = array(
-				'tags' => $_POST['Communication']['tags'] === '' ? null : $_POST['Communication']['tags'],
-				);
-            CommunicationTag::model()->deleteAll(array('condition' =>'communication_id = :cid', 'params' => array(':cid' => $model->id)));
-			if ($model->saveWithRelated($relatedData)) {
+		if (isset($_POST['Todo'])) {
+			$model->setAttributes($_POST['Todo']);
+
+			if ($model->save()) {
 				$this->redirect(array('view', 'id' => $model->id));
 			}
 		}
@@ -77,7 +71,7 @@ public function accessRules() {
 
 	public function actionDelete($id) {
 		if (Yii::app()->getRequest()->getIsPostRequest()) {
-			$this->loadModel($id, 'Communication')->delete();
+			$this->loadModel($id, 'Todo')->delete();
 
 			if (!Yii::app()->getRequest()->getIsAjaxRequest())
 				$this->redirect(array('admin'));
@@ -86,18 +80,18 @@ public function accessRules() {
 	}
 
 	public function actionIndex() {
-		$dataProvider = new CActiveDataProvider('Communication');
+		$dataProvider = new CActiveDataProvider('Todo');
 		$this->render('index', array(
 			'dataProvider' => $dataProvider,
 		));
 	}
 
 	public function actionAdmin() {
-		$model = new Communication('search');
+		$model = new Todo('search');
 		$model->unsetAttributes();
 
-		if (isset($_GET['Communication']))
-			$model->setAttributes($_GET['Communication']);
+		if (isset($_GET['Todo']))
+			$model->setAttributes($_GET['Todo']);
 
 		$this->render('admin', array(
 			'model' => $model,

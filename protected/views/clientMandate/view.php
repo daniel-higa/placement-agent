@@ -42,13 +42,13 @@ $this->menu=array(
         </thead>
 
         <?php
-            
+            //echo count($model->client_mandate_lps) . "<br/>";
             foreach ($model->client_mandate_lps as $cmlp) {
                 echo '<tr>';
                 echo '<td>' . $cmlp->lp_id . '</td>';
                 echo '<td>' . $cmlp->lp->firm->name . '</td>';
                 echo '<td>' . $cmlp->status_id . '</td>';
-                echo '<td>' . $cmlp->status->name . '</td>';
+                echo '<td>' . ($cmlp->status_id?$cmlp->status->name:'') . '</td>';
                 echo '</tr>';
               }
         ?>

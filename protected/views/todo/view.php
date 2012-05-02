@@ -20,27 +20,12 @@ $this->menu=array(
 	'data' => $model,
 	'attributes' => array(
 'id',
-'name',
 'description',
-'firm_id',
-'gp_id',
-'lp_id',
-'status_id',
-'client_mandate_id',
 'user_id',
-'employees_id',
+'create_at',
+'date',
+'communication_id',
+'done:boolean',
 	),
 )); ?>
 
-<h2><?php echo GxHtml::encode($model->getRelationLabel('tags')); ?></h2>
-<?php
-	echo GxHtml::openTag('ul');
-	foreach($model->tags as $relatedModel) {
-		echo GxHtml::openTag('li');
-		echo GxHtml::link(GxHtml::encode(GxHtml::valueEx($relatedModel)), array('tag/view', 'id' => GxActiveRecord::extractPkValue($relatedModel, true)));
-		echo GxHtml::closeTag('li');
-	}
-	echo GxHtml::closeTag('ul');
-?>
-
-<a href=<?php echo $this->createurl('/todo/create', array('communication_id' => $model->id));?>><button>Add To-Do</button></a>

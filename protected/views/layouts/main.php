@@ -36,7 +36,13 @@
                            ),
                       'visible'=>!Yii::app()->user->isGuest,
                 ),
-                array('label'=>'tag', 'url'=>array('/tag/admin'), 'visible'=>!Yii::app()->user->isGuest),
+                array('label'=> 'Communications', 'items' => array(
+                            array('label' => 'Communications', 'url' => array('/communication/admin')),
+                            array('label' => 'To-Dos', 'url' => array('/todo/admin')),
+                        ),
+                        'visible'=>!Yii::app()->user->isGuest,
+                        'url' => array(''),
+                    ),
 				array('label'=>'Firm', 'url'=>array('/firm'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Office', 'url'=>array('/office'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Employees', 'url'=>array('/employees'), 'visible'=>!Yii::app()->user->isGuest),
@@ -47,7 +53,7 @@
                             array('label' => 'Target', 'url' => array('/target')),
                         ),
                         'visible'=>!Yii::app()->user->isGuest,
-                        'url' => '',
+                        'url' => array(''),
                     ),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
