@@ -26,17 +26,29 @@
 	</div><!-- header -->
 
 	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
+		<?php $this->widget('ext.CDropDownMenu.CDropDownMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
-				/*array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),*/
+				array('label'=>'Projects',
+                      'url'=>array(''),
+                      'items' =>  array(
+                           array('label'=>'Client Mandate', 'url'=>array('/clientMandate/admin'))
+                           ),
+                      'visible'=>!Yii::app()->user->isGuest,
+                ),
+                array('label'=>'tag', 'url'=>array('/tag/admin'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Firm', 'url'=>array('/firm'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Office', 'url'=>array('/office'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Employees', 'url'=>array('/employees'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'GP', 'url'=>array('/gp'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'LP', 'url'=>array('/lp'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Target', 'url'=>array('/target'), 'visible'=>!Yii::app()->user->isGuest),
+                array('label'=> 'Config', 'items' => array(
+                            array('label' => 'Tag', 'url' => array('/tag')),
+                            array('label' => 'Target', 'url' => array('/target')),
+                        ),
+                        'visible'=>!Yii::app()->user->isGuest,
+                        'url' => '',
+                    ),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
