@@ -25,8 +25,13 @@
 		</div><!-- row -->
 		<div class="row">
 		<?php echo $form->labelEx($model,'gp_id'); ?>
-		<?php // echo $form->textField($model, 'gp_id'); ?>
-        <?php echo $form->dropDownList($model, 'gp_id', $model->getGps()); ?>
+        <?php
+            if ($model->isNewRecord) {
+                echo $form->dropDownList($model, 'gp_id', $model->getGps());
+            } else {
+                echo $model->gp_id . ' - ' . $model->gp->firm->name;
+            }
+        ?>
 		<?php echo $form->error($model,'gp_id'); ?>
 		</div><!-- row -->
 

@@ -46,7 +46,7 @@ abstract class BaseLp extends GxActiveRecord {
 
 	public function rules() {
 		return array(
-			array('name, website, rank, firm_id, assets_umgmt, assets_umgmt_ori, top_interests', 'required'),
+			array('rank, firm_id, assets_umgmt, assets_umgmt_ori, top_interests', 'required'),
 			array('top_interests', 'numerical', 'integerOnly'=>true),
 			array('assets_umgmt, assets_umgmt_ori', 'numerical'),
 			array('name', 'length', 'max'=>50),
@@ -62,6 +62,9 @@ abstract class BaseLp extends GxActiveRecord {
 	public function relations() {
 		return array(
 			'firm' => array(self::BELONGS_TO, 'Firm', 'firm_id'),
+            'continents' => array(self::MANY_MANY, 'Continent', 'lpcontinent(lp_id, continent_id)'),
+            'regions' => array(self::MANY_MANY, 'Region', 'lpregion(lp_id, region_id)'),
+            'sectors' => array(self::MANY_MANY, 'Sector', 'lpsector(lp_id, sector_id)'),
 			'lpcontinents' => array(self::HAS_MANY, 'Lpcontinent', 'lp_id'),
 			'lpdocuments' => array(self::HAS_MANY, 'Lpdocument', 'lp_id'),
 			'lpregions' => array(self::HAS_MANY, 'Lpregion', 'lp_id'),

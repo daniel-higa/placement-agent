@@ -15,7 +15,7 @@ class ClientMandateController extends GxController {
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'admin'),
+				'actions'=>array('create','update', 'admin', 'addLps'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -93,6 +93,34 @@ class ClientMandateController extends GxController {
 
 		$this->render('admin', array(
 			'model' => $model,
+		));
+	}
+    
+    public function actionAddLps($id) {
+        $model = ClientMandate::model()->findByPk($id);
+        $continents = array();
+        $regions = array();
+        $sectors = array();
+        $rank = 'A';
+        $post = $_POST;
+        if (isset($_POST['continents'])) {
+            $continents = array_values($_POST['continents']);
+        }
+        if (isset($_POST['regions'])) {
+            $regions = array_values($_POST['regions']);
+        }
+        if (isset($_POST['sectors'])) {
+            $sectors = array_values($_POST['sectors']);
+        }
+        if (isset($_POST['rank'])) {
+            $rank = $_POST['rank'];
+        }
+        $lps = $model->findLps($rank, $continents, $regions, $sectors);
+		$this->render('addLps', array(
+            'model' => $model,
+            'post' => $post,
+            'lps' => $lps,
+            'continents'  => $continents,
 		));
 	}
 

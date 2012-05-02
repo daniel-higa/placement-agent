@@ -27,9 +27,8 @@ $this->menu=array(
 )); ?>
 
 <div>
-    <form action="">
-        <input type="BUTTON" value="add lps" />
-    </form>
+    <a href=<?php echo $this->createUrl("clientMandate/addLps", array('id' => $model->id)); ?> ><button>Add LPs</button></a>
+
     <h2>LP list</h2>
     <div>
         <table>
