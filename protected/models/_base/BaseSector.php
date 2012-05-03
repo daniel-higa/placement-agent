@@ -43,6 +43,8 @@ abstract class BaseSector extends GxActiveRecord {
 	public function relations() {
 		return array(
 			'employeessectors' => array(self::HAS_MANY, 'Employeessector', 'sector_id'),
+            'lpsectors' => array(self::HAS_MANY, 'Lpsector', 'sector_id'),
+            'Lps' => array(self::HAS_MANY, 'Lp', 'lpsector(sector_id, lp_id)'),
 		);
 	}
 

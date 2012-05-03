@@ -1192,3 +1192,487 @@ Stack trace:
 #24 {main}
 REQUEST_URI=/placement_agent/web001/index.php?r=gp/view&id=4
 ---
+2012/05/03 05:09:50 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'adrian.user' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `user`.
+in C:\wamp\www\placement_agent\web001\protected\extensions\giix-components\GxActiveRecord.php (26)
+in C:\wamp\www\placement_agent\web001\protected\models\_base\BaseUser.php (21)
+in C:\wamp\www\placement_agent\web001\protected\models\User.php (8)
+2012/05/03 05:09:50 [error] [exception.CDbException] exception 'CDbException' with message 'The table "user" for active record class "User" cannot be found in the database.' in C:\wamp\yii\framework\db\ar\CActiveRecord.php:2264
+Stack trace:
+#0 C:\wamp\yii\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(User))
+#1 C:\wamp\www\placement_agent\web001\protected\extensions\giix-components\GxActiveRecord.php(26): CActiveRecord::model('User')
+#2 C:\wamp\www\placement_agent\web001\protected\models\_base\BaseUser.php(21): GxActiveRecord::model('User')
+#3 C:\wamp\www\placement_agent\web001\protected\models\User.php(8): BaseUser::model('User')
+#4 C:\wamp\www\placement_agent\web001\protected\components\UserIdentity.php(20): User::model()
+#5 C:\wamp\www\placement_agent\web001\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#6 C:\wamp\yii\framework\validators\CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#7 C:\wamp\yii\framework\validators\CValidator.php(197): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#8 C:\wamp\yii\framework\base\CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#9 C:\wamp\www\placement_agent\web001\protected\controllers\SiteController.php(88): CModel->validate()
+#10 C:\wamp\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#11 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 C:\wamp\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#13 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('login')
+#15 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#16 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=site/login
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=site/login
+---
+2012/05/03 05:41:06 [error] [php] Invalid argument supplied for foreach() (C:\wamp\www\placement_agent\web001\protected\views\lp\_view.php:45)
+Stack trace:
+#0 C:\wamp\yii\framework\web\CController.php(870): LpController->renderFile()
+#1 C:\wamp\yii\framework\zii\widgets\CListView.php(242): LpController->renderPartial()
+#2 C:\wamp\yii\framework\zii\widgets\CBaseListView.php(158): CListView->renderItems()
+#3 unknown(0): CListView->renderSection()
+#4 C:\wamp\yii\framework\zii\widgets\CBaseListView.php(141): preg_replace_callback()
+#5 C:\wamp\yii\framework\zii\widgets\CBaseListView.php(126): CListView->renderContent()
+#6 C:\wamp\yii\framework\web\CBaseController.php(174): CListView->run()
+#7 C:\wamp\www\placement_agent\web001\protected\views\lp\index.php(19): LpController->widget()
+#8 C:\wamp\yii\framework\web\CBaseController.php(127): require()
+#9 C:\wamp\yii\framework\web\CBaseController.php(96): LpController->renderInternal()
+#10 C:\wamp\yii\framework\web\CController.php(870): LpController->renderFile()
+#11 C:\wamp\yii\framework\web\CController.php(783): LpController->renderPartial()
+#12 C:\wamp\www\placement_agent\web001\protected\controllers\LpController.php(226): LpController->render()
+#13 C:\wamp\yii\framework\web\actions\CInlineAction.php(50): LpController->actionIndex()
+#14 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#15 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): LpController->runAction()
+#16 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#17 C:\wamp\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#18 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): LpController->filterAccessControl()
+#19 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#20 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#21 C:\wamp\yii\framework\web\CController.php(266): LpController->runActionWithFilters()
+#22 C:\wamp\yii\framework\web\CWebApplication.php(276): LpController->run()
+#23 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#24 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 C:\wamp\www\placement_agent\web001\index.php(13): CWebApplication->run()
+REQUEST_URI=/placement_agent/web001/index.php?r=lp/index
+in C:\wamp\www\placement_agent\web001\protected\views\lp\_view.php (45)
+in C:\wamp\www\placement_agent\web001\protected\views\lp\index.php (19)
+in C:\wamp\www\placement_agent\web001\protected\controllers\LpController.php (226)
+2012/05/03 05:47:18 [error] [exception.CException] exception 'CException' with message 'Property "Office.office_id" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\wamp\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('office_id')
+#1 C:\wamp\www\placement_agent\web001\protected\views\lp\_view.php(65): CActiveRecord->__get('office_id')
+#2 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#3 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#4 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#5 C:\wamp\yii\framework\zii\widgets\CListView.php(242): CController->renderPartial('_view', Array)
+#6 C:\wamp\yii\framework\zii\widgets\CBaseListView.php(158): CListView->renderItems()
+#7 [internal function]: CBaseListView->renderSection(Array)
+#8 C:\wamp\yii\framework\zii\widgets\CBaseListView.php(141): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{sort...')
+#9 C:\wamp\yii\framework\zii\widgets\CBaseListView.php(126): CBaseListView->renderContent()
+#10 C:\wamp\yii\framework\web\CBaseController.php(174): CBaseListView->run()
+#11 C:\wamp\www\placement_agent\web001\protected\views\lp\index.php(19): CBaseController->widget('zii.widgets.CLi...', Array)
+#12 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#13 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#14 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#15 C:\wamp\yii\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#16 C:\wamp\www\placement_agent\web001\protected\controllers\LpController.php(226): CController->render('index', Array)
+#17 C:\wamp\yii\framework\web\actions\CInlineAction.php(50): LpController->actionIndex()
+#18 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#19 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#20 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#21 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#22 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#23 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#24 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#25 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('index')
+#27 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('lp/index')
+#28 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#29 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=lp/index
+---
+2012/05/03 05:47:55 [error] [exception.CException] exception 'CException' with message 'Property "Employees.name" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\wamp\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('name')
+#1 C:\wamp\www\placement_agent\web001\protected\views\lp\_view.php(68): CActiveRecord->__get('name')
+#2 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#3 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#4 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#5 C:\wamp\yii\framework\zii\widgets\CListView.php(242): CController->renderPartial('_view', Array)
+#6 C:\wamp\yii\framework\zii\widgets\CBaseListView.php(158): CListView->renderItems()
+#7 [internal function]: CBaseListView->renderSection(Array)
+#8 C:\wamp\yii\framework\zii\widgets\CBaseListView.php(141): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{sort...')
+#9 C:\wamp\yii\framework\zii\widgets\CBaseListView.php(126): CBaseListView->renderContent()
+#10 C:\wamp\yii\framework\web\CBaseController.php(174): CBaseListView->run()
+#11 C:\wamp\www\placement_agent\web001\protected\views\lp\index.php(19): CBaseController->widget('zii.widgets.CLi...', Array)
+#12 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#13 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#14 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#15 C:\wamp\yii\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#16 C:\wamp\www\placement_agent\web001\protected\controllers\LpController.php(226): CController->render('index', Array)
+#17 C:\wamp\yii\framework\web\actions\CInlineAction.php(50): LpController->actionIndex()
+#18 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#19 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#20 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#21 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#22 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#23 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#24 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#25 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('index')
+#27 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('lp/index')
+#28 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#29 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=lp/index
+---
+2012/05/03 05:58:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\wamp\www\placement_agent\web001\protected\extensions\giix-components\GxController.php:144
+Stack trace:
+#0 C:\wamp\www\placement_agent\web001\protected\controllers\LpController.php(128): GxController->loadModel('4', 'Lp')
+#1 [internal function]: LpController->actionUpdate('4')
+#2 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(LpController), Array)
+#3 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(LpController), Object(ReflectionMethod), Array)
+#4 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#11 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#13 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('lp/update')
+#14 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=lp/update&id=4
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=lp
+---
+2012/05/03 06:04:35 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\yii\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\wamp\yii\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('admin')
+#8 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('gp/admin')
+#9 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=gp/admin
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=gp
+---
+2012/05/03 06:04:42 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\yii\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\wamp\yii\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('admin')
+#8 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('gp/admin')
+#9 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=gp/admin
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=gp
+---
+2012/05/03 06:04:48 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\yii\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\wamp\yii\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('admin')
+#8 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('gp/admin')
+#9 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=gp/admin
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=gp/create
+---
+2012/05/03 06:04:48 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\yii\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\wamp\yii\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('admin')
+#8 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('gp/admin')
+#9 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=gp/admin
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=gp/create
+---
+2012/05/03 06:10:08 [error] [exception.CException] exception 'CException' with message 'Property "CDetailView.0" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\wamp\yii\framework\web\CWidgetFactory.php(162): CComponent->__set('0', Array)
+#1 C:\wamp\yii\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(LpController), 'zii.widgets.CDe...', Array)
+#2 C:\wamp\yii\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CDe...', Array)
+#3 C:\wamp\www\placement_agent\web001\protected\views\lp\view.php(40): CBaseController->widget('zii.widgets.CDe...', Array)
+#4 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#5 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#6 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#7 C:\wamp\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#8 C:\wamp\www\placement_agent\web001\protected\controllers\LpController.php(41): CController->render('view', Array)
+#9 [internal function]: LpController->actionView('1')
+#10 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(LpController), Array)
+#11 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(LpController), Object(ReflectionMethod), Array)
+#12 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#13 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#14 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#15 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#16 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#19 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('view')
+#21 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('lp/view')
+#22 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=lp/view&id=1
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=lp/admin
+---
+2012/05/03 06:12:01 [error] [exception.CException] exception 'CException' with message 'Property "Lp.user" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\wamp\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('user')
+#1 C:\wamp\www\placement_agent\web001\protected\views\lp\view.php(37): CActiveRecord->__get('user')
+#2 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#3 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#4 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#5 C:\wamp\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#6 C:\wamp\www\placement_agent\web001\protected\controllers\LpController.php(41): CController->render('view', Array)
+#7 [internal function]: LpController->actionView('1')
+#8 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(LpController), Array)
+#9 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(LpController), Object(ReflectionMethod), Array)
+#10 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('view')
+#19 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('lp/view')
+#20 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=lp/view&id=1
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=lp/admin
+---
+2012/05/03 06:12:13 [error] [exception.CException] exception 'CException' with message 'Property "Lp.user" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\wamp\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('user')
+#1 C:\wamp\www\placement_agent\web001\protected\views\lp\view.php(37): CActiveRecord->__get('user')
+#2 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#3 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#4 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#5 C:\wamp\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#6 C:\wamp\www\placement_agent\web001\protected\controllers\LpController.php(41): CController->render('view', Array)
+#7 [internal function]: LpController->actionView('1')
+#8 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(LpController), Array)
+#9 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(LpController), Object(ReflectionMethod), Array)
+#10 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('view')
+#19 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('lp/view')
+#20 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=lp/view&id=1
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=lp/admin
+---
+2012/05/03 06:12:26 [error] [exception.CException] exception 'CException' with message 'Property "Lp.user" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\wamp\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('user')
+#1 C:\wamp\www\placement_agent\web001\protected\views\lp\view.php(37): CActiveRecord->__get('user')
+#2 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#3 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#4 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#5 C:\wamp\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#6 C:\wamp\www\placement_agent\web001\protected\controllers\LpController.php(41): CController->render('view', Array)
+#7 [internal function]: LpController->actionView('1')
+#8 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(LpController), Array)
+#9 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(LpController), Object(ReflectionMethod), Array)
+#10 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('view')
+#19 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('lp/view')
+#20 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=lp/view&id=1
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=lp/admin
+---
+2012/05/03 06:12:37 [error] [exception.CException] exception 'CException' with message 'Property "CDetailView.0" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\wamp\yii\framework\web\CWidgetFactory.php(162): CComponent->__set('0', Array)
+#1 C:\wamp\yii\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(LpController), 'zii.widgets.CDe...', Array)
+#2 C:\wamp\yii\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CDe...', Array)
+#3 C:\wamp\www\placement_agent\web001\protected\views\lp\view.php(39): CBaseController->widget('zii.widgets.CDe...', Array)
+#4 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#5 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#6 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#7 C:\wamp\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#8 C:\wamp\www\placement_agent\web001\protected\controllers\LpController.php(41): CController->render('view', Array)
+#9 [internal function]: LpController->actionView('1')
+#10 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(LpController), Array)
+#11 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(LpController), Object(ReflectionMethod), Array)
+#12 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#13 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#14 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#15 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#16 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#19 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('view')
+#21 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('lp/view')
+#22 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=lp/view&id=1
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=lp/admin
+---
+2012/05/03 06:12:50 [error] [exception.CException] exception 'CException' with message 'Property "CDetailView.0" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\wamp\yii\framework\web\CWidgetFactory.php(162): CComponent->__set('0', Array)
+#1 C:\wamp\yii\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(LpController), 'zii.widgets.CDe...', Array)
+#2 C:\wamp\yii\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CDe...', Array)
+#3 C:\wamp\www\placement_agent\web001\protected\views\lp\view.php(39): CBaseController->widget('zii.widgets.CDe...', Array)
+#4 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#5 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#6 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#7 C:\wamp\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#8 C:\wamp\www\placement_agent\web001\protected\controllers\LpController.php(41): CController->render('view', Array)
+#9 [internal function]: LpController->actionView('1')
+#10 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(LpController), Array)
+#11 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(LpController), Object(ReflectionMethod), Array)
+#12 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#13 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#14 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#15 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#16 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#19 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('view')
+#21 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('lp/view')
+#22 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=lp/view&id=1
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=lp/admin
+---
+2012/05/03 06:12:52 [error] [exception.CException] exception 'CException' with message 'Property "CDetailView.0" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\wamp\yii\framework\web\CWidgetFactory.php(162): CComponent->__set('0', Array)
+#1 C:\wamp\yii\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(LpController), 'zii.widgets.CDe...', Array)
+#2 C:\wamp\yii\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CDe...', Array)
+#3 C:\wamp\www\placement_agent\web001\protected\views\lp\view.php(39): CBaseController->widget('zii.widgets.CDe...', Array)
+#4 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#5 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#6 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#7 C:\wamp\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#8 C:\wamp\www\placement_agent\web001\protected\controllers\LpController.php(41): CController->render('view', Array)
+#9 [internal function]: LpController->actionView('1')
+#10 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(LpController), Array)
+#11 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(LpController), Object(ReflectionMethod), Array)
+#12 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#13 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#14 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#15 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#16 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#19 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('view')
+#21 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('lp/view')
+#22 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=lp/view&id=1
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=lp/admin
+---
+2012/05/03 06:12:53 [error] [exception.CException] exception 'CException' with message 'Property "CDetailView.0" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\wamp\yii\framework\web\CWidgetFactory.php(162): CComponent->__set('0', Array)
+#1 C:\wamp\yii\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(LpController), 'zii.widgets.CDe...', Array)
+#2 C:\wamp\yii\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CDe...', Array)
+#3 C:\wamp\www\placement_agent\web001\protected\views\lp\view.php(39): CBaseController->widget('zii.widgets.CDe...', Array)
+#4 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#5 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#6 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#7 C:\wamp\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#8 C:\wamp\www\placement_agent\web001\protected\controllers\LpController.php(41): CController->render('view', Array)
+#9 [internal function]: LpController->actionView('1')
+#10 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(LpController), Array)
+#11 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(LpController), Object(ReflectionMethod), Array)
+#12 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#13 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#14 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#15 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#16 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#19 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('view')
+#21 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('lp/view')
+#22 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=lp/view&id=1
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=lp/admin
+---
+2012/05/03 06:13:09 [error] [exception.CException] exception 'CException' with message 'Property "CDetailView.0" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\wamp\yii\framework\web\CWidgetFactory.php(162): CComponent->__set('0', Array)
+#1 C:\wamp\yii\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(LpController), 'zii.widgets.CDe...', Array)
+#2 C:\wamp\yii\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CDe...', Array)
+#3 C:\wamp\www\placement_agent\web001\protected\views\lp\view.php(39): CBaseController->widget('zii.widgets.CDe...', Array)
+#4 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#5 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#6 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#7 C:\wamp\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#8 C:\wamp\www\placement_agent\web001\protected\controllers\LpController.php(41): CController->render('view', Array)
+#9 [internal function]: LpController->actionView('1')
+#10 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(LpController), Array)
+#11 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(LpController), Object(ReflectionMethod), Array)
+#12 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#13 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#14 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#15 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#16 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#19 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('view')
+#21 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('lp/view')
+#22 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=lp/view&id=1
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=lp/admin
+---

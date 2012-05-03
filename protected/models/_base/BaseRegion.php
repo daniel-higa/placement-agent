@@ -47,6 +47,8 @@ abstract class BaseRegion extends GxActiveRecord {
 			'employeesregions' => array(self::HAS_MANY, 'Employeesregion', 'region_id'),
 			'firmregions' => array(self::HAS_MANY, 'Firmregion', 'region_id'),
 			'officeregions' => array(self::HAS_MANY, 'Officeregion', 'region_id'),
+            'lpregions' => array(self::HAS_MANY, 'Lpregion', 'region_id'),
+            'lps' => array(self::HAS_MANY, 'Lp', 'lpregion(region_id, lp_id)'),
 		);
 	}
 
