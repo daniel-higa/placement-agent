@@ -20,18 +20,58 @@ $this->menu=array(
 	'data' => $model,
 	'attributes' => array(
 'id',
-array(
-			'name' => 'firm',
-			'type' => 'raw',
-			'value' => $model->firm !== null ? GxHtml::link(GxHtml::encode(GxHtml::valueEx($model->firm)), array('firm/view', 'id' => GxActiveRecord::extractPkValue($model->firm, true))) : null,
-			),
 'rank',
-
 'assets_umgmt',
 'assets_umgmt_ori',
 'top_interests:boolean',
-	),
+array(
+			'name' => 'firm',
+			'type' => 'raw',
+			'value' => $model->firm !== null ? GxHtml::link(GxHtml::encode(GxHtml::valueEx($model->firm)), array('firm/update', 'id' => GxActiveRecord::extractPkValue($model->firm, true))) : null,
+			),
+
+array(
+			'name' => 'description',
+			'type' => 'raw',
+			'value' => $model->firm !== null ? Firm::model()->findByPk($model->firm_id)->description : null,
+			),
+array(
+			'name' => 'website',
+			'type' => 'raw',
+			'value' => $model->firm !== null ? Firm::model()->findByPk($model->firm_id)->website : null,
+			),
+),
 )); ?>
+
+<br /><br />
+	
+	<h2>Offices/Employees</h2>
+<?php
+	echo GxHtml::openTag('ul');
+	
+	$offices = Office::model()->findAll(array('condition' => 'firm_id = :ID', 'params' => array(':ID' => $model->firm_id)));
+	
+	foreach($offices as $office) {
+		echo GxHtml::openTag('li');
+		echo GxHtml::link(GxHtml::encode($office->name), array('office/update', 'id' => $office->id)) . ": ";
+		
+		echo GxHtml::openTag('ul');
+		
+		$emps = Employees::model()->findAll(array('condition' => 'office_id = :ID', 'params' => array(':ID' => $office->id)));
+		foreach($emps as $emp) {
+			echo GxHtml::openTag('li');
+			echo GxHtml::link(GxHtml::encode($emp->first_name.' '.$emp->last_name), array('employees/update', 'id' => $emp->id));
+			echo GxHtml::closeTag('li');
+		}
+		
+		echo GxHtml::closeTag('ul');
+		
+		echo GxHtml::closeTag('li');
+	}
+	echo GxHtml::closeTag('ul');
+?>
+
+<br /><br />
 
 <h2>Continents</h2>
 <?php

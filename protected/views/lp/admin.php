@@ -42,6 +42,10 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 	'dataProvider' => $model->search(),
 	'columns' => array(
 		'id',
+		'name',
+		'description',
+		'website',
+		'rank',
 		array(
 				'name'=>'firm_id',
 				'value'=>'GxHtml::valueEx($data->firm)',
