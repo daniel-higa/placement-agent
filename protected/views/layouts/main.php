@@ -49,8 +49,12 @@
 				array('label'=>'GP', 'url'=>array('/gp'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'LP', 'url'=>array('/lp'), 'visible'=>!Yii::app()->user->isGuest),
                 array('label'=> 'Config', 'items' => array(
+                            array('label' => 'User', 'url' => array('/user')),
                             array('label' => 'Tag', 'url' => array('/tag')),
                             array('label' => 'Target', 'url' => array('/target')),
+                            array('label' => 'Sector', 'url' => array('/sector')),
+                            array('label' => 'Region', 'url' => array('/region')),
+                            array('label' => 'Continent', 'url' => array('/continent')),
                         ),
                         'visible'=>!Yii::app()->user->isGuest,
                         'url' => array(''),
