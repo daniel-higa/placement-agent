@@ -103,6 +103,8 @@ class ClientMandateController extends GxController {
         $sectors = array();
         $ranks = array('A');
         $post = $_POST;
+        $post['average_ticket'] = isset($post['average_ticket'])?$post['average_ticket']:'>= 0';
+        $post['average_inv'] = isset($post['average_inv'])?$post['average_inv']:'>= 0';
         $lps = array();
         if (isset($_POST['continents'])) {
             $continents = array_values($_POST['continents']);
@@ -121,7 +123,7 @@ class ClientMandateController extends GxController {
             $this->redirect(array('view', 'id' => $model->id));
         }
         if (isset($_POST['continents']) or isset($_POST['regions']) or isset($_POST['sectors'])) {
-            $lps = $model->findLps($ranks, $continents, $regions, $sectors);
+            $lps = $model->findLps($ranks, $continents, $regions, $sectors, $post);
         }
 		$this->render('addLps', array(
             'model' => $model,

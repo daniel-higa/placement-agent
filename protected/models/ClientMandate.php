@@ -27,7 +27,7 @@ class ClientMandate extends BaseClientMandate
         return $list;
     }
     
-    public function findLps($ranks, $continent_ids, $region_ids, $sector_ids) {
+    public function findLps($ranks, $continent_ids, $region_ids, $sector_ids, $data) {
         $lps = array();
         
         $criteria = new CDbCriteria;
@@ -40,9 +40,12 @@ class ClientMandate extends BaseClientMandate
         $criteria->addInCondition('lpcontinent.continent_id', $continent_ids, 'OR');
         $criteria->addInCondition('lpregion.region_id', $region_ids, 'OR');
         $criteria->addInCondition('lpsector.sector_id', $sector_ids, 'OR');
+        
 
         $criteria2 = new CDbCriteria;
         $criteria2->addInCondition('rank', $ranks);
+        $criteria2->compare('average_ticket', $data['average_ticket']);
+        $criteria2->compare('average_inv', $data['average_inv']);
         $criteria->mergeWith($criteria2);
         $lps = Lp::model()->findAll($criteria);
         

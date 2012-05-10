@@ -19,9 +19,7 @@ echo 'GP ' . $model->gp_id . ' - ' . $model->gp->firm->name . '<br/>';
 
     <div class="row">
 		<?php echo 'Rank'; ?><br/>
-
         <?php echo CHtml::checkBoxList("rank", $ranks, Lp::getRankItems() ,array('separator'=>'', 'template'=>'<div class="left">{label}{input} </div>')); ?>
-        
     </div>
     <div style="clear:both;"></div>
 
@@ -46,6 +44,16 @@ echo 'GP ' . $model->gp_id . ' - ' . $model->gp->firm->name . '<br/>';
         </div>
     </div>
     <div style="clear:both;"></div>
+
+    <div class="row">
+		<?php echo 'Average ticket'; ?><br/>
+        <?php echo CHtml::textField("average_ticket", $post['average_ticket']); ?>
+    </div>
+
+    <div class="row">
+		<?php echo 'Average Annual Invest'; ?><br/>
+        <?php echo CHtml::textField("average_inv", $post['average_inv']); ?>
+    </div>
 
 <?php
 echo GxHtml::submitButton(Yii::t('app', 'search'));
