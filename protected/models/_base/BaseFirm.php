@@ -63,6 +63,7 @@ abstract class BaseFirm extends GxActiveRecord {
 			'firmdocuments' => array(self::HAS_MANY, 'Firmdocument', 'firm_id'),
 			'firmregions' => array(self::HAS_MANY, 'Firmregion', 'firm_id'),
 			'offices' => array(self::HAS_MANY, 'Office', 'firm_id'),
+            'employees' => array(self::HAS_MANY, 'Employees', array('id' => 'office_id'), 'through' => 'offices' ),
 		);
 	}
 

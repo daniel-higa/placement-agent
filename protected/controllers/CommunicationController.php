@@ -11,7 +11,7 @@ public function filters() {
 public function accessRules() {
 	return array(
 			array('allow',
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'ajax_lp', 'ajax_employee'),
 				'users'=>array('@'),
 				),
 			array('allow', 
@@ -28,6 +28,25 @@ public function accessRules() {
 			);
 }
 
+    public function actionAjax_lp() {
+        $data = ClientMandate::model()->findByPk($_POST['Communication']['client_mandate_id'])->lps;
+        echo CHtml::tag('option', array('value'=>''),CHtml::encode('Choose one'),true);
+        foreach($data as $item)
+        {
+            echo CHtml::tag('option', array('value'=>$item->id),CHtml::encode($item->firm->name),true);
+        }
+    }
+
+    public function actionAjax_employee() {
+        $data = Lp::model()->findByPk($_POST['Communication']['lp_id'])->getEmployees();
+        echo CHtml::tag('option', array('value'=>''),CHtml::encode('Choose one'),true);
+        foreach($data as $item)
+        {
+            echo CHtml::tag('option', array('value'=>$item->id),CHtml::encode($item->last_name . ', ' . $item->first_name),true);
+        }
+    }
+
+
 	public function actionView($id) {
 		$this->render('view', array(
 			'model' => $this->loadModel($id, 'Communication'),
@@ -36,6 +55,8 @@ public function accessRules() {
 
 	public function actionCreate() {
 		$model = new Communication;
+        
+        $model->user_id = Yii::app()->user->id;
 
 
 		if (isset($_POST['Communication'])) {
@@ -51,6 +72,7 @@ public function accessRules() {
 					$this->redirect(array('view', 'id' => $model->id));
 			}
 		}
+        
 
 		$this->render('create', array( 'model' => $model));
 	}

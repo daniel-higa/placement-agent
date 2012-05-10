@@ -26,46 +26,71 @@
 				),
 			)); ?>
 		<?php echo $form->error($model,'date'); ?>
+        
+        <div class="row">
+		<?php echo $form->labelEx($model,'communication_type_id'); ?>
+		<?php echo $form->dropDownList($model, 'communication_type_id', GxHtml::listDataEx(CommunicationType::model()->findAllAttributes(null, true)),array('empty' => 'Choose one')); 
+        ?>
+		<?php echo $form->error($model,'communication_type_id'); ?>
+		</div><!-- row -->
+        
+        <div class="row">
+		<?php echo $form->labelEx($model,'client_mandate_id'); ?>
+		<?php echo $form->dropDownList($model, 'client_mandate_id', GxHtml::listDataEx(ClientMandate::model()->findAllAttributes(null, true)),array('empty' => 'Choose one', 
+                'ajax' => array(
+                    'type' => 'post',
+                    'url'=>CController::createUrl('communication/ajax_lp'),
+                    'update'=>'#Communication_lp_id',
+                ),
+            )); 
+        ?>
+		<?php echo $form->error($model,'client_mandate_id'); ?>
+		</div><!-- row -->
+        
+        <div class="row">
+		<?php echo $form->labelEx($model,'lp_id'); ?>
+		<?php
+                echo $form->dropDownList($model, 'lp_id', $model->getLpItems(), array('empty' => 'Choose one' ,
+                    'ajax' => array(
+                        'type' => 'post',
+                        'url'=>CController::createUrl('communication/ajax_employee'),
+                        'update'=>'#Communication_employees_id',
+                    ),
+                ));
+        ?>
+		<?php echo $form->error($model,'lp_id'); ?>
+		</div><!-- row -->
+        
+        <div class="row">
+		<?php echo $form->labelEx($model,'employees_id'); ?>
+        <?php
+              $emp_list = Employees::model()->findAllAttributes(null, true);
+        ?>
+		<?php echo $form->dropDownList($model, 'employees_id', $model->getEmployeeItems(), array('empty' => 'Choose one',
+            )); ?>
+		<?php echo $form->error($model,'employees_id'); ?>
+		</div><!-- row -->
+        
 		</div><!-- row -->
 		<div class="row">
 		<?php echo $form->labelEx($model,'description'); ?>
 		<?php echo $form->textArea($model, 'description'); ?>
 		<?php echo $form->error($model,'description'); ?>
 		</div><!-- row -->
-		<div class="row">
-		<?php echo $form->labelEx($model,'firm_id'); ?>
-		<?php 
-            if ($model->isNewRecord) {
-                echo $form->dropDownList($model, 'firm_id', GxHtml::listDataEx(Firm::model()->findAllAttributes(null, true)),array('empty' => 'Choose one' ));
-            } else {
-                echo $model->firm->name;
-            }
-        ?>
-		<?php echo $form->error($model,'firm_id'); ?>
-		</div><!-- row -->
+        
+		
 		<div class="row">
 		<?php echo $form->labelEx($model,'status_id'); ?>
 		<?php echo $form->dropDownList($model, 'status_id', GxHtml::listDataEx(Status::model()->findAllAttributes(null, true)),array('empty' => 'Choose one' )); ?>
 		<?php echo $form->error($model,'status_id'); ?>
 		</div><!-- row -->
-		<div class="row">
-		<?php echo $form->labelEx($model,'client_mandate_id'); ?>
-		<?php echo $form->dropDownList($model, 'client_mandate_id', GxHtml::listDataEx(ClientMandate::model()->findAllAttributes(null, true)),array('empty' => 'Choose one' )); ?>
-		<?php echo $form->error($model,'client_mandate_id'); ?>
-		</div><!-- row -->
+		
 		<div class="row">
 		<?php echo $form->labelEx($model,'user_id'); ?>
 		<?php echo $form->dropDownList($model, 'user_id', GxHtml::listDataEx(User::model()->findAllAttributes(null, true)),array('empty' => 'Choose one' )); ?>
 		<?php echo $form->error($model,'user_id'); ?>
 		</div><!-- row -->
-		<div class="row">
-		<?php echo $form->labelEx($model,'employees_id'); ?>
-        <?php
-              $emp_list = Employees::model()->findAllAttributes(null, true);
-        ?>
-		<?php echo $form->dropDownList($model, 'employees_id', GxHtml::listDataEx($emp_list), array('empty' => 'Choose one' )); ?>
-		<?php echo $form->error($model,'employees_id'); ?>
-		</div><!-- row -->
+		
         <label><?php echo GxHtml::encode($model->getRelationLabel('tags')); ?></label>
 		<?php echo $form->checkBoxList($model, 'tags', GxHtml::encodeEx(GxHtml::listDataEx(Tag::model()->findAllAttributes(null, true)), false, true)); ?>
 

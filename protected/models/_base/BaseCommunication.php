@@ -41,7 +41,7 @@ abstract class BaseCommunication extends GxActiveRecord {
 
 	public function rules() {
 		return array(
-			array('name', 'required'),
+			array('description, date, ', 'required'),
 			array('firm_id, gp_id, lp_id, status_id, client_mandate_id, user_id, employees_id', 'numerical', 'integerOnly'=>true),
 			array('description', 'safe'),
 			array('description, firm_id, gp_id, lp_id, status_id, client_mandate_id, user_id, employees_id', 'default', 'setOnEmpty' => true, 'value' => null),
@@ -58,6 +58,7 @@ abstract class BaseCommunication extends GxActiveRecord {
           'client_mandate' => array(self::BELONGS_TO, 'ClientMandate', 'client_mandate_id'),
           'employee' => array(self::BELONGS_TO, 'Employees', 'employees_id'),
           'tags' => array(self::MANY_MANY, 'Tag', 'communication_tag(communication_id, tag_id)'),
+          'lp' => array(self::BELONGS_TO, 'Lp', 'lp_id'),
 		);
 	}
 

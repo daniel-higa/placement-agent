@@ -12,4 +12,14 @@ class Lp extends BaseLp
         return array('A' => 'A', 'B' => 'B', 'C' => 'C', 'D' => 'D', 'E' => 'E');
     }
     
+    public function getEmployees() {
+        $employees = array();
+        foreach ($this->firm->offices as $o) {
+            foreach($o->employees as $e) {
+                $employees[] = $e;
+            }
+        }
+        return $employees;
+    }
+    
 }
