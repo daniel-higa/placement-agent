@@ -11,8 +11,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model, 'name'); ?>
-		<?php echo $form->textField($model, 'name', array('maxlength' => 255)); ?>
+		<?php echo $form->label($model, 'date'); ?>
+		<?php echo $form->textField($model, 'date', array('maxlength' => 255)); ?>
 	</div>
 
 	<div class="row">

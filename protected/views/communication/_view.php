@@ -4,8 +4,8 @@
 	<?php echo GxHtml::link(GxHtml::encode($data->id), array('view', 'id' => $data->id)); ?>
 	<br />
 
-	<?php echo GxHtml::encode($data->getAttributeLabel('name')); ?>:
-	<?php echo GxHtml::encode($data->name); ?>
+	<?php echo GxHtml::encode($data->getAttributeLabel('date')); ?>:
+	<?php echo GxHtml::encode($data->date); ?>
 	<br />
 	<?php echo GxHtml::encode($data->getAttributeLabel('description')); ?>:
 	<?php echo GxHtml::encode($data->description); ?>

@@ -14,9 +14,18 @@
 	<?php echo $form->errorSummary($model); ?>
 
 		<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model, 'name', array('maxlength' => 255)); ?>
-		<?php echo $form->error($model,'name'); ?>
+		<?php echo $form->labelEx($model,'date'); ?>
+		<?php  $form->widget('zii.widgets.jui.CJuiDatePicker', array(
+			'model' => $model,
+			'attribute' => 'date',
+			'value' => $model->date,
+			'options' => array(
+				'showButtonPanel' => true,
+				'changeYear' => true,
+				'dateFormat' => 'yy-mm-dd',
+				),
+			)); ?>
+		<?php echo $form->error($model,'date'); ?>
 		</div><!-- row -->
 		<div class="row">
 		<?php echo $form->labelEx($model,'description'); ?>

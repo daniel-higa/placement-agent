@@ -36,17 +36,16 @@ abstract class BaseCommunication extends GxActiveRecord {
 	}
 
 	public static function representingColumn() {
-		return 'name';
+		return 'description';
 	}
 
 	public function rules() {
 		return array(
 			array('name', 'required'),
 			array('firm_id, gp_id, lp_id, status_id, client_mandate_id, user_id, employees_id', 'numerical', 'integerOnly'=>true),
-			array('name', 'length', 'max'=>255),
 			array('description', 'safe'),
 			array('description, firm_id, gp_id, lp_id, status_id, client_mandate_id, user_id, employees_id', 'default', 'setOnEmpty' => true, 'value' => null),
-			array('id, name, description, firm_id, gp_id, lp_id, status_id, client_mandate_id, user_id, employees_id', 'safe', 'on'=>'search'),
+			array('id,  description, firm_id, gp_id, lp_id, status_id, client_mandate_id, user_id, employees_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -71,7 +70,7 @@ abstract class BaseCommunication extends GxActiveRecord {
 	public function attributeLabels() {
 		return array(
 			'id' => Yii::t('app', 'ID'),
-			'name' => Yii::t('app', 'Name'),
+			'date' => Yii::t('app', 'Date'),
 			'description' => Yii::t('app', 'Description'),
 			'firm_id' => Yii::t('app', 'Firm'),
 			'gp_id' => Yii::t('app', 'Gp'),
@@ -87,7 +86,6 @@ abstract class BaseCommunication extends GxActiveRecord {
 		$criteria = new CDbCriteria;
 
 		$criteria->compare('id', $this->id);
-		$criteria->compare('name', $this->name, true);
 		$criteria->compare('description', $this->description, true);
 		$criteria->compare('firm_id', $this->firm_id);
 		$criteria->compare('gp_id', $this->gp_id);

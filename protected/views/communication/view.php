@@ -20,7 +20,7 @@ $this->menu=array(
 	'data' => $model,
 	'attributes' => array(
 'id',
-'name',
+'date',
 'description',
 'firm_id',
 'gp_id',

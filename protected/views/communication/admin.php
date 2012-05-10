@@ -43,7 +43,7 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 	'filter' => $model,
 	'columns' => array(
 		'id',
-		'name',
+		'date',
 		'description',
 		'firm_id',
 		'gp_id',
