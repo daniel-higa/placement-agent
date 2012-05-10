@@ -46,7 +46,7 @@ abstract class BaseLp extends GxActiveRecord {
 
 	public function rules() {
 		return array(
-			array('name, website, rank, firm_id, assets_umgmt, assets_umgmt_ori, top_interests', 'required'),
+			array('rank, firm_id, assets_umgmt, assets_umgmt_ori, top_interests', 'required'),
 			array('top_interests', 'numerical', 'integerOnly'=>true),
 			array('assets_umgmt', 'numerical'),
 			array('name', 'length', 'max'=>50),

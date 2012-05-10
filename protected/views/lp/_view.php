@@ -31,7 +31,12 @@
 	
 	<br />
 	<?php echo GxHtml::encode($data->getAttributeLabel('responsible')); ?>:
-	<?php $firm = Firm::model()->findByPk($data->firm_id); echo GxHtml::encode(User::model()->findByPk($firm->user_id)->name); ?>
+	<?php
+        $firm = Firm::model()->findByPk($data->firm_id);
+        if (isset($firm->user_id)) {
+            echo GxHtml::encode(User::model()->findByPk($firm->user_id)->name);
+        }
+    ?>
 	
 	
 	
