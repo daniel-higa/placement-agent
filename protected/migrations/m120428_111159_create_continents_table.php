@@ -161,9 +161,11 @@ class m120428_111159_create_continents_table extends CDbMigration
 		
 		$this->createTable('lp', array(
 		'id' => 'pk',
-		'name' => 'varchar(50) NOT NULL',
+		'name' => 'varchar(50) NULL',
+        'assets_in_euro' => 'bigint',
+        'assets_original' => 'varchar (50)',
 		'description' => 'text',
-		'website' => 'varchar(100) NOT NULL',
+		'website' => 'varchar(100) NULL',
 		'rank' => 'varchar(1) NOT NULL',
 		'firm_id' => 'int(10) unsigned NOT NULL',
 		'assets_umgmt' => 'float NOT NULL',
