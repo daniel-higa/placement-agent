@@ -21,6 +21,15 @@
 		<?php echo $form->dropDownList($model, 'firm_id', GxHtml::listDataEx(Firm::model()->findAllAttributes(null, true))); ?>
 		<?php echo $form->error($model,'firm_id'); ?>
 		</div>
+        
+        
+        <?php echo $form->labelEx($model,'average_ticket'); ?>
+		<?php echo $form->textField($model, 'average_ticket', array('maxlength' => 2)); ?>
+		<?php echo $form->error($model,'average_ticket'); ?>
+        
+        <?php echo $form->labelEx($model,'average_inv'); ?>
+		<?php echo $form->textField($model, 'average_inv', array('maxlength' => 2)); ?>
+		<?php echo $form->error($model,'average_inv'); ?>
 <!--
 		<div class="row">
 		<?php echo $form->labelEx($model,'name'); ?>
@@ -110,33 +119,41 @@
 		</div><!-- row -->
 		
 		<hr />
-		<div>
+		<div style="display: block; margin-top: 0px; margin-left:20px; float:left;">
 			<label>Continents</label>
 			<div id="divcontainers">
 			<?php echo CHtml::checkBoxList("lpcontinents", CHtml::listData($model->lpcontinents,'continent_id','continent_id'), CHtml::listData(Continent::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
 			</div>
 		</div>
 		
-		<div style="display: block; margin-top: -50px; margin-left:200px;">
+		<div style="display: block; margin-top: 0px; margin-left:20px; float:left;">
 			<label>Regions</label>
 			<div id="divcontainers">
 			<?php echo CHtml::checkBoxList("lpregions", CHtml::listData($model->lpregions,'region_id','region_id'), CHtml::listData(Region::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
 			</div>
 		</div>
 		
-		<div style="display: block; margin-top: -70px; margin-left:400px;">
-			<label>Sections</label>
+		<div style="display: block; margin-top: 0px; margin-left:20px;  float:left;">
+			<label>Sectors</label>
 			<div id="divcontainers">
 			<?php echo CHtml::checkBoxList("lpsectors", CHtml::listData($model->lpsectors,'sector_id','sector_id'), CHtml::listData(Sector::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
 			</div>
 		</div>
 		
-		<div style="display: block; margin-top: -80px; margin-left:600px;">
+		<div style="display: block; margin-top: 0px; margin-left:20px;  float:left;">
 			<label>Targets</label>
 			<div id="divcontainers">
 			<?php echo CHtml::checkBoxList("lptargets", CHtml::listData($model->lptargets,'target_id','target_id'), CHtml::listData(Target::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
 			</div>
 		</div>
+        
+        <div style="display: block; margin-top: 0px; margin-left:20px;  float:left;">
+			<label>Segments</label>
+			<div id="divcontainers">
+			<?php echo CHtml::checkBoxList("lpsegments", CHtml::listData($model->lpsegments,'segment_id','segment_id'), CHtml::listData(Segment::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
+			</div>
+		</div>
+        <div class="clearfix"></div>
 		
 		<div class="row">
 		<?php echo $form->labelEx($model,'top_interests'); ?>

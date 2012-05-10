@@ -101,6 +101,17 @@ class LpController extends GxController {
 						$model_t->save();
 					}
 				}
+                
+				if(isset($_POST['lpsegments']))
+                {
+					$model_segments=$_POST['lpsegments'];
+					for ($i=0;$i<count($model_segments);$i++){
+						$model_t=new Lpsegment;
+						$model_t->lp_id = $model->id;
+						$model_t->segment_id = $model_segments[$i];
+						$model_t->save();
+					}
+				}
 				
 				$limit=count($_FILES['lpfiles']['name']);
 				for($i=0;$i<$limit;$i++){
@@ -177,6 +188,18 @@ class LpController extends GxController {
 						$model_t=new Lptarget;
 						$model_t->lp_id = $model->id;
 						$model_t->target_id = $model_targets[$i];
+						$model_t->save();
+					}
+				}
+                
+                Lpsegment::model()->deleteAll(array('condition' => 'lp_id = :ID', 'params' => array(':ID' => $model->id)));
+				if(isset($_POST['lpsegments']))
+                {
+					$model_segments=$_POST['lpsegments'];
+					for ($i=0;$i<count($model_segments);$i++){
+						$model_t=new Lpsegment;
+						$model_t->lp_id = $model->id;
+						$model_t->segment_id = $model_segments[$i];
 						$model_t->save();
 					}
 				}

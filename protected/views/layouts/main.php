@@ -56,6 +56,7 @@
                             array('label' => 'Region', 'url' => array('/region')),
                             array('label' => 'Continent', 'url' => array('/continent')),
                             array('label' => 'Communication Type', 'url' => array('/communicationType')),
+                            array('label' => 'Segment', 'url' => array('/segment')),
                         ),
                         'visible'=>!Yii::app()->user->isGuest,
                         'url' => array(''),
