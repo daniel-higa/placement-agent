@@ -1,5 +1,5 @@
 <?php
-//var_dump($post);
+//var_dump($lps);
 //echo "<br/>";
 //var_dump($continents);
 echo "<h1>";
@@ -18,16 +18,12 @@ echo 'GP ' . $model->gp_id . ' - ' . $model->gp->firm->name . '<br/>';
     ?>
 
     <div class="row">
-		<?php echo 'Rank'; ?>
-		
-		<input type="radio" id="Gp_rank" name="rank" value="A" checked="selected"/>A
-		<input type="radio" id="Gp_rank" name="rank" value="B" />B
-		<input type="radio" id="Gp_rank" name="rank" value="C" />C
-		<input type="radio" id="Gp_rank" name="rank" value="D" />D
-		<input type="radio" id="Gp_rank" name="rank" value="E" />E
-		
-		<?php echo $form->error($model,'rank'); ?>
+		<?php echo 'Rank'; ?><br/>
+
+        <?php echo CHtml::checkBoxList("rank", $ranks, Lp::getRankItems() ,array('separator'=>'', 'template'=>'<div class="left">{label}{input} </div>')); ?>
+        
     </div>
+    <div style="clear:both;"></div>
 
     <div style="float: left;">
         <label>Continents</label>
@@ -57,7 +53,8 @@ $this->endWidget();
 ?>
 </div>
 
-<?php echo "Match: " . count($lps) . '<br/>'; ?>
+<?php echo "Match: " . count($lps) . '<br/>';
+?>
 
 
 <div class="form">

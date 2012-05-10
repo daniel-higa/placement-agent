@@ -101,7 +101,7 @@ class ClientMandateController extends GxController {
         $continents = array();
         $regions = array();
         $sectors = array();
-        $rank = 'A';
+        $ranks = array('A');
         $post = $_POST;
         $lps = array();
         if (isset($_POST['continents'])) {
@@ -114,20 +114,21 @@ class ClientMandateController extends GxController {
             $sectors = array_values($_POST['sectors']);
         }
         if (isset($_POST['rank'])) {
-            $rank = $_POST['rank'];
+            $ranks = array_values($_POST['rank']);
         }
         if (isset($_POST['Lps'])) {  //add lps to client mandate
             $model->addLps(array_values($_POST['Lps']));
             $this->redirect(array('view', 'id' => $model->id));
         }
         if (isset($_POST['continents']) or isset($_POST['regions']) or isset($_POST['sectors'])) {
-            $lps = $model->findLps($rank, $continents, $regions, $sectors);
+            $lps = $model->findLps($ranks, $continents, $regions, $sectors);
         }
 		$this->render('addLps', array(
             'model' => $model,
             'post' => $post,
             'lps' => $lps,
             'continents'  => $continents,
+            'ranks' => $ranks
 		));
 	}
 

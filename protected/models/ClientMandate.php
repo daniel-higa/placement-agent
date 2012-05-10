@@ -27,41 +27,27 @@ class ClientMandate extends BaseClientMandate
         return $list;
     }
     
-    public function findLps($rank, $continent_ids, $region_ids, $sector_ids) {
+    public function findLps($ranks, $continent_ids, $region_ids, $sector_ids) {
         $lps = array();
         
-        $lprank = Lp::model()->findAllByAttributes(array('rank' => $rank));
-        foreach ($lprank as $r) {
-            $lps[] = $r->id;
-        }
+        $criteria = new CDbCriteria;
+        $criteria->select = 't.id, t.firm_id';
+        $criteria->distinct = true;
+        $criteria->join = 'LEFT JOIN lpcontinent ON (lpcontinent.lp_id = t.id)
+                           LEFT JOIN lpregion ON (lpregion.lp_id = t.id)
+                           LEFT JOIN lpsector ON (lpsector.lp_id = t.id)';
+
+        $criteria->addInCondition('lpcontinent.continent_id', $continent_ids, 'OR');
+        $criteria->addInCondition('lpregion.region_id', $region_ids, 'OR');
+        $criteria->addInCondition('lpsector.sector_id', $sector_ids, 'OR');
+
+        $criteria2 = new CDbCriteria;
+        $criteria2->addInCondition('rank', $ranks);
+        $criteria->mergeWith($criteria2);
+        $lps = Lp::model()->findAll($criteria);
         
-        
-        $continents = Continent::model()->findAllByPk($continent_ids);
-        foreach ($continents as $c) {
-            $lpc = $c->lpcontinents;
-            foreach ($lpc as $a) {
-                $lps[] = $a->lp_id;
-            }
-        }
 
-        $regions = Region::model()->findAllByPk($region_ids);
-        foreach ($regions as $r) {
-            $lpr = $r->lpregions;
-            foreach ($lpr as $a) {
-                $lps[] = $a->lp_id;
-            }
-        }
-
-        $sectors = Sector::model()->findAllByPk($sector_ids);
-        foreach ($sectors as $s) {
-            $lpse = $s->lpsectors;
-            foreach ($lpse as $a) {
-                $lps[] = $a->lp_id;
-            }
-        }
-
-        return Lp::model()->findAllByPk($lps);
-        //return $lps;
+        return $lps;
     }
     
     public function addLps($lps) {
