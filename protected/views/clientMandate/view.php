@@ -22,7 +22,7 @@ $this->menu=array(
 'id',
 'name',
 'description',
-'gp_id',
+array('label' => 'GP', 'type' => 'text', 'value' => CHtml::encode($model->gp->firm->name)),
 	),
 )); ?>
 

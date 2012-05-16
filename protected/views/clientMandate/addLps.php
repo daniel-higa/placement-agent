@@ -2,7 +2,7 @@
 
 $this->breadcrumbs = array(
 	$model->label(2) => array('index'),
-    $model->label(2) => array('view', 'id' => $model->id),
+    $model->name => array('view', 'id' => $model->id),
 	Yii::t('app', 'Add LPs'),
 );
 
