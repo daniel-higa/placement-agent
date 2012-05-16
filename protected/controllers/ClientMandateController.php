@@ -7,6 +7,13 @@ class ClientMandateController extends GxController {
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
+     
+    public function filters() {
+        return array(
+                'accessControl', 
+                );
+    }
+
 	public function accessRules()
 	{
 		return array(
