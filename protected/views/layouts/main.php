@@ -77,7 +77,7 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Placement Agent
+		<?php echo Yii::app()->name?Yii::app()->name:'Placement Agent'; ?>
 	</div><!-- footer -->
 
 </div><!-- page -->
