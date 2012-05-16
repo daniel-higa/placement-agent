@@ -15,7 +15,7 @@ class TargetController extends GxController {
                     'users'=>array('@'),
                     ),
                 array('allow', 
-                    'actions'=>array('minicreate', 'create','update'),
+                    'actions'=>array('minicreate', 'create','update','admin'),
                     'users'=>array('@'),
                     ),
                 array('allow', 
