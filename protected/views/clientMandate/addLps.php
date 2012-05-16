@@ -99,9 +99,10 @@ if (count($lps) > 0) {
         <tr>
             <th>Include</th>
             <th>Firm Name</th>
+            <th>Rank</th>
         </tr>
     </thead>
-    <?php echo CHtml::checkBoxList("Lps", array(), $model->LpItems($lps),array('separator'=>'', 'template'=>'<tr><td>{input}</td><td>{label}</td></tr>')); ?>        
+    <?php echo CHtml::checkBoxList("Lps", array(), $model->LpItemsRank($lps),array('separator'=>'', 'template'=>'<tr><td>{input}</td><td>{label}</td></tr>')); ?>        
 
     </table>
     <?php

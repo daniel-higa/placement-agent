@@ -19,19 +19,28 @@ class ClientMandate extends BaseClientMandate
     }
     
     public function LpItems($lps) {
-        $list =  array();
+        $list = array();
         foreach ($lps as $lp) {
             $list[$lp->id] = $lp->firm->name;
         }
         natcasesort($list);
         return $list;
     }
-    
+
+    public function LpItemsRank($lps) {
+        $list = array();
+        foreach ($lps as $lp) {
+            $list[$lp->id] = $lp->firm->name . '</td><td>' . $lp->rank ;
+        }
+        natcasesort($list);
+        return $list;
+    }
+   
     public function findLps($ranks, $continent_ids, $region_ids, $sector_ids, $data) {
         $lps = array();
         
         $criteria = new CDbCriteria;
-        $criteria->select = 't.id, t.firm_id';
+        $criteria->select = 't.id, t.firm_id, t.rank';
         $criteria->distinct = true;
         $criteria->join = 'LEFT JOIN lpcontinent ON (lpcontinent.lp_id = t.id)
                            LEFT JOIN lpregion ON (lpregion.lp_id = t.id)

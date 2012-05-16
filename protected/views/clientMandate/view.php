@@ -26,6 +26,8 @@ array('label' => 'GP', 'type' => 'text', 'value' => CHtml::encode($model->gp->fi
 	),
 )); ?>
 
+<a href=<?php echo $this->createurl('clientMandate/update', array('id' => $model->id)); ?> ><button>Edit</button></a>
+<br/><br/>
 <div>
     <a href=<?php echo $this->createUrl("clientMandate/addLps", array('id' => $model->id)); ?> ><button>Add LPs</button></a>
 
