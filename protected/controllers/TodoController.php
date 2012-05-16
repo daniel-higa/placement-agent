@@ -59,11 +59,8 @@ class TodoController extends GxController {
 	}
 
 	public function actionIndex() {
-		$dataProvider = new CActiveDataProvider('Todo');
-		$this->render('index', array(
-			'dataProvider' => $dataProvider,
-		));
-	}
+        $this->redirect(array('admin'));
+    }
 
 	public function actionAdmin() {
 		$model = new Todo('search');

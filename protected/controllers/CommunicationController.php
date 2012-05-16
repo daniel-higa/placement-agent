@@ -108,10 +108,7 @@ public function accessRules() {
 	}
 
 	public function actionIndex() {
-		$dataProvider = new CActiveDataProvider('Communication');
-		$this->render('index', array(
-			'dataProvider' => $dataProvider,
-		));
+        $this->redirect(array('admin'));
 	}
 
 	public function actionAdmin() {

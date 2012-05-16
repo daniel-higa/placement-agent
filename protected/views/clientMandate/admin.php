@@ -43,7 +43,7 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 	'filter' => $model,
 	'columns' => array(
 		'id',
-		'name',
+		array('name' => 'name', 'type' => 'raw', 'value' => 'CHTML::link($data->name, array("clientMandate/view", "id" => $data->id))'),
 		'description',
 		'gp_id',
 		array(
