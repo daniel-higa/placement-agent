@@ -1,4 +1,12 @@
 <?php
+
+$this->breadcrumbs = array(
+	$model->label(2) => array('index'),
+    $model->label(2) => array('view', 'id' => $model->id),
+	Yii::t('app', 'Add LPs'),
+);
+
+
 //var_dump($lps);
 //echo "<br/>";
 //var_dump($continents);
