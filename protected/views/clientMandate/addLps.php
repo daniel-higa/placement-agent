@@ -6,7 +6,6 @@ $this->breadcrumbs = array(
 	Yii::t('app', 'Add LPs'),
 );
 
-
 //var_dump($lps);
 //echo "<br/>";
 //var_dump($continents);
@@ -17,6 +16,16 @@ echo "</h1>";
 echo "<div>" . $model->description ."</div>";
 echo 'GP ' . $model->gp_id . ' - ' . $model->gp->firm->name . '<br/>';
 ?>
+
+<script type="text/javascript">
+    function select_all() {
+        $('INPUT[name*=Lps]').attr('checked', 'checked');
+    }
+    
+    function unselect_all() {
+        $('INPUT[name*=Lps]').removeAttr('checked');
+    }
+</script>
 
 <div class="form">
     <?php $form = $this->beginWidget('GxActiveForm', array(
@@ -70,6 +79,10 @@ $this->endWidget();
 </div>
 
 <?php echo "Match: " . count($lps) . '<br/>';
+if (count($lps) > 0) {
+    echo "<button onclick='select_all();'>select all</button>";
+    echo "<button onclick='unselect_all();'>select none</button>";
+}
 ?>
 
 
