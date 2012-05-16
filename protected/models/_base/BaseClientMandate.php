@@ -36,11 +36,11 @@ abstract class BaseClientMandate extends GxActiveRecord {
 	public function rules() {
 		return array(
 			array('name', 'required'),
-			array('gp_id', 'numerical', 'integerOnly'=>true),
+			array('gp_id, revenue', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>255),
 			array('description', 'safe'),
 			array('description, gp_id', 'default', 'setOnEmpty' => true, 'value' => null),
-			array('id, name, description, gp_id', 'safe', 'on'=>'search'),
+			array('id, name, description, gp_id, revenue', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,6 +63,7 @@ abstract class BaseClientMandate extends GxActiveRecord {
 			'name' => Yii::t('app', 'Name'),
 			'description' => Yii::t('app', 'Description'),
 			'gp_id' => Yii::t('app', 'Gp'),
+            'revenue' => Yii::t('app', 'Target revenue in Euros'),
 		);
 	}
 

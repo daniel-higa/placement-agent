@@ -24,6 +24,11 @@
 		<?php echo $form->error($model,'description'); ?>
 		</div><!-- row -->
 		<div class="row">
+        <?php echo $form->labelEx($model,'revenue'); ?>
+		<?php echo $form->textField($model, 'revenue', array('maxlength' => 12)); ?>
+		<?php echo $form->error($model,'revenue'); ?>
+		</div><!-- row -->
+		<div class="row">
 		<?php echo $form->labelEx($model,'gp_id'); ?>
         <?php
             if ($model->isNewRecord) {

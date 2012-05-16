@@ -19,11 +19,13 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data' => $model,
 	'attributes' => array(
-'id',
-'name',
-'description',
-array('label' => 'GP', 'type' => 'text', 'value' => CHtml::encode($model->gp->firm->name)),
-	),
+        'id',
+        'name',
+        'description',
+        array('label' => 'GP', 'type' => 'text', 'value' => CHtml::encode($model->gp->firm->name)),
+        'revenue',
+    ),
+    
 )); ?>
 
 <a href=<?php echo $this->createurl('clientMandate/update', array('id' => $model->id)); ?> ><button>Edit</button></a>
