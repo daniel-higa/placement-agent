@@ -85,10 +85,7 @@ class ClientMandateController extends GxController {
 	}
 
 	public function actionIndex() {
-		$dataProvider = new CActiveDataProvider('ClientMandate');
-		$this->render('index', array(
-			'dataProvider' => $dataProvider,
-		));
+        $this->redirect(array('admin'));
 	}
 
 	public function actionAdmin() {
