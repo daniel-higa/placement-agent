@@ -12,9 +12,6 @@
 	<br />
 	<?php echo GxHtml::encode($data->getAttributeLabel('assets under management original currency')); ?>:
 	<?php echo GxHtml::encode($data->assets_umgmt_ori); ?>
-	<br />
-	<?php echo GxHtml::encode($data->getAttributeLabel('top_interests')); ?>:
-	<?php echo GxHtml::encode($data->top_interests == "1" ? "Yes" : "No"); ?>
 	
 	<br />
 	<br />

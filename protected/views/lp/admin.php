@@ -55,12 +55,12 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 		
 		/*
 		'assets_umgmt',
-		'assets_umgmt_ori',*/
+		'assets_umgmt_ori',
 		array(
 					'name' => 'top_interests',
 					'value' => '($data->top_interests === 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
 					'filter' => array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')),
-					),
+					),*/
 		
 		array(
 			'class' => 'CButtonColumn',

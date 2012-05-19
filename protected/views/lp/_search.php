@@ -45,7 +45,7 @@
 		<?php echo $form->textField($model, 'assets_umgmt_ori', array('maxlength' => 100)); ?>
 	</div>
 
-	<div class="row">
+	<div class="row" style="display:none">
 		<?php echo $form->label($model, 'top_interests'); ?>
 		<?php echo $form->dropDownList($model, 'top_interests', array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')), array('prompt' => Yii::t('app', 'All'))); ?>
 	</div>
