@@ -138,13 +138,44 @@
 			</div>
 		</div>
 		
-		<div class="row">
+		<hr />
+		<div class="row"><h3>Top 5 Interests</h3></div>
+		<div>
+			<label>Continents</label>
+			<div id="divcontainers">
+			<?php
+			$c_tops = array();
+			for ($i=0;$i<count($model->lpcontinents);$i++){ if($model->lpcontinents[$i]->top == 1){	array_push($c_tops, $model->lpcontinents[$i]); } }
+			echo CHtml::checkBoxList("lpcontinents2", CHtml::listData($c_tops,'continent_id','continent_id'), CHtml::listData(Continent::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
+			</div>
+		</div>
+		
+		<div style="display: block; margin-top: -50px; margin-left:200px;">
+			<label>Regions</label>
+			<div id="divcontainers">
+			<?php
+			$r_tops = array();
+			for ($i=0;$i<count($model->lpregions);$i++){ if($model->lpregions[$i]->top == 1){	array_push($r_tops, $model->lpregions[$i]); } }
+			echo CHtml::checkBoxList("lpregions2", CHtml::listData($r_tops,'region_id','region_id'), CHtml::listData(Region::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
+			</div>
+		</div>
+		
+		<div style="display: block; margin-top: -70px; margin-left:400px;">
+			<label>Sections</label>
+			<div id="divcontainers">
+			<?php
+			$s_tops = array();
+			for ($i=0;$i<count($model->lpsectors);$i++){ if($model->lpsectors[$i]->top == 1){	array_push($s_tops, $model->lpsectors[$i]); } }
+			echo CHtml::checkBoxList("lpsectors2", CHtml::listData($s_tops,'sector_id','sector_id'), CHtml::listData(Sector::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
+			</div>
+		</div>
+		
+		<div class="row" style="display:none">
 		<?php echo $form->labelEx($model,'top_interests'); ?>
 		<?php echo $form->checkBox($model, 'top_interests'); ?>
 		<?php echo $form->error($model,'top_interests'); ?>
 		</div><!-- row -->
 		
-
 <?php
 echo GxHtml::submitButton(Yii::t('app', 'Save'));
 $this->endWidget();

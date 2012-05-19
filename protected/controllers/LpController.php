@@ -59,10 +59,19 @@ class LpController extends GxController {
 				if(isset($_POST['lpregions']))
                 {
 					$model_regions=$_POST['lpregions'];
+					$model_regionstops=$_POST['lpregions2'];
+					
 					for ($i=0;$i<count($model_regions);$i++){
 						$model_r=new Lpregion;
 						$model_r->lp_id = $model->id;
 						$model_r->region_id = $model_regions[$i];
+						$model_r->top = 0;
+						for ($j=0;$j<count($model_regionstops);$j++){
+							if($model_regionstops[$j] == $model_regions[$i]){
+								$model_r->top = 1;
+								break;
+							}
+						}
 						$model_r->save();
 					}
 				}
@@ -71,10 +80,18 @@ class LpController extends GxController {
 				if(isset($_POST['lpcontinents']))
                 {
 					$model_continents=$_POST['lpcontinents'];
+					$model_continentstops=$_POST['lpcontinents2'];
 					for ($i=0;$i<count($model_continents);$i++){
 						$model_c=new Lpcontinent;
 						$model_c->lp_id = $model->id;
 						$model_c->continent_id = $model_continents[$i];
+						$model_c->top = 0;
+						for ($j=0;$j<count($model_continentstops);$j++){
+							if($model_continentstops[$j] == $model_continents[$i]){
+								$model_c->top = 1;
+								break;
+							}
+						}
 						$model_c->save();
 					}
 				}
@@ -83,10 +100,18 @@ class LpController extends GxController {
 				if(isset($_POST['lpsectors']))
                 {
 					$model_sectors=$_POST['lpsectors'];
+					$model_sectorstops=$_POST['lpsectors2'];
 					for ($i=0;$i<count($model_sectors);$i++){
 						$model_c=new Lpsector;
 						$model_c->lp_id = $model->id;
 						$model_c->sector_id = $model_sectors[$i];
+						$model_c->top = 0;
+						for ($j=0;$j<count($model_sectorstops);$j++){
+							if($model_sectorstops[$j] == $model_sectors[$i]){
+								$model_c->top = 1;
+								break;
+							}
+						}
 						$model_c->save();
 					}
 				}
@@ -137,10 +162,19 @@ class LpController extends GxController {
 				if(isset($_POST['lpregions']))
                 {
 					$model_regions=$_POST['lpregions'];
+					$model_regionstops=$_POST['lpregions2'];
+					
 					for ($i=0;$i<count($model_regions);$i++){
 						$model_r=new Lpregion;
 						$model_r->lp_id = $model->id;
 						$model_r->region_id = $model_regions[$i];
+						$model_r->top = 0;
+						for ($j=0;$j<count($model_regionstops);$j++){
+							if($model_regionstops[$j] == $model_regions[$i]){
+								$model_r->top = 1;
+								break;
+							}
+						}
 						$model_r->save();
 					}
 				}
@@ -149,10 +183,19 @@ class LpController extends GxController {
 				if(isset($_POST['lpcontinents']))
                 {
 					$model_continents=$_POST['lpcontinents'];
+					$model_continentstops=$_POST['lpcontinents2'];
+					
 					for ($i=0;$i<count($model_continents);$i++){
 						$model_c=new Lpcontinent;
 						$model_c->lp_id = $model->id;
 						$model_c->continent_id = $model_continents[$i];
+						$model_c->top = 0;
+						for ($j=0;$j<count($model_continentstops);$j++){
+							if($model_continentstops[$j] == $model_continents[$i]){
+								$model_c->top = 1;
+								break;
+							}
+						}
 						$model_c->save();
 					}
 				}
@@ -161,10 +204,18 @@ class LpController extends GxController {
 				if(isset($_POST['lpsectors']))
                 {
 					$model_sectors=$_POST['lpsectors'];
+					$model_sectorstops=$_POST['lpsectors2'];
 					for ($i=0;$i<count($model_sectors);$i++){
 						$model_c=new Lpsector;
 						$model_c->lp_id = $model->id;
 						$model_c->sector_id = $model_sectors[$i];
+						$model_c->top = 0;
+						for ($j=0;$j<count($model_sectorstops);$j++){
+							if($model_sectorstops[$j] == $model_sectors[$i]){
+								$model_c->top = 1;
+								break;
+							}
+						}
 						$model_c->save();
 					}
 				}

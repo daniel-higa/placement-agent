@@ -22,8 +22,8 @@ $this->menu=array(
 'id',
 'rank',
 'assets_umgmt',
-'assets_umgmt_ori',
-'top_interests:boolean',
+'assets_umgmt_ori',/*
+'top_interests:boolean',*/
 array(
 			'name' => 'firm',
 			'type' => 'raw',

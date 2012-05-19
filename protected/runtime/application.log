@@ -1676,3 +1676,46 @@ Stack trace:
 REQUEST_URI=/placement_agent/web001/index.php?r=lp/view&id=1
 HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=lp/admin
 ---
+2012/05/19 13:04:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "yii".' in C:\wamp\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('yii')
+#1 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=yii
+---
+2012/05/19 13:04:23 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'plcamentdb.lgregion' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `Lgregion`.
+in C:\wamp\www\placement_agent\web001\index.php (13)
+2012/05/19 13:47:56 [error] [exception.CException] exception 'CException' with message 'Property "Lpregion.continent_id" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\wamp\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('continent_id')
+#1 C:\wamp\yii\framework\web\helpers\CHtml.php(1696): CActiveRecord->__get('continent_id')
+#2 C:\wamp\yii\framework\web\helpers\CHtml.php(1659): CHtml::value(Object(Lpregion), 'continent_id')
+#3 C:\wamp\www\placement_agent\web001\protected\views\lp\_form.php(159): CHtml::listData(Array, 'continent_id', 'continent_id')
+#4 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#5 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#6 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#7 C:\wamp\www\placement_agent\web001\protected\views\lp\update.php(21): CController->renderPartial('_form', Array)
+#8 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#9 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#10 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#11 C:\wamp\yii\framework\web\CController.php(783): CController->renderPartial('update', Array, true)
+#12 C:\wamp\www\placement_agent\web001\protected\controllers\LpController.php(253): CController->render('update', Array)
+#13 [internal function]: LpController->actionUpdate('2')
+#14 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(LpController), Array)
+#15 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(LpController), Object(ReflectionMethod), Array)
+#16 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#17 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#18 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#19 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#20 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#23 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('update')
+#25 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('lp/update')
+#26 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=lp/update&id=2
+---
