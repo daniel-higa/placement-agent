@@ -24,7 +24,7 @@
 		<?php echo $form->dropDownList($model, 'firm_id', GxHtml::listDataEx(Firm::model()->findAllAttributes(null, true))); ?>
 		<?php echo $form->error($model,'firm_id'); ?>
 		</div><!-- row -->
-		
+		<!--
 		<div>
 			<label>Continents</label>
 			<div id="divcontainers">
@@ -38,6 +38,7 @@
 			<?php echo CHtml::checkBoxList("officeregions", CHtml::listData($model->officeregions,'region_id','region_id'), CHtml::listData(Region::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
 			</div>
 		</div>
+		-->
 		<div class="row">
 		<?php echo $form->labelEx($model,'main_office'); ?>
 		<?php echo $form->checkBox($model, 'main_office'); ?>
@@ -172,7 +173,7 @@
 			}
 		 
 		</script>
-		<div style="display:block;margin-left: 450px; margin-top:-335px;height:400px;">
+		<div style="display:block;margin-left: 450px; margin-top:-315px;height:400px;">
 			<div><?php echo $form->checkBox($model, 'sync_gmaps',array('onclick' => 'changeCheck(this)')); ?>&nbsp;Synchronize with Google Maps</div><br />
 			<div id="map_canvas" style="width: 400px; height: 250px;"></div>
 		</div>

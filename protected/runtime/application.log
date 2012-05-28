@@ -1719,3 +1719,286 @@ Stack trace:
 #28 {main}
 REQUEST_URI=/placement_agent/web001/index.php?r=lp/update&id=2
 ---
+2012/05/26 18:19:34 [error] [exception.CException] exception 'CException' with message 'Property "Employees.firm_id" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\wamp\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('firm_id')
+#1 C:\wamp\yii\framework\web\helpers\CHtml.php(2044): CActiveRecord->__get('firm_id')
+#2 C:\wamp\yii\framework\web\helpers\CHtml.php(1402): CHtml::resolveValue(Object(Employees), 'firm_id')
+#3 C:\wamp\yii\framework\web\widgets\CActiveForm.php(681): CHtml::activeDropDownList(Object(Employees), 'firm_id', Array, Array)
+#4 C:\wamp\www\placement_agent\web001\protected\views\employees\_form.php(18): CActiveForm->dropDownList(Object(Employees), 'firm_id', Array)
+#5 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#6 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#7 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#8 C:\wamp\www\placement_agent\web001\protected\views\employees\create.php(19): CController->renderPartial('_form', Array)
+#9 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#10 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#11 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#12 C:\wamp\yii\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#13 C:\wamp\www\placement_agent\web001\protected\controllers\EmployeesController.php(95): CController->render('create', Array)
+#14 C:\wamp\yii\framework\web\actions\CInlineAction.php(50): EmployeesController->actionCreate()
+#15 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#17 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#18 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#19 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#22 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#24 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('employees/creat...')
+#25 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#26 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=employees/create
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=employees/admin
+---
+2012/05/26 18:19:57 [error] [exception.CException] exception 'CException' with message 'Property "Employees.firm_id" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\wamp\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('firm_id')
+#1 C:\wamp\yii\framework\web\helpers\CHtml.php(2044): CActiveRecord->__get('firm_id')
+#2 C:\wamp\yii\framework\web\helpers\CHtml.php(1402): CHtml::resolveValue(Object(Employees), 'firm_id')
+#3 C:\wamp\yii\framework\web\widgets\CActiveForm.php(681): CHtml::activeDropDownList(Object(Employees), 'firm_id', Array, Array)
+#4 C:\wamp\www\placement_agent\web001\protected\views\employees\_form.php(18): CActiveForm->dropDownList(Object(Employees), 'firm_id', Array)
+#5 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#6 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#7 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#8 C:\wamp\www\placement_agent\web001\protected\views\employees\create.php(19): CController->renderPartial('_form', Array)
+#9 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#10 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#11 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#12 C:\wamp\yii\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#13 C:\wamp\www\placement_agent\web001\protected\controllers\EmployeesController.php(95): CController->render('create', Array)
+#14 C:\wamp\yii\framework\web\actions\CInlineAction.php(50): EmployeesController->actionCreate()
+#15 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#17 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#18 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#19 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#22 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('create')
+#24 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('employees/creat...')
+#25 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#26 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=employees/create
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=employees/admin
+---
+2012/05/26 18:20:43 [error] [php] get_class() expects parameter 1 to be object, null given (C:\wamp\yii\framework\web\helpers\CHtml.php:2009)
+Stack trace:
+#0 C:\wamp\yii\framework\web\helpers\CHtml.php(1401): resolveNameID()
+#1 C:\wamp\yii\framework\web\widgets\CActiveForm.php(681): activeDropDownList()
+#2 C:\wamp\www\placement_agent\web001\protected\views\employees\_form.php(18): GxActiveForm->dropDownList()
+#3 C:\wamp\yii\framework\web\CBaseController.php(127): require()
+#4 C:\wamp\yii\framework\web\CBaseController.php(96): EmployeesController->renderInternal()
+#5 C:\wamp\yii\framework\web\CController.php(870): EmployeesController->renderFile()
+#6 C:\wamp\www\placement_agent\web001\protected\views\employees\create.php(19): EmployeesController->renderPartial()
+#7 C:\wamp\yii\framework\web\CBaseController.php(127): require()
+#8 C:\wamp\yii\framework\web\CBaseController.php(96): EmployeesController->renderInternal()
+#9 C:\wamp\yii\framework\web\CController.php(870): EmployeesController->renderFile()
+#10 C:\wamp\yii\framework\web\CController.php(783): EmployeesController->renderPartial()
+#11 C:\wamp\www\placement_agent\web001\protected\controllers\EmployeesController.php(95): EmployeesController->render()
+#12 C:\wamp\yii\framework\web\actions\CInlineAction.php(50): EmployeesController->actionCreate()
+#13 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#14 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): EmployeesController->runAction()
+#15 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#16 C:\wamp\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#17 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): EmployeesController->filterAccessControl()
+#18 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#19 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#20 C:\wamp\yii\framework\web\CController.php(266): EmployeesController->runActionWithFilters()
+#21 C:\wamp\yii\framework\web\CWebApplication.php(276): EmployeesController->run()
+#22 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#23 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 C:\wamp\www\placement_agent\web001\index.php(13): CWebApplication->run()
+REQUEST_URI=/placement_agent/web001/index.php?r=employees/create
+in C:\wamp\www\placement_agent\web001\protected\views\employees\_form.php (18)
+in C:\wamp\www\placement_agent\web001\protected\views\employees\create.php (19)
+in C:\wamp\www\placement_agent\web001\protected\controllers\EmployeesController.php (95)
+2012/05/26 18:23:48 [error] [php] get_class() expects parameter 1 to be object, null given (C:\wamp\yii\framework\web\helpers\CHtml.php:2009)
+Stack trace:
+#0 C:\wamp\yii\framework\web\helpers\CHtml.php(1401): resolveNameID()
+#1 C:\wamp\yii\framework\web\widgets\CActiveForm.php(681): activeDropDownList()
+#2 C:\wamp\www\placement_agent\web001\protected\views\employees\_form.php(18): GxActiveForm->dropDownList()
+#3 C:\wamp\yii\framework\web\CBaseController.php(127): require()
+#4 C:\wamp\yii\framework\web\CBaseController.php(96): EmployeesController->renderInternal()
+#5 C:\wamp\yii\framework\web\CController.php(870): EmployeesController->renderFile()
+#6 C:\wamp\www\placement_agent\web001\protected\views\employees\create.php(19): EmployeesController->renderPartial()
+#7 C:\wamp\yii\framework\web\CBaseController.php(127): require()
+#8 C:\wamp\yii\framework\web\CBaseController.php(96): EmployeesController->renderInternal()
+#9 C:\wamp\yii\framework\web\CController.php(870): EmployeesController->renderFile()
+#10 C:\wamp\yii\framework\web\CController.php(783): EmployeesController->renderPartial()
+#11 C:\wamp\www\placement_agent\web001\protected\controllers\EmployeesController.php(95): EmployeesController->render()
+#12 C:\wamp\yii\framework\web\actions\CInlineAction.php(50): EmployeesController->actionCreate()
+#13 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#14 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): EmployeesController->runAction()
+#15 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#16 C:\wamp\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#17 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): EmployeesController->filterAccessControl()
+#18 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#19 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#20 C:\wamp\yii\framework\web\CController.php(266): EmployeesController->runActionWithFilters()
+#21 C:\wamp\yii\framework\web\CWebApplication.php(276): EmployeesController->run()
+#22 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#23 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 C:\wamp\www\placement_agent\web001\index.php(13): CWebApplication->run()
+REQUEST_URI=/placement_agent/web001/index.php?r=employees/create
+in C:\wamp\www\placement_agent\web001\protected\views\employees\_form.php (18)
+in C:\wamp\www\placement_agent\web001\protected\views\employees\create.php (19)
+in C:\wamp\www\placement_agent\web001\protected\controllers\EmployeesController.php (95)
+2012/05/26 18:57:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "updateoffice".' in C:\wamp\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\yii\framework\web\CController.php(271): CController->missingAction('updateoffice')
+#1 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('updateoffice')
+#2 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/updateoffi...')
+#3 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=firm/updateoffice
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=employees/create
+---
+2012/05/26 18:58:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "updateoffice".' in C:\wamp\yii\framework\web\CController.php:484
+Stack trace:
+#0 C:\wamp\yii\framework\web\CController.php(271): CController->missingAction('updateoffice')
+#1 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('updateoffice')
+#2 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('firm/updateoffi...')
+#3 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=firm/updateoffice
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=employees/create
+---
+2012/05/26 18:59:00 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\yii\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\wamp\yii\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('updateoffice')
+#8 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('employees/updat...')
+#9 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=employees/updateoffice
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=employees/create
+---
+2012/05/26 18:59:33 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\yii\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\wamp\yii\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('UpdateOffice')
+#8 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('employees/Updat...')
+#9 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=employees/UpdateOffice
+HTTP_REFERER=http://localhost/placement_agent/web001/index.php?r=employees/create
+---
+2012/05/26 19:00:21 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\wamp\yii\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\wamp\yii\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\wamp\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('UpdateOffice')
+#8 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('employees/Updat...')
+#9 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=employees/UpdateOffice
+---
+2012/05/26 19:05:13 [error] [php] Invalid argument supplied for foreach() (C:\wamp\yii\framework\web\helpers\CHtml.php:1847)
+Stack trace:
+#0 C:\wamp\www\placement_agent\web001\protected\views\employees\_form.php(36): GxActiveForm->dropDownList()
+#1 C:\wamp\yii\framework\web\CBaseController.php(127): require()
+#2 C:\wamp\yii\framework\web\CBaseController.php(96): EmployeesController->renderInternal()
+#3 C:\wamp\yii\framework\web\CController.php(870): EmployeesController->renderFile()
+#4 C:\wamp\www\placement_agent\web001\protected\views\employees\create.php(19): EmployeesController->renderPartial()
+#5 C:\wamp\yii\framework\web\CBaseController.php(127): require()
+#6 C:\wamp\yii\framework\web\CBaseController.php(96): EmployeesController->renderInternal()
+#7 C:\wamp\yii\framework\web\CController.php(870): EmployeesController->renderFile()
+#8 C:\wamp\yii\framework\web\CController.php(783): EmployeesController->renderPartial()
+#9 C:\wamp\www\placement_agent\web001\protected\controllers\EmployeesController.php(109): EmployeesController->render()
+#10 C:\wamp\yii\framework\web\actions\CInlineAction.php(50): EmployeesController->actionCreate()
+#11 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#12 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): EmployeesController->runAction()
+#13 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#14 C:\wamp\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#15 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): EmployeesController->filterAccessControl()
+#16 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#17 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#18 C:\wamp\yii\framework\web\CController.php(266): EmployeesController->runActionWithFilters()
+#19 C:\wamp\yii\framework\web\CWebApplication.php(276): EmployeesController->run()
+#20 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#21 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 C:\wamp\www\placement_agent\web001\index.php(13): CWebApplication->run()
+REQUEST_URI=/placement_agent/web001/index.php?r=employees/create
+in C:\wamp\www\placement_agent\web001\protected\views\employees\_form.php (36)
+in C:\wamp\www\placement_agent\web001\protected\views\employees\create.php (19)
+in C:\wamp\www\placement_agent\web001\protected\controllers\EmployeesController.php (109)
+2012/05/26 19:07:30 [error] [php] Missing argument 3 for CActiveForm::dropDownList(), called in C:\wamp\www\placement_agent\web001\protected\views\employees\_form.php on line 35 and defined (C:\wamp\yii\framework\web\widgets\CActiveForm.php:679)
+Stack trace:
+#0 C:\wamp\yii\framework\web\CBaseController.php(96): EmployeesController->renderInternal()
+#1 C:\wamp\yii\framework\web\CController.php(870): EmployeesController->renderFile()
+#2 C:\wamp\www\placement_agent\web001\protected\views\employees\create.php(19): EmployeesController->renderPartial()
+#3 C:\wamp\yii\framework\web\CBaseController.php(127): require()
+#4 C:\wamp\yii\framework\web\CBaseController.php(96): EmployeesController->renderInternal()
+#5 C:\wamp\yii\framework\web\CController.php(870): EmployeesController->renderFile()
+#6 C:\wamp\yii\framework\web\CController.php(783): EmployeesController->renderPartial()
+#7 C:\wamp\www\placement_agent\web001\protected\controllers\EmployeesController.php(109): EmployeesController->render()
+#8 C:\wamp\yii\framework\web\actions\CInlineAction.php(50): EmployeesController->actionCreate()
+#9 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#10 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): EmployeesController->runAction()
+#11 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#12 C:\wamp\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#13 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): EmployeesController->filterAccessControl()
+#14 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#15 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#16 C:\wamp\yii\framework\web\CController.php(266): EmployeesController->runActionWithFilters()
+#17 C:\wamp\yii\framework\web\CWebApplication.php(276): EmployeesController->run()
+#18 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#19 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#20 C:\wamp\www\placement_agent\web001\index.php(13): CWebApplication->run()
+REQUEST_URI=/placement_agent/web001/index.php?r=employees/create
+in C:\wamp\www\placement_agent\web001\protected\views\employees\_form.php (35)
+in C:\wamp\www\placement_agent\web001\protected\views\employees\create.php (19)
+in C:\wamp\www\placement_agent\web001\protected\controllers\EmployeesController.php (109)
+2012/05/26 19:29:13 [error] [exception.CException] exception 'CException' with message 'Property "Employees.firm" is not defined.' in C:\wamp\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\wamp\yii\framework\db\ar\CActiveRecord.php(144): CComponent->__get('firm')
+#1 C:\wamp\www\placement_agent\web001\protected\views\employees\view.php(39): CActiveRecord->__get('firm')
+#2 C:\wamp\yii\framework\web\CBaseController.php(127): require('C:\wamp\www\pla...')
+#3 C:\wamp\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\wamp\www\pla...', Array, true)
+#4 C:\wamp\yii\framework\web\CController.php(870): CBaseController->renderFile('C:\wamp\www\pla...', Array, true)
+#5 C:\wamp\yii\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#6 C:\wamp\www\placement_agent\web001\protected\controllers\EmployeesController.php(41): CController->render('view', Array)
+#7 [internal function]: EmployeesController->actionView('3')
+#8 C:\wamp\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(EmployeesController), Array)
+#9 C:\wamp\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(EmployeesController), Object(ReflectionMethod), Array)
+#10 C:\wamp\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\wamp\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\wamp\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\wamp\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\wamp\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\wamp\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\wamp\yii\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\wamp\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\wamp\yii\framework\web\CWebApplication.php(276): CController->run('view')
+#19 C:\wamp\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('employees/view')
+#20 C:\wamp\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\wamp\www\placement_agent\web001\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/placement_agent/web001/index.php?r=employees/view&id=3
+---

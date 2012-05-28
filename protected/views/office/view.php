@@ -40,8 +40,8 @@ array(
 			),
 	),
 )); ?>
-
-<h2>Continents<!--<?php echo GxHtml::encode($model->getRelationLabel('officecontinents')); ?>--></h2>
+<!--
+<h2>Continents</h2>
 <?php
 	echo GxHtml::openTag('ul');
 	foreach($model->officecontinents as $relatedModel) {
@@ -50,7 +50,7 @@ array(
 		echo GxHtml::closeTag('li');
 	}
 	echo GxHtml::closeTag('ul');
-?><h2>Regions<!--<?php echo GxHtml::encode($model->getRelationLabel('officeregions')); ?>--></h2>
+?><h2>Regions</h2>
 <?php
 	echo GxHtml::openTag('ul');
 	foreach($model->officeregions as $relatedModel) {
@@ -60,4 +60,5 @@ array(
 	}
 	echo GxHtml::closeTag('ul');
 ?>
+-->
 
