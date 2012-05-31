@@ -24,7 +24,7 @@ abstract class BaseLpsector extends GxActiveRecord {
 	}
 
 	public function tableName() {
-		return 'Lpsector';
+		return 'lpsector';
 	}
 
 	public static function label($n = 1) {

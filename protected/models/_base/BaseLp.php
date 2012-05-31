@@ -33,7 +33,7 @@ abstract class BaseLp extends GxActiveRecord {
 	}
 
 	public function tableName() {
-		return 'Lp';
+		return 'lp';
 	}
 
 	public static function label($n = 1) {

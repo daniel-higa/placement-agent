@@ -24,7 +24,7 @@ abstract class BaseLpregion extends GxActiveRecord {
 	}
 
 	public function tableName() {
-		return 'Lpregion';
+		return 'lpregion';
 	}
 
 	public static function label($n = 1) {
