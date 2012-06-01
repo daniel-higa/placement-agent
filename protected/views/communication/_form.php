@@ -26,6 +26,7 @@
 				),
 			)); ?>
 		<?php echo $form->error($model,'date'); ?>
+        </div>
         
         <div class="row">
 		<?php echo $form->labelEx($model,'communication_type_id'); ?>
@@ -91,8 +92,40 @@
 		<?php echo $form->error($model,'user_id'); ?>
 		</div><!-- row -->
 		
+
+        <hr/>
+        
+        <h2>To D2</h2>
+        
+        <div class="row">
+		<?php echo $form->labelEx($model,'todo_description'); ?>
+		<?php echo $form->textArea($model, 'todo_description'); ?>
+		<?php echo $form->error($model,'todo_description'); ?>
+		</div><!-- row -->
+        
+        <div class="row">
+		<?php echo $form->labelEx($model,'todo_date'); ?>
+		<?php  $form->widget('zii.widgets.jui.CJuiDatePicker', array(
+			'model' => $model,
+			'attribute' => 'todo_date',
+			'value' => $model->date,
+			'options' => array(
+				'showButtonPanel' => true,
+				'changeYear' => true,
+				'dateFormat' => 'yy-mm-dd',
+				),
+			)); ?>
+		<?php echo $form->error($model,'todo_date'); ?>
+        </div>
+        
+        <hr/>
+        <h2>Tags</h2>
         <label><?php echo GxHtml::encode($model->getRelationLabel('tags')); ?></label>
-		<?php echo $form->checkBoxList($model, 'tags', GxHtml::encodeEx(GxHtml::listDataEx(Tag::model()->findAllAttributes(null, true)), false, true)); ?>
+        <div id="divcontainers">
+		<?php echo $form->checkBoxList($model, 'tags', GxHtml::encodeEx(GxHtml::listDataEx(Tag::model()->findAllAttributes(null, true)), false, true), array('separator'=>'<span class="left">,&nbsp;&nbsp;</span>', 'template' => ' <span class="left">{input}{label} </span> ')); ?>
+        </div>
+        <div class="clearfix"></div>
+        <hr/>
 
 <?php
 echo GxHtml::submitButton(Yii::t('app', 'Save'));

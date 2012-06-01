@@ -41,9 +41,9 @@ abstract class BaseCommunication extends GxActiveRecord {
 
 	public function rules() {
 		return array(
-			array('description, date, ', 'required'),
-			array('firm_id, gp_id, lp_id, status_id, client_mandate_id, user_id, employees_id', 'numerical', 'integerOnly'=>true),
-			array('description', 'safe'),
+			array('description, date', 'required'),
+			array('firm_id, gp_id, lp_id, status_id, client_mandate_id, user_id, employees_id, todo_done, todo_user_id', 'numerical', 'integerOnly'=>true),
+			array('description, todo_description', 'safe'),
 			array('description, firm_id, gp_id, lp_id, status_id, client_mandate_id, user_id, employees_id', 'default', 'setOnEmpty' => true, 'value' => null),
 			array('id,  description, firm_id, gp_id, lp_id, status_id, client_mandate_id, user_id, employees_id', 'safe', 'on'=>'search'),
 		);
@@ -80,6 +80,11 @@ abstract class BaseCommunication extends GxActiveRecord {
 			'client_mandate_id' => Yii::t('app', 'Client Mandate'),
 			'user_id' => Yii::t('app', 'User'),
 			'employees_id' => Yii::t('app', 'Employees'),
+            
+			'todo_description' => Yii::t('app', 'Description'),
+			'todo_user_id' => Yii::t('app', 'User Responsible'),
+			'date' => Yii::t('app', 'Date'),
+			'todo_done' => Yii::t('app', 'Done'),
 		);
 	}
 
