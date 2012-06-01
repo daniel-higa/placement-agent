@@ -44,6 +44,7 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 	'columns' => array(
 		'id',
 		'name',
+		'continent_id',
 		array(
 			'class' => 'CButtonColumn',
 		),

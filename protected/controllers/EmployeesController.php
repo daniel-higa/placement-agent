@@ -45,14 +45,9 @@ class EmployeesController extends GxController {
     {
             //Offices
             $data = Office::model()->findAll('firm_id=:firm_id', array(':firm_id'=>(int) $_POST['firm_id']));
-            $data = CHtml::listData($data,'id','name');
-            foreach($data as $value=>$name)
-                $dropDownOffices .= CHtml::tag('option', array('value'=>$value),CHtml::encode($name),true);
- 
-            // return data (JSON formatted)
-            echo CJSON::encode(array(
-              'dropDownOffices'=>$dropDownOffices
-            ));
+            foreach($data as $item) {
+                echo CHtml::tag('option', array('value'=>$item->id),CHtml::encode($item->name),true);
+            }
     }
 	
 	public function actionListRegions()

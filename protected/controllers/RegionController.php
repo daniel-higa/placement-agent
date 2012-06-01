@@ -10,16 +10,16 @@ public function filters() {
 
 public function accessRules() {
 	return array(
-			array('allow',
-				'actions'=>array('index','view'),
+			array('allow', 
+				'actions'=>array('index', 'view'),
 				'users'=>array('@'),
 				),
 			array('allow', 
-				'actions'=>array('minicreate', 'create','update', 'admin'),
+				'actions'=>array('minicreate', 'create', 'update', 'admin'),
 				'users'=>array('@'),
 				),
 			array('allow', 
-				'actions'=>array('admin','delete'),
+				'actions'=>array('delete'),
 				'users'=>array('admin'),
 				),
 			array('deny', 
@@ -80,10 +80,7 @@ public function accessRules() {
 	}
 
 	public function actionIndex() {
-		$dataProvider = new CActiveDataProvider('Region');
-		$this->render('index', array(
-			'dataProvider' => $dataProvider,
-		));
+        $this->redirect(array('admin'));
 	}
 
 	public function actionAdmin() {

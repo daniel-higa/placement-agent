@@ -24,7 +24,6 @@
  * @property string $skype
  * @property string $personal_note
  * @property string $office_id
- * @property string $firm_id
  *
  * @property Office $office
  * @property Employeescontinent[] $employeescontinents
@@ -51,15 +50,15 @@ abstract class BaseEmployees extends GxActiveRecord {
 
 	public function rules() {
 		return array(
-			array('first_name, last_name, email, current_position, archived_position, office_id, firm_id', 'required'),
+			array('first_name, last_name, email, current_position, archived_position, office_id', 'required'),
 			array('current_position, archived_position', 'numerical', 'integerOnly'=>true),
 			array('first_name, last_name, phone_office, phone_home, phone_mobile, fax, skype', 'length', 'max'=>50),
 			array('email, position', 'length', 'max'=>100),
 			array('phone_office_ext', 'length', 'max'=>20),
-			array('office_id, firm_id', 'length', 'max'=>10),
+			array('office_id', 'length', 'max'=>10),
 			array('personal_note', 'safe'),
 			array('phone_office, phone_office_ext, phone_home, phone_mobile, fax, position, skype, personal_note', 'default', 'setOnEmpty' => true, 'value' => null),
-			array('id, first_name, last_name, email, phone_office, phone_office_ext, phone_home, phone_mobile, fax, position, current_position, archived_position, skype, personal_note, office_id, firm_id', 'safe', 'on'=>'search'),
+			array('id, first_name, last_name, email, phone_office, phone_office_ext, phone_home, phone_mobile, fax, position, current_position, archived_position, skype, personal_note, office_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -94,7 +93,6 @@ abstract class BaseEmployees extends GxActiveRecord {
 			'skype' => Yii::t('app', 'Skype'),
 			'personal_note' => Yii::t('app', 'Personal Note'),
 			'office_id' => null,
-			'firm_id' => Yii::t('app', 'Firm'),
 			'office' => null,
 			'employeescontinents' => null,
 			'employeesregions' => null,
@@ -120,7 +118,6 @@ abstract class BaseEmployees extends GxActiveRecord {
 		$criteria->compare('skype', $this->skype, true);
 		$criteria->compare('personal_note', $this->personal_note, true);
 		$criteria->compare('office_id', $this->office_id);
-		$criteria->compare('firm_id', $this->firm_id, true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria' => $criteria,

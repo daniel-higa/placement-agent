@@ -48,6 +48,7 @@ abstract class BaseContinent extends GxActiveRecord {
 			'firmcontinents' => array(self::HAS_MANY, 'Firmcontinent', 'continent_id'),
 			'officecontinents' => array(self::HAS_MANY, 'Officecontinent', 'continent_id'),
             'lpcontinents' => array(self::HAS_MANY, 'Lpcontinent', 'continent_id'),
+            'regions' => array(self::HAS_MANY, 'Region', 'continent_id'),
             'lps' => array(self::MANY_MANY, 'Lp', 'lpcontinent(continent_id, lp_id)'),
 		);
 	}

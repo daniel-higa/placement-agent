@@ -18,6 +18,12 @@
 		<?php echo $form->textField($model, 'name', array('maxlength' => 50)); ?>
 		<?php echo $form->error($model,'name'); ?>
 		</div><!-- row -->
+		<div class="row">
+		<?php echo $form->labelEx($model,'continent_id'); ?>
+        <?php echo $form->dropDownList($model, 'continent_id', GxHtml::listDataEx(Continent::model()->findAllAttributes(null, true)),array('empty' => 'Choose one')); ?>
+		<?php echo $form->error($model,'continent_id'); ?>
+		</div><!-- row -->
+
 
 <?php
 echo GxHtml::submitButton(Yii::t('app', 'Save'));

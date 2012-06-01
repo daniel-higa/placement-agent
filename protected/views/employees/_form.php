@@ -15,24 +15,21 @@
 		
 		<div class="row">
 		<?php echo $form->labelEx($model,'Select firm'); ?>
-		<?php echo CHtml::dropDownList('Employees[firm_id]',strval($model->firm_id), GxHtml::listDataEx(Firm::model()->findAllAttributes(null, true)),
+		<?php echo CHtml::dropDownList('firm_id',$model->office->firm_id, GxHtml::listDataEx(Firm::model()->findAllAttributes(null, true)),
                 array(
                     'prompt'=>'Select Firm',
                     'ajax' => array(
                         'type'=>'POST',
                         'url'=>CController::createUrl('employees/UpdateOffice'), 
-                        'dataType'=>'json',
                         'data'=>array('firm_id'=>'js:this.value'),  
-                        'success'=>'function(data) {
-                            $("#Employees_office_id").html(data.dropDownOffices);
-                        }',
-            )));
+                        'update'=>'#Employees_office_id',
+                    )));
 			?>
 		</div>
 		
 		<div class="row">
 		<?php echo $form->labelEx($model,'Select office'); ?>
-		<?php echo CHtml::dropDownList('Employees[office_id]',strval($model->office_id),( $model->firm_id >0 ? Office::model()->findAll('firm_id=:firm_id', array(':firm_id'=>(int) $model->firm_id)) :  array())); ?>
+		<?php echo CHtml::dropDownList('Employees[office_id]',strval($model->office_id), array($model->office_id => $model->office->name)); ?>
 		<?php echo $form->error($model,'office_id'); ?>
 		</div><!-- row -->
 		<div class="row">
@@ -96,7 +93,7 @@
 		<?php echo $form->textArea($model, 'personal_note'); ?>
 		<?php echo $form->error($model,'personal_note'); ?>
 		</div><!-- row -->
-		
+		<hr/>
 		<h2>Main interests</h2>
 		<script type="text/javascript">
 		function continentClick(c){
@@ -121,26 +118,27 @@
 			}
 		}
 		</script>
-		<div>
+		<div style="float:left; margin-left:20px;">
 			<label>Continents</label>
 			<div id="divcontainers">
 			<?php echo CHtml::checkBoxList("employeescontinents", CHtml::listData($model->employeescontinents,'continent_id','continent_id'), CHtml::listData(Continent::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>', 'onclick'=>'continentClick(this)')); ?>
 			</div>
 		</div>
 		
-		<div style="display: block; margin-top: -50px; margin-left:200px;">
+		<div style="float:left; margin-left:20px;">
 			<label>Regions</label>
 			<div id="divcontainers">
 			<?php echo CHtml::checkBoxList("employeesregions", CHtml::listData($model->employeesregions,'region_id','region_id'), CHtml::listData(Region::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
 			</div>
 		</div>
 		
-		<div style="display: block; margin-top: -65px; margin-left:400px;">
+		<div style="float:left; margin-left:20px;">
 			<label>Sections</label>
 			<div id="divcontainers">
 			<?php echo CHtml::checkBoxList("employeessectors", CHtml::listData($model->employeessectors,'sector_id','sector_id'), CHtml::listData(Sector::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
 			</div>
 		</div>
+        <div class="clearfix"></div>
 
 <?php
 echo GxHtml::submitButton(Yii::t('app', 'Save'));
