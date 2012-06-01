@@ -99,7 +99,7 @@
 		function continentClick(c){
 			if(c.checked) {
 
-					jQuery.ajax({'type':'POST','url':'/placement_agent/web001/index.php?r=employees/ListRegions','dataType':'json','data':{'continent_id':c.value},'success':function(data) {
+					jQuery.ajax({'type':'POST','url':'<?php echo CController::createUrl("employees/ListRegions") ?>','dataType':'json','data':{'continent_id':c.value},'success':function(data) {
 						
 						var regchks = document.getElementsByName("employeesregions[]");
 						
