@@ -26,12 +26,10 @@
 				),
 			)); ?>
 		<?php echo $form->error($model,'date'); ?>
-        </div>
-        
+        </div><!-- row -->
         <div class="row">
 		<?php echo $form->labelEx($model,'communication_type_id'); ?>
-		<?php echo $form->dropDownList($model, 'communication_type_id', GxHtml::listDataEx(CommunicationType::model()->findAllAttributes(null, true)),array('empty' => 'Choose one')); 
-        ?>
+		<?php echo $form->dropDownList($model, 'communication_type_id', GxHtml::listDataEx(CommunicationType::model()->findAllAttributes(null, true)),array('empty' => 'Choose one'));  ?>
 		<?php echo $form->error($model,'communication_type_id'); ?>
 		</div><!-- row -->
         
@@ -72,7 +70,6 @@
 		<?php echo $form->error($model,'employees_id'); ?>
 		</div><!-- row -->
         
-		</div><!-- row -->
 		<div class="row">
 		<?php echo $form->labelEx($model,'description'); ?>
 		<?php echo $form->textArea($model, 'description'); ?>
