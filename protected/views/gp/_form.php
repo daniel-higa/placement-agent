@@ -94,28 +94,28 @@
 		<?php echo $form->error($model,'rank'); ?>
 		</div>
 		
-		<div>
+		<div style="float:left; margin-left:20px;">
 			<label>Continents</label>
 			<div id="divcontainers">
 			<?php echo CHtml::checkBoxList("gpcontinents", CHtml::listData($model->gpcontinents,'continent_id','continent_id'), CHtml::listData(Continent::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
 			</div>
 		</div>
 		
-		<div style="display: block; margin-top: -50px; margin-left:200px;">
+		<div style="float:left; margin-left:20px;">
 			<label>Regions</label>
 			<div id="divcontainers">
 			<?php echo CHtml::checkBoxList("gpregions", CHtml::listData($model->gpregions,'region_id','region_id'), CHtml::listData(Region::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
 			</div>
 		</div>
 		
-		<div style="display: block; margin-top: -65px; margin-left:400px;">
+		<div style="float:left; margin-left:20px;">
 			<label>Sections</label>
 			<div id="divcontainers">
 			<?php echo CHtml::checkBoxList("gpsectors", CHtml::listData($model->gpsectors,'sector_id','sector_id'), CHtml::listData(Sector::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
 			</div>
 		</div>
 		
-		
+		<div class="clearfix"></div>
 
 		
 		<br />

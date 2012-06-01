@@ -156,7 +156,7 @@
 
 		
 		<hr />
-		<div class="row"><h3>Top 5 Interests</h3></div>
+		<div class="row"><h3>Top Interests</h3></div>
 		
 		<div style="float:left; position:relative; width: 200px;">
 			<label>Continents</label>
