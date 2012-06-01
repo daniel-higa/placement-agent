@@ -111,8 +111,6 @@
 								}
 							}
 						}
-						//$("#Employees_office_id").html(data.dropDownOffices);
-
 					},'cache':false});
 				
 			}

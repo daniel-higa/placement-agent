@@ -118,18 +118,36 @@
 		<?php echo $form->error($model,'assets_umgmt_ori'); ?>
 		</div><!-- row -->
 		
-		
+		<script type="text/javascript">
+            function continentClick(c){
+                $('input[name=lpregions\\[\\]]').each(function(i,e) {
+                   if ($(e).attr('data') == $(c).val()) {
+                      $(e).attr('checked', c.checked);
+                   }
+                }
+                );
+            }
+		</script>
 		<div style="float:left; position:relative; width: 120px;">
 			<label>Continents</label>
 			<div id="divcontainers">
-			<?php echo CHtml::checkBoxList("lpcontinents", CHtml::listData($model->lpcontinents,'continent_id','continent_id'), CHtml::listData(Continent::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
+			<?php echo CHtml::checkBoxList("lpcontinents", CHtml::listData($model->lpcontinents,'continent_id','continent_id'), CHtml::listData(Continent::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>', 'onclick' => 'continentClick(this)')); ?>
 			</div>
 		</div>
 		
 		<div style="float:left; position:relative; width: 120px;">
 			<label>Regions</label>
 			<div id="divcontainers">
-			<?php echo CHtml::checkBoxList("lpregions", CHtml::listData($model->lpregions,'region_id','region_id'), CHtml::listData(Region::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
+			<?php //echo
+                //CHtml::checkBoxList("lpregions", CHtml::listData($model->lpregions,'region_id','region_id'), CHtml::listData(Region::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label} </span>'));
+                $lpr = CHtml::listData($model->lpregions,'region_id','region_id');
+                foreach(Region::model()->findAll() as $r) {
+                    echo '<span>';
+                    echo CHtml::checkBox("lpregions[]", in_array($r->id, $lpr), array('value' => $r->id, 'data' => $r->continent_id));
+                    echo CHTML::label($r->name, false);
+                    echo '</span>';
+                }
+            ?>
 			</div>
 		</div>
 		
