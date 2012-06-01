@@ -19,18 +19,39 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data' => $model,
 	'attributes' => array(
-'id',
-'date',
-'description',
-'firm_id',
-'gp_id',
-'lp_id',
-'status_id',
-'client_mandate_id',
-'user_id',
-'employees_id',
+        'id',
+        'date',
+        'description',
+        'firm_id',
+        'gp_id',
+        'lp_id',
+        'status_id',
+        'client_mandate_id',
+        array('label' => 'user',
+            'type' => 'raw',
+            'value' =>  $model->todo_user->name
+        ),
+        array('label' => 'Employee',
+            'type' => 'raw',
+            'value' =>  $model->getEmployeeName(),
+        ),
 	),
 )); ?>
+
+<h1>To Do</h1>
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data' => $model,
+	'attributes' => array(
+        'todo_description',
+        'todo_date',
+        array('label' => 'user',
+            'type' => 'raw',
+            'value' =>  $model->todo_user->name
+        ),
+        'todo_done',
+    ),
+)); ?>
+
 
 <h2><?php echo GxHtml::encode($model->getRelationLabel('tags')); ?></h2>
 <?php
@@ -42,5 +63,3 @@ $this->menu=array(
 	}
 	echo GxHtml::closeTag('ul');
 ?>
-
-<a href=<?php echo $this->createurl('/todo/create', array('communication_id' => $model->id));?>><button>Add To-Do</button></a>

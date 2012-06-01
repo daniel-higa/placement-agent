@@ -29,4 +29,11 @@ class Communication extends BaseCommunication
         return $items;
     }
     
+    public function getEmployeeName() {
+       if (isset($this->employee)) {
+         return $this->employee->last_name . ', ' . $this->employee->first_name;
+       }
+       return 'N/A';
+    }
+    
 }

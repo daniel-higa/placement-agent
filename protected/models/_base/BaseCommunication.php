@@ -53,6 +53,7 @@ abstract class BaseCommunication extends GxActiveRecord {
 		return array(
           'communicationtags' => array(self::HAS_MANY, 'CommunicationTag', 'communication_id'),
           'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+          'todo_user' => array(self::BELONGS_TO, 'User', 'todo_user_id'),
           'firm' => array(self::BELONGS_TO, 'Firm', 'firm_id'),
           'status' => array(self::BELONGS_TO, 'Status', 'status_id'),
           'client_mandate' => array(self::BELONGS_TO, 'ClientMandate', 'client_mandate_id'),

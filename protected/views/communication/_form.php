@@ -92,7 +92,7 @@
 
         <hr/>
         
-        <h2>To D2</h2>
+        <h2>To Do</h2>
         
         <div class="row">
 		<?php echo $form->labelEx($model,'todo_description'); ?>
