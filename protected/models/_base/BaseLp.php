@@ -86,7 +86,7 @@ abstract class BaseLp extends GxActiveRecord {
 			'rank' => Yii::t('app', 'Rank'),
 			'firm_id' => null,
 			'assets_umgmt' => Yii::t('app', 'Assets Under Managment'),
-			'assets_umgmt_ori' => Yii::t('app', 'Assets Under Managment Original'),
+			'assets_umgmt_ori' => Yii::t('app', 'Assets Under Managment (original currency)'),
 			'top_interests' => Yii::t('app', 'Top Interests'),
 			'firm' => null,
 			'lpcontinents' => null,

@@ -119,41 +119,41 @@
 		</div><!-- row -->
 		
 		
-		<div style="float:left; position:relative; width: 170px;">
+		<div style="float:left; position:relative; width: 120px;">
 			<label>Continents</label>
 			<div id="divcontainers">
 			<?php echo CHtml::checkBoxList("lpcontinents", CHtml::listData($model->lpcontinents,'continent_id','continent_id'), CHtml::listData(Continent::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
 			</div>
 		</div>
 		
-		<div style="float:left; position:relative; width: 170px;">
+		<div style="float:left; position:relative; width: 120px;">
 			<label>Regions</label>
 			<div id="divcontainers">
 			<?php echo CHtml::checkBoxList("lpregions", CHtml::listData($model->lpregions,'region_id','region_id'), CHtml::listData(Region::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
 			</div>
 		</div>
 		
-		<div style="float:left; position:relative; width: 170px;">
-			<label>Sections</label>
+		<div style="float:left; position:relative; width: 120px;">
+			<label>Sectors</label>
 			<div id="divcontainers">
 			<?php echo CHtml::checkBoxList("lpsectors", CHtml::listData($model->lpsectors,'sector_id','sector_id'), CHtml::listData(Sector::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
 			</div>
 		</div>
 		
-		<div style="float:left; position:relative; width: 170px;">
+		<div style="float:left; position:relative; width: 120px;">
 			<label>Targets</label>
 			<div id="divcontainers">
 			<?php echo CHtml::checkBoxList("lptargets", CHtml::listData($model->lptargets,'target_id','target_id'), CHtml::listData(Target::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
 			</div>
 		</div>
         
-        <div style="display: block; margin-top: 0px; margin-left:20px;  float:left;">
+        <div style="float:left; position:relative; width: 120px;">
 			<label>Segments</label>
 			<div id="divcontainers">
 			<?php echo CHtml::checkBoxList("lpsegments", CHtml::listData($model->lpsegments,'segment_id','segment_id'), CHtml::listData(Segment::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
 			</div>
 		</div>
-        <div class="clearfix"></div>
+
 		
 		<hr />
 		<div class="row"><h3>Top 5 Interests</h3></div>
@@ -179,7 +179,7 @@
 		</div>
 		
 		<div style="float:left; position:relative; width: 200px;">
-			<label>Sections</label>
+			<label>Sectors</label>
 			<div id="divcontainers">
 			<?php
 			$s_tops = array();
