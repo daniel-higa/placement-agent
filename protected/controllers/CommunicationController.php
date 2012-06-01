@@ -57,7 +57,7 @@ public function accessRules() {
 		$model = new Communication;
         
         $model->user_id = Yii::app()->user->id;
-
+        $model->todo_user_id = Yii::app()->user->id;
 
 		if (isset($_POST['Communication'])) {
 			$model->setAttributes($_POST['Communication']);

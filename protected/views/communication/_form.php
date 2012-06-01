@@ -1,6 +1,5 @@
 <div class="form">
 
-
 <?php $form = $this->beginWidget('GxActiveForm', array(
 	'id' => 'communication-form',
 	'enableAjaxValidation' => false,
@@ -19,6 +18,7 @@
 			'model' => $model,
 			'attribute' => 'date',
 			'value' => $model->date,
+            'language' => 'en',
 			'options' => array(
 				'showButtonPanel' => true,
 				'changeYear' => true,
@@ -102,18 +102,34 @@
         
         <div class="row">
 		<?php echo $form->labelEx($model,'todo_date'); ?>
-		<?php  $form->widget('zii.widgets.jui.CJuiDatePicker', array(
-			'model' => $model,
-			'attribute' => 'todo_date',
-			'value' => $model->date,
-			'options' => array(
-				'showButtonPanel' => true,
-				'changeYear' => true,
-				'dateFormat' => 'yy-mm-dd',
-				),
-			)); ?>
+		<?php
+            $this->widget('application.extensions.timepicker.EJuiDateTimePicker',array(
+                'model'=> $model,
+                'attribute'=> 'todo_date',
+                'options'=>array(
+                    'dateFormat'=> 'yy-mm-dd',
+                    'timeFormat' => 'hh:mm',
+                    'changeMonth' => true,
+                    'changeYear' => true,
+                    ),
+                ));  
+        ?>
 		<?php echo $form->error($model,'todo_date'); ?>
         </div>
+
+		<div class="row">
+		<?php echo $form->labelEx($model,'todo_user_id'); ?>
+		<?php 
+            echo $form->dropDownList($model, 'todo_user_id', GxHtml::listDataEx(User::model()->findAllAttributes(null, true)),array('empty' => 'Choose one' ));
+        ?>
+		<?php echo $form->error($model,'todo_user_id'); ?>
+		</div><!-- row -->
+
+        <div class="row">
+		<?php echo $form->labelEx($model,'todo_done'); ?>
+		<?php echo $form->checkBox($model, 'todo_done'); ?>
+		<?php echo $form->error($model,'todo_done'); ?>
+		</div><!-- row -->        
         
         <hr/>
         <h2>Tags</h2>

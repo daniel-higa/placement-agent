@@ -43,7 +43,7 @@ abstract class BaseCommunication extends GxActiveRecord {
 		return array(
 			array('description, date', 'required'),
 			array('firm_id, gp_id, lp_id, status_id, client_mandate_id, user_id, employees_id, todo_done, todo_user_id', 'numerical', 'integerOnly'=>true),
-			array('description, todo_description', 'safe'),
+			array('description, todo_description, todo_date', 'safe'),
 			array('description, firm_id, gp_id, lp_id, status_id, client_mandate_id, user_id, employees_id', 'default', 'setOnEmpty' => true, 'value' => null),
 			array('id,  description, firm_id, gp_id, lp_id, status_id, client_mandate_id, user_id, employees_id', 'safe', 'on'=>'search'),
 		);
@@ -83,7 +83,7 @@ abstract class BaseCommunication extends GxActiveRecord {
             
 			'todo_description' => Yii::t('app', 'Description'),
 			'todo_user_id' => Yii::t('app', 'User Responsible'),
-			'date' => Yii::t('app', 'Date'),
+			'todo_date' => Yii::t('app', 'To Do Date'),
 			'todo_done' => Yii::t('app', 'Done'),
 		);
 	}
