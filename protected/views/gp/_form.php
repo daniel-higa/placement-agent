@@ -93,18 +93,37 @@
 		
 		<?php echo $form->error($model,'rank'); ?>
 		</div>
-		
+
+		<script type="text/javascript">
+            function continentClick(c){
+                $('input[name=gpregions\\[\\]]').each(function(i,e) {
+                   if ($(e).attr('data') == $(c).val()) {
+                      $(e).attr('checked', c.checked);
+                   }
+                }
+                );
+            }
+		</script>
+
 		<div style="float:left; margin-left:20px;">
 			<label>Continents</label>
 			<div id="divcontainers">
-			<?php echo CHtml::checkBoxList("gpcontinents", CHtml::listData($model->gpcontinents,'continent_id','continent_id'), CHtml::listData(Continent::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
+			<?php echo CHtml::checkBoxList("gpcontinents", CHtml::listData($model->gpcontinents,'continent_id','continent_id'), CHtml::listData(Continent::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>', 'onclick' => 'continentClick(this)')); ?>
 			</div>
 		</div>
 		
 		<div style="float:left; margin-left:20px;">
 			<label>Regions</label>
 			<div id="divcontainers">
-			<?php echo CHtml::checkBoxList("gpregions", CHtml::listData($model->gpregions,'region_id','region_id'), CHtml::listData(Region::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
+			<?php
+                $gpr = CHtml::listData($model->gpregions,'region_id','region_id');
+                foreach(Region::model()->findAll() as $r) {
+                    echo '<span>';
+                    echo CHtml::checkBox("gpregions[]", in_array($r->id, $gpr), array('value' => $r->id, 'data' => $r->continent_id));
+                    echo CHtml::label($r->name, false);
+                    echo '</span>';
+                }
+            ?>
 			</div>
 		</div>
 		

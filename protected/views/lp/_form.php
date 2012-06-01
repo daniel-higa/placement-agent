@@ -144,7 +144,7 @@
                 foreach(Region::model()->findAll() as $r) {
                     echo '<span>';
                     echo CHtml::checkBox("lpregions[]", in_array($r->id, $lpr), array('value' => $r->id, 'data' => $r->continent_id));
-                    echo CHTML::label($r->name, false);
+                    echo CHtml::label($r->name, false);
                     echo '</span>';
                 }
             ?>
