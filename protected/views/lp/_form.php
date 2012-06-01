@@ -118,29 +118,29 @@
 		<?php echo $form->error($model,'assets_umgmt_ori'); ?>
 		</div><!-- row -->
 		
-		<hr />
-		<div style="display: block; margin-top: 0px; margin-left:20px; float:left;">
+		
+		<div style="float:left; position:relative; width: 170px;">
 			<label>Continents</label>
 			<div id="divcontainers">
 			<?php echo CHtml::checkBoxList("lpcontinents", CHtml::listData($model->lpcontinents,'continent_id','continent_id'), CHtml::listData(Continent::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
 			</div>
 		</div>
 		
-		<div style="display: block; margin-top: 0px; margin-left:20px; float:left;">
+		<div style="float:left; position:relative; width: 170px;">
 			<label>Regions</label>
 			<div id="divcontainers">
 			<?php echo CHtml::checkBoxList("lpregions", CHtml::listData($model->lpregions,'region_id','region_id'), CHtml::listData(Region::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
 			</div>
 		</div>
 		
-		<div style="display: block; margin-top: 0px; margin-left:20px;  float:left;">
-			<label>Sectors</label>
+		<div style="float:left; position:relative; width: 170px;">
+			<label>Sections</label>
 			<div id="divcontainers">
 			<?php echo CHtml::checkBoxList("lpsectors", CHtml::listData($model->lpsectors,'sector_id','sector_id'), CHtml::listData(Sector::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
 			</div>
 		</div>
 		
-		<div style="display: block; margin-top: 0px; margin-left:20px;  float:left;">
+		<div style="float:left; position:relative; width: 170px;">
 			<label>Targets</label>
 			<div id="divcontainers">
 			<?php echo CHtml::checkBoxList("lptargets", CHtml::listData($model->lptargets,'target_id','target_id'), CHtml::listData(Target::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
@@ -157,7 +157,8 @@
 		
 		<hr />
 		<div class="row"><h3>Top 5 Interests</h3></div>
-		<div>
+		
+		<div style="float:left; position:relative; width: 200px;">
 			<label>Continents</label>
 			<div id="divcontainers">
 			<?php
@@ -167,7 +168,7 @@
 			</div>
 		</div>
 		
-		<div style="display: block; margin-top: -50px; margin-left:200px;">
+		<div style="float:left; position:relative; width: 200px;">
 			<label>Regions</label>
 			<div id="divcontainers">
 			<?php
@@ -177,7 +178,7 @@
 			</div>
 		</div>
 		
-		<div style="display: block; margin-top: -70px; margin-left:400px;">
+		<div style="float:left; position:relative; width: 200px;">
 			<label>Sections</label>
 			<div id="divcontainers">
 			<?php
@@ -192,6 +193,7 @@
 		<?php echo $form->checkBox($model, 'top_interests'); ?>
 		<?php echo $form->error($model,'top_interests'); ?>
 		</div><!-- row -->
+		<hr />
 		
 <?php
 echo GxHtml::submitButton(Yii::t('app', 'Save'));

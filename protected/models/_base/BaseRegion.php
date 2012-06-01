@@ -10,10 +10,13 @@
  * followed by relations of table "region" available as properties of the model.
  *
  * @property string $id
+ * @property string $continent_id
  * @property string $name
  *
  * @property Employeesregion[] $employeesregions
  * @property Firmregion[] $firmregions
+ * @property Gpregion[] $gpregions
+ * @property Lpregion[] $lpregions
  * @property Officeregion[] $officeregions
  */
 abstract class BaseRegion extends GxActiveRecord {
@@ -36,9 +39,10 @@ abstract class BaseRegion extends GxActiveRecord {
 
 	public function rules() {
 		return array(
-			array('name', 'required'),
+			array('continent_id, name', 'required'),
+			array('continent_id', 'length', 'max'=>10),
 			array('name', 'length', 'max'=>50),
-			array('id, name', 'safe', 'on'=>'search'),
+			array('id, continent_id, name', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -46,9 +50,9 @@ abstract class BaseRegion extends GxActiveRecord {
 		return array(
 			'employeesregions' => array(self::HAS_MANY, 'Employeesregion', 'region_id'),
 			'firmregions' => array(self::HAS_MANY, 'Firmregion', 'region_id'),
+			'gpregions' => array(self::HAS_MANY, 'Gpregion', 'region_id'),
+			'lpregions' => array(self::HAS_MANY, 'Lpregion', 'region_id'),
 			'officeregions' => array(self::HAS_MANY, 'Officeregion', 'region_id'),
-            'lpregions' => array(self::HAS_MANY, 'Lpregion', 'region_id'),
-            'lps' => array(self::HAS_MANY, 'Lp', 'lpregion(region_id, lp_id)'),
 		);
 	}
 
@@ -60,9 +64,12 @@ abstract class BaseRegion extends GxActiveRecord {
 	public function attributeLabels() {
 		return array(
 			'id' => Yii::t('app', 'ID'),
+			'continent_id' => Yii::t('app', 'Continent'),
 			'name' => Yii::t('app', 'Name'),
 			'employeesregions' => null,
 			'firmregions' => null,
+			'gpregions' => null,
+			'lpregions' => null,
 			'officeregions' => null,
 		);
 	}
@@ -71,6 +78,7 @@ abstract class BaseRegion extends GxActiveRecord {
 		$criteria = new CDbCriteria;
 
 		$criteria->compare('id', $this->id, true);
+		$criteria->compare('continent_id', $this->continent_id, true);
 		$criteria->compare('name', $this->name, true);
 
 		return new CActiveDataProvider($this, array(

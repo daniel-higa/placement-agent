@@ -14,8 +14,25 @@
 	<?php echo $form->errorSummary($model); ?>
 		
 		<div class="row">
+		<?php echo $form->labelEx($model,'Select firm'); ?>
+		<?php echo CHtml::dropDownList('Employees[firm_id]',strval($model->firm_id), GxHtml::listDataEx(Firm::model()->findAllAttributes(null, true)),
+                array(
+                    'prompt'=>'Select Firm',
+                    'ajax' => array(
+                        'type'=>'POST',
+                        'url'=>CController::createUrl('employees/UpdateOffice'), 
+                        'dataType'=>'json',
+                        'data'=>array('firm_id'=>'js:this.value'),  
+                        'success'=>'function(data) {
+                            $("#Employees_office_id").html(data.dropDownOffices);
+                        }',
+            )));
+			?>
+		</div>
+		
+		<div class="row">
 		<?php echo $form->labelEx($model,'Select office'); ?>
-		<?php echo $form->dropDownList($model, 'office_id', GxHtml::listDataEx(Office::model()->findAllAttributes(null, true))); ?>
+		<?php echo CHtml::dropDownList('Employees[office_id]',strval($model->office_id),( $model->firm_id >0 ? Office::model()->findAll('firm_id=:firm_id', array(':firm_id'=>(int) $model->firm_id)) :  array())); ?>
 		<?php echo $form->error($model,'office_id'); ?>
 		</div><!-- row -->
 		<div class="row">
@@ -40,8 +57,6 @@
 		<?php echo $form->textField($model, 'email', array('maxlength' => 100)); ?>
 		<?php echo $form->error($model,'email'); ?>
 		</div><!-- row -->
-		
-		
 
 		<hr />
 		
@@ -82,10 +97,34 @@
 		<?php echo $form->error($model,'personal_note'); ?>
 		</div><!-- row -->
 		
+		<h2>Main interests</h2>
+		<script type="text/javascript">
+		function continentClick(c){
+			if(c.checked) {
+
+					jQuery.ajax({'type':'POST','url':'/placement_agent/web001/index.php?r=employees/ListRegions','dataType':'json','data':{'continent_id':c.value},'success':function(data) {
+						
+						var regchks = document.getElementsByName("employeesregions[]");
+						
+						for(var i=0; i<data.regions.length; i++){
+							for(var j=0; j<regchks.length; j++){
+								if(regchks[j].value == data.regions[i]){
+									regchks[j].checked = true;
+									break;
+								}
+							}
+						}
+						//$("#Employees_office_id").html(data.dropDownOffices);
+
+					},'cache':false});
+				
+			}
+		}
+		</script>
 		<div>
 			<label>Continents</label>
 			<div id="divcontainers">
-			<?php echo CHtml::checkBoxList("employeescontinents", CHtml::listData($model->employeescontinents,'continent_id','continent_id'), CHtml::listData(Continent::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
+			<?php echo CHtml::checkBoxList("employeescontinents", CHtml::listData($model->employeescontinents,'continent_id','continent_id'), CHtml::listData(Continent::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>', 'onclick'=>'continentClick(this)')); ?>
 			</div>
 		</div>
 		

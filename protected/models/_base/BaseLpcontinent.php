@@ -24,7 +24,7 @@ abstract class BaseLpcontinent extends GxActiveRecord {
 	}
 
 	public function tableName() {
-		return 'Lpcontinent';
+		return 'lpcontinent';
 	}
 
 	public static function label($n = 1) {

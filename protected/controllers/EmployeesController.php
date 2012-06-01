@@ -22,7 +22,7 @@ class EmployeesController extends GxController {
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'admin'),
+				'actions'=>array('create','update', 'updateoffice', 'listregions', 'admin'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -40,6 +40,40 @@ class EmployeesController extends GxController {
 			'model' => $this->loadModel($id, 'Employees'),
 		));
 	}
+	
+	public function actionUpdateOffice()
+    {
+            //Offices
+            $data = Office::model()->findAll('firm_id=:firm_id', array(':firm_id'=>(int) $_POST['firm_id']));
+            $data = CHtml::listData($data,'id','name');
+            foreach($data as $value=>$name)
+                $dropDownOffices .= CHtml::tag('option', array('value'=>$value),CHtml::encode($name),true);
+ 
+            // return data (JSON formatted)
+            echo CJSON::encode(array(
+              'dropDownOffices'=>$dropDownOffices
+            ));
+    }
+	
+	public function actionListRegions()
+    {
+            //Regions
+            $data = Region::model()->findAll('continent_id=:continent_id', array(':continent_id'=>(int) $_POST['continent_id']));
+            $data = CHtml::listData($data,'id','name');
+			
+			$arr = array();
+			
+            foreach($data as $value=>$name){
+				array_push($arr, $value);
+			}
+				
+			
+ 
+            // return data (JSON formatted)
+            echo CJSON::encode(array(
+              'regions'=>$arr
+            ));
+    }
 
 	public function actionCreate() {
 		$model = new Employees;
