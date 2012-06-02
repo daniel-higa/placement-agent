@@ -124,6 +124,55 @@
 		<?php echo $form->hiddenField($model, 'assets_umgmt_ori', array('maxlength' => 100, 'value' =>'1')); ?>
 		<!-- row -->
         
+        <div class="row">
+		<?php echo $form->labelEx($model,'fund_size'); ?>
+		<?php echo $form->dropDownList($model, 'fund_size', Lp::model()->getFundSizeItems()); ?>
+		<?php echo $form->error($model,'fund_size'); ?>
+		</div>
+        
+        <div>
+            <div class="left append-1">
+            <?php echo $form->labelEx($model,'pe_allocation'); ?>
+            <?php echo $form->checkbox($model, 'pe_allocation'); ?>
+            <?php echo $form->error($model,'pe_allocation'); ?>
+            </div>
+
+            <div class="left">
+            <?php echo $form->labelEx($model,'commited_pe'); ?>
+            <?php echo $form->checkbox($model, 'commited_pe'); ?>
+            <?php echo $form->error($model,'commited_pe'); ?>
+            </div>        
+        </div>
+        <div class="clearfix"></div>
+        
+        <script type="text/javascript">
+            function toggle_appetite(s) {
+                if (s.val() == 1) {
+                    $('#div_appetite').show('fast');
+                } else {
+                    $('#div_appetite').hide('fast');
+                }
+            }
+        </script>
+        <div class="row">
+        <?php echo $form->labelEx($model,'actively'); ?>
+        <?php echo $form->radioButtonList($model, 'actively', array(true => 'Yes', false => 'No'), array('onclick' => 'toggle_appetite($(this));', 'template' => '<span class="left">{input}</span><span class="left">{label}</span>', 'class' => 'left', 'separator' => ' ')); ?>
+        <?php echo $form->error($model,'actively'); ?>
+        </div>
+        <div class="clearfix"></div>
+        
+        <?php
+            if (isset($model->actively) and $model->actively == true) {
+                echo '<div id="div_appetite" class="row">';
+            } else {
+                echo '<div id="div_appetite" class="row" style="display: none;">';
+            }
+        ?>
+		<?php echo $form->labelEx($model,'appetite'); ?>
+		<?php echo $form->dropDownList($model, 'appetite', Lp::model()->getAppetiteItems(), array('empty' => 'Choose One')); ?>
+		<?php echo $form->error($model,'appetite'); ?>
+		</div>
+        
         <hr/>
         
         <h2>General investment strategy</h2>

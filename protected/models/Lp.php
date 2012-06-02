@@ -22,4 +22,33 @@ class Lp extends BaseLp
         return $employees;
     }
     
+    public function getFundSizeItems() {
+        return array(
+            '1' => '0-100',
+            '2' => '100-250',
+            '3' => '250-500',
+            '4' => '500-1 billion',
+            '5' => '1 billion and more',
+        );
+    }
+    
+    public function getAppetiteItems() {
+        return array(
+            '1' => '100% existing relationships',
+            '2' => '85 % existing relationships',
+            '3' => '50% existing relationships',
+            '4' => '25% existing relationships',
+            '5' => '100% new relationships',
+        );
+    }
+    
+    public function beforeSave() {
+        if ($this->isNewRecord)
+            $this->created = new CDbExpression('NOW()');
+        else
+            $this->modified = new CDbExpression('NOW()');
+     
+        return parent::beforeSave();
+    }
+    
 }
