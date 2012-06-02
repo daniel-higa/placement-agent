@@ -47,7 +47,7 @@ abstract class BaseLp extends GxActiveRecord {
 	public function rules() {
 		return array(
 			array('rank, firm_id, assets_umgmt, assets_umgmt_ori, top_interests', 'required'),
-			array('top_interests, average_ticket, average_inv, segment_id', 'numerical', 'integerOnly'=>true),
+			array('top_interests, average_ticket, average_inv, segment_id, lptype_id', 'numerical', 'integerOnly'=>true),
 			array('assets_umgmt', 'numerical'),
 			array('name', 'length', 'max'=>50),
 			array('website, assets_umgmt_ori', 'length', 'max'=>100),
@@ -69,6 +69,7 @@ abstract class BaseLp extends GxActiveRecord {
 			'lptargets' => array(self::HAS_MANY, 'Lptarget', 'lp_id'),
             'lpsegments' => array(self::HAS_MANY, 'Lpsegment', 'lp_id'),
             'segments' => array(self::MANY_MANY, 'Segment', 'lpsegment(lp_id, segment_id)'),
+            'lptype' => array(self::HAS_ONE, 'Lptype', 'lptype_id'),
 		);
 	}
 
@@ -94,6 +95,7 @@ abstract class BaseLp extends GxActiveRecord {
 			'lpregions' => null,
 			'lpsectors' => null,
 			'lptargets' => null,
+			'lptype_id' => Yii::t('app', 'LP Type'),
             'average_ticket' => Yii::t('app', 'Average Ticket'),
             'average_inv' => Yii::t('app', 'Average Annual Investment'),
 		);

@@ -30,6 +30,13 @@
         <?php echo $form->labelEx($model,'average_inv'); ?>
 		<?php echo $form->textField($model, 'average_inv', array('maxlength' => 2)); ?>
 		<?php echo $form->error($model,'average_inv'); ?>
+        
+        <div class="row">
+		<?php echo $form->labelEx($model,'lptype_id'); ?>
+		<?php echo $form->dropDownList($model, 'lptype_id', GxHtml::listDataEx(Lptype::model()->findAllAttributes(null, true))); ?>
+		<?php echo $form->error($model,'lptype_id'); ?>
+		</div>
+        
 <!--
 		<div class="row">
 		<?php echo $form->labelEx($model,'name'); ?>

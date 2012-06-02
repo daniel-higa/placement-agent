@@ -53,6 +53,7 @@
                             array('label' => 'Region', 'url' => array('/region/admin')),
                             array('label' => 'Continent', 'url' => array('/continent/admin')),
                             array('label' => 'Communication Type', 'url' => array('/communicationType/admin')),
+                            array('label' => 'LP Type', 'url' => array('/lptype/admin')),
                             array('label' => 'Segment', 'url' => array('/segment/admin')),
                             array('label' => 'Status (Client Mandate)', 'url' => array('/status/admin')),
                         ),
