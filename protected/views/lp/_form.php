@@ -123,6 +123,10 @@
         <!--original currency-->
 		<?php echo $form->hiddenField($model, 'assets_umgmt_ori', array('maxlength' => 100, 'value' =>'1')); ?>
 		<!-- row -->
+        
+        <hr/>
+        
+        <h2>General investment strategy</h2>
 		
 		<script type="text/javascript">
             function continentClick(c){
