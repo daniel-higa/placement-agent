@@ -15,7 +15,7 @@
 		
 		<div class="row">
 		<?php echo $form->labelEx($model,'Select firm'); ?>
-		<?php echo CHtml::dropDownList('firm_id',$model->office->firm_id, GxHtml::listDataEx(Firm::model()->findAllAttributes(null, true)),
+		<?php echo CHtml::dropDownList('firm_id',$model->office?$model->office->firm_id:null, GxHtml::listDataEx(Firm::model()->findAllAttributes(null, true)),
                 array(
                     'prompt'=>'Select Firm',
                     'ajax' => array(
@@ -29,7 +29,7 @@
 		
 		<div class="row">
 		<?php echo $form->labelEx($model,'Select office'); ?>
-		<?php echo CHtml::dropDownList('Employees[office_id]',strval($model->office_id), array($model->office_id => $model->office->name)); ?>
+		<?php echo CHtml::dropDownList('Employees[office_id]',strval($model->office_id), array($model->office_id => ($model->office?$model->office->name:null))); ?>
 		<?php echo $form->error($model,'office_id'); ?>
 		</div><!-- row -->
 		<div class="row">

@@ -48,7 +48,10 @@ $this->menu=array(
             'type' => 'raw',
             'value' =>  $model->todo_user->name
         ),
-        'todo_done',
+        array('label' => 'Done',
+            'type' => 'raw',
+            'value' =>  $model->todo_done?'Yes':'No'
+        ),
     ),
 )); ?>
 
