@@ -119,11 +119,10 @@
 		<?php echo $form->textField($model, 'assets_umgmt'); ?>
 		<?php echo $form->error($model,'assets_umgmt'); ?>
 		</div><!-- row -->
-		<div class="row">
-		<?php echo $form->labelEx($model,'assets under management original currency'); ?>
-		<?php echo $form->textField($model, 'assets_umgmt_ori', array('maxlength' => 100)); ?>
-		<?php echo $form->error($model,'assets_umgmt_ori'); ?>
-		</div><!-- row -->
+        
+        <!--original currency-->
+		<?php echo $form->hiddenField($model, 'assets_umgmt_ori', array('maxlength' => 100, 'value' =>'1')); ?>
+		<!-- row -->
 		
 		<script type="text/javascript">
             function continentClick(c){
