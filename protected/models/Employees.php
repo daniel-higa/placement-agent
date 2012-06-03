@@ -12,4 +12,11 @@ class Employees extends BaseEmployees
         return $this->last_name . ', ' . $this->first_name;
     }
     
+    public function getLastCommunication() {
+        $c = $this->communications;
+        if (count($c) > 0) {
+            return end($c);
+        }
+    }
+    
 }

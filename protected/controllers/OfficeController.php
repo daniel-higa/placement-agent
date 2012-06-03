@@ -43,7 +43,9 @@ class OfficeController extends GxController {
 
 	public function actionCreate() {
 		$model = new Office;
-
+        if (isset($_GET['firm_id'])) {
+            $model->firm_id = $_GET['firm_id'];
+        }
 
 		if (isset($_POST['Office'])) {
 			$model->setAttributes($_POST['Office']);

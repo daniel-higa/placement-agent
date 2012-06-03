@@ -36,7 +36,7 @@ abstract class BaseCommunication extends GxActiveRecord {
 	}
 
 	public static function representingColumn() {
-		return 'description';
+		return 'id';
 	}
 
 	public function rules() {

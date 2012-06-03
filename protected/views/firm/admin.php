@@ -7,7 +7,7 @@ $this->breadcrumbs = array(
 
 $this->menu = array(
 		array('label'=>Yii::t('app', 'List') . ' ' . $model->label(2), 'url'=>array('index')),
-		array('label'=>Yii::t('app', 'Create') . ' ' . $model->label(), 'url'=>array('create')),
+		array('label'=>Yii::t('app', 'Create Other') . ' ' . $model->label(), 'url'=>array('create')),
 	);
 
 Yii::app()->clientScript->registerScript('search', "
@@ -42,7 +42,11 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 	'dataProvider' => $model->search(),
 	'columns' => array(
 		'id',
-		'name',
+		array(
+            'type' => 'raw',
+            'value' => 'FirmHelper::viewUrl($data)',
+            'name' => 'name'
+        ),
 		array(
 				'name'=>'user_id',
 				'value'=>'GxHtml::valueEx($data->user)',

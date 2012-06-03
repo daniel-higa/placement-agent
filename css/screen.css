@@ -236,3 +236,16 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 .clearfix:after, .container:after {content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}
 .clearfix, .container {display:block;}
 .clear {clear:both;}
+
+
+
+.sumary {
+    width: 100%;
+    height: auto;
+    border: solid 2px black;
+    background-color: #EAECFD;
+}
+
+.margin-20 {
+    margin: 20px;
+}

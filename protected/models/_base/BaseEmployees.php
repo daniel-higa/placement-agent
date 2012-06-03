@@ -68,6 +68,7 @@ abstract class BaseEmployees extends GxActiveRecord {
 			'employeescontinents' => array(self::HAS_MANY, 'Employeescontinent', 'employees_id'),
 			'employeesregions' => array(self::HAS_MANY, 'Employeesregion', 'employees_id'),
 			'employeessectors' => array(self::HAS_MANY, 'Employeessector', 'employees_id'),
+            'communications' => array(self::HAS_MANY, 'Communication', 'employees_id'),
 		);
 	}
 

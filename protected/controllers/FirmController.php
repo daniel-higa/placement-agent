@@ -186,10 +186,7 @@ class FirmController extends GxController {
 	}
 
 	public function actionIndex() {
-		$dataProvider = new CActiveDataProvider('Firm');
-		$this->render('index', array(
-			'dataProvider' => $dataProvider,
-		));
+        $this->redirect(array('admin'));
 	}
 
 	public function actionAdmin() {

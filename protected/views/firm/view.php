@@ -14,28 +14,11 @@ $this->menu=array(
 );
 ?>
 
-<h1><?php echo Yii::t('app', 'View') . ' ' . GxHtml::encode($model->label()) . ' ' . GxHtml::encode(GxHtml::valueEx($model)); ?></h1>
+<?php $this->renderPartial('_sumary', array('model' => $model)); ?>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data' => $model,
-	'attributes' => array(
-'id',
-'name',
-array(
-			'name' => 'user',
-			'type' => 'raw',
-			'value' => $model->user !== null ? User::model()->findByPk($model->user_id)->name : null,
-			),
-array(
-			'name' => 'firmtype',
-			'type' => 'raw',
-			'value' => $model->firmtype !== null ? Firmtype::model()->findByPk($model->firmtype_id)->name : null,
-			),
-'description',
-'website',
-'rank',
-	),
-)); ?>
+
+
+
 
 <h2>Continents<!--<?php echo GxHtml::encode($model->getRelationLabel('firmcontinents')); ?>--></h2>
 <?php
@@ -65,3 +48,6 @@ array(
 	}
 	echo GxHtml::closeTag('ul');
 ?>
+
+
+<?php $this->renderPartial('_officesEmployees', array('model' => $model)); ?>

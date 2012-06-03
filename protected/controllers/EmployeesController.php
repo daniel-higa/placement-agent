@@ -72,6 +72,10 @@ class EmployeesController extends GxController {
 
 	public function actionCreate() {
 		$model = new Employees;
+        
+        if (isset($_GET['office_id'])) {
+            $model->office_id = $_GET['office_id'];
+        }
 
 
 		if (isset($_POST['Employees'])) {
