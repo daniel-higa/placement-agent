@@ -29,7 +29,7 @@ $this->menu=array(
         'client_mandate_id',
         array('label' => 'user',
             'type' => 'raw',
-            'value' =>  $model->todo_user->name
+            'value' =>  $model->user->name
         ),
         array('label' => 'Employee',
             'type' => 'raw',
@@ -46,7 +46,7 @@ $this->menu=array(
         'todo_date',
         array('label' => 'user',
             'type' => 'raw',
-            'value' =>  $model->todo_user->name
+            'value' =>  $model->todo_user_id?$model->todo_user->name:'N/A'
         ),
         array('label' => 'Done',
             'type' => 'raw',
