@@ -12,5 +12,9 @@ class FirmHelper {
                 return '<a href="' . Yii::app()->createUrl('/firm/view', array('id' => $firm->id )) . '">' . $firm->name . '</a>';;
         }
     }
+    
+    public static function div($class, $content) {
+        return "<div class='$class'>" . $content . '</div>';
+    }
 
 }

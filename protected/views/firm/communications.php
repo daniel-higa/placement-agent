@@ -16,30 +16,26 @@ $this->menu=array(
 <?php $this->renderPartial('_sumary', array('model' => $model)); ?>
 <?php $this->renderPartial('_sections', array('model' => $model)); ?>
 
-<h2>Description</h2>
-<div class="description">
-    <?php echo $model->description?>
-</div>
 
-<div class="row">
-    website: 
-    <?php 
-        $website = $model->website;
-        echo "<a href='$model->website'>$model->website</a>";
-    ?>
-</div>
+<h2>Communications</h2>
 
-<h2>Documents<!--<?php echo GxHtml::encode($model->getRelationLabel('firmdocuments')); ?>--></h2>
-
-<?php
-	echo GxHtml::openTag('ul');
-	foreach($model->firmdocuments as $relatedModel) {
-		echo GxHtml::openTag('li');
-		echo GxHtml::link(GxHtml::valueEx($relatedModel), 'upload/'.GxHtml::valueEx($relatedModel), array('target'=>'_blank'));
-		echo GxHtml::closeTag('li');
-	}
-	echo GxHtml::closeTag('ul');
-?>
-
-
-<?php $this->renderPartial('_officesEmployees', array('model' => $model)); ?>
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id' => 'communication-grid',
+	'dataProvider' => $communication->search2($model->id),
+	'filter' => $communication,
+	'columns' => array(
+		'id',
+		'date',
+		'description',
+		array('name' => 'lp_id',
+            'header' => 'LP',
+            'value' => '$data->getLpName()',
+        ),
+		array(
+			'class' => 'CButtonColumn',
+            'viewButtonUrl'=>'Yii::app()->createUrl("/communication/view", array("id" => $data->id))',
+            'updateButtonUrl'=>'Yii::app()->createUrl("/communication/update", array("id" => $data->id))',
+            'deleteButtonUrl'=>'Yii::app()->createUrl("/communication/delete", array("id" => $data->id))',
+		),
+	),
+)); ?>

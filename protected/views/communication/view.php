@@ -22,9 +22,18 @@ $this->menu=array(
         'id',
         'date',
         'description',
-        'firm_id',
-        'gp_id',
-        'lp_id',
+        array(
+            'label' => 'Firm',
+            'value' => $model->getFirmName(),
+        ),
+        array(
+            'label' => 'GP',
+            'value' => $model->getGpName(),
+        ),
+        array(
+            'label' => 'LP',
+            'value' => $model->getLpName(),
+        ),
         'status_id',
         'client_mandate_id',
         array('label' => 'user',

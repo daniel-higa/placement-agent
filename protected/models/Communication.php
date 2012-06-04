@@ -51,14 +51,14 @@ class Communication extends BaseCommunication
     }
     
     public function getGpName() {
-        if (isset($this->gp_id)) {
+        if (isset($this->gp_id) and $this->gp) {
             return $this->gp->getName();
         }
         return 'N/A';
     }
     
     public function getLpName() {
-        if (isset($this->lp_id)) {
+        if (isset($this->lp_id) and $this->lp) {
             return $this->lp->getName();
         }
         return 'N/A';
@@ -72,11 +72,18 @@ class Communication extends BaseCommunication
     }
     
     public function search2($firm_id) {
+        $firm = Firm::model()->findByPk($firm_id);
 		$criteria = new CDbCriteria;
-
 		$criteria->compare('id', $this->id);
 		$criteria->compare('description', $this->description, true);
-		$criteria->compare('firm_id', $firm_id, false);
+		
+        if ($firm and ($firm->firmtype_id == 1) and $firm->gp) {
+            $criteria->compare('gp_id', $firm->gp->id, false);
+        }
+        if ($firm and ($firm->firmtype_id == 2) and $firm->lp) {
+            $criteria->compare('lp_id', $firm->lp->id, false);
+        }
+        //$criteria->compare('firm_id', $firm_id, false);
 		$criteria->compare('status_id', $this->status_id);
 		$criteria->compare('client_mandate_id', $this->client_mandate_id);
 		$criteria->compare('user_id', $this->user_id);

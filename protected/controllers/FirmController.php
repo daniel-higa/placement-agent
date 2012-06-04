@@ -22,7 +22,7 @@ class FirmController extends GxController {
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'admin'),
+				'actions'=>array('create','update', 'admin', 'funds', 'communications', 'projects'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -41,7 +41,32 @@ class FirmController extends GxController {
 			'model' => $this->loadModel($id, 'Firm'),
 		));
 	}
-	
+
+	public function actionCommunications($id) {
+		$communication = new Communication('search');
+		$communication->unsetAttributes();
+
+		if (isset($_GET['Communication']))
+			$communication->setAttributes($_GET['Communication']);
+    
+		$this->render('communications', array(
+			'model' => $this->loadModel($id, 'Firm'),
+            'communication' => $communication,
+		));
+	}
+    
+	public function actionProjects($id) {
+		$this->render('projects', array(
+			'model' => $this->loadModel($id, 'Firm'),
+		));
+	}
+    
+    public function actionFunds($id) {
+		$this->render('funds', array(
+			'model' => $this->loadModel($id, 'Firm'),
+		));
+	}
+
 	public function actionCreate() {
 		$model = new Firm;
 		if (isset($_POST['Firm'])) {

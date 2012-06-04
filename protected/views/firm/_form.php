@@ -79,7 +79,7 @@
 		</div><!-- row -->
 		<div class="row">
 		<?php echo $form->labelEx($model,'Please enter the description of de firm'); ?>
-		<?php echo $form->textArea($model, 'description'); ?>
+		<?php echo $form->textArea($model, 'description', array('rows' => 12, 'cols' => 90)); ?>
 		<?php echo $form->error($model,'description'); ?>
 		</div><!-- row -->
 		<div class="row">
@@ -115,19 +115,20 @@
 		<br />
 		Add Document
 		<?php
-		  $this->widget('CMultiFileUpload', array(
-			 'name'=>'firmfiles',
-			 'attribute'=>'firmfiles',
-			 'accept'=>'jpg|gif',
-			 'options'=>array(
-				'onFileSelect'=>'function(e, v, m){  }',
-				'afterFileSelect'=>'function(e, v, m){  }',
-				'onFileAppend'=>'function(e, v, m){  }',
-				'afterFileAppend'=>'function(e, v, m){  }',
-				'onFileRemove'=>'function(e, v, m){  }',
-				'afterFileRemove'=>'function(e, v, m){  }',
-			 ),
-		  ));
+            //$accepted_files = (string) Yii::app()->accepted_files;
+            $this->widget('CMultiFileUpload', array(
+                 'name'=>'firmfiles',
+                 'attribute'=>'firmfiles',
+                 'accept'=> 'gif|jpg|png|pdf|doc|xdoc|xls|zip|gz|rar|ppt|pptx|xlsx',
+                 'options'=>array(
+                    'onFileSelect'=>'function(e, v, m){  }',
+                    'afterFileSelect'=>'function(e, v, m){  }',
+                    'onFileAppend'=>'function(e, v, m){  }',
+                    'afterFileAppend'=>'function(e, v, m){  }',
+                    'onFileRemove'=>'function(e, v, m){  }',
+                    'afterFileRemove'=>'function(e, v, m){  }',
+                 ),
+              ));
 		?>
 
 <?php

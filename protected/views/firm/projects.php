@@ -16,30 +16,4 @@ $this->menu=array(
 <?php $this->renderPartial('_sumary', array('model' => $model)); ?>
 <?php $this->renderPartial('_sections', array('model' => $model)); ?>
 
-<h2>Description</h2>
-<div class="description">
-    <?php echo $model->description?>
-</div>
-
-<div class="row">
-    website: 
-    <?php 
-        $website = $model->website;
-        echo "<a href='$model->website'>$model->website</a>";
-    ?>
-</div>
-
-<h2>Documents<!--<?php echo GxHtml::encode($model->getRelationLabel('firmdocuments')); ?>--></h2>
-
-<?php
-	echo GxHtml::openTag('ul');
-	foreach($model->firmdocuments as $relatedModel) {
-		echo GxHtml::openTag('li');
-		echo GxHtml::link(GxHtml::valueEx($relatedModel), 'upload/'.GxHtml::valueEx($relatedModel), array('target'=>'_blank'));
-		echo GxHtml::closeTag('li');
-	}
-	echo GxHtml::closeTag('ul');
-?>
-
-
-<?php $this->renderPartial('_officesEmployees', array('model' => $model)); ?>
+<h2>Projects</h2>

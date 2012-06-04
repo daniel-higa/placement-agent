@@ -12,6 +12,13 @@ class Lp extends BaseLp
         return array('A' => 'A', 'B' => 'B', 'C' => 'C', 'D' => 'D', 'E' => 'E');
     }
     
+    public function getName() {
+        if (isset($this->firm_id)) {
+            return $this->firm->name;
+        }
+        return 'N/A';
+    }
+    
     public function getEmployees() {
         $employees = array();
         foreach ($this->firm->offices as $o) {
