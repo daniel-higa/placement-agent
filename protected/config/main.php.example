@@ -79,6 +79,7 @@ return array(
 				*/
 			),
 		),
+        'accepted_files' => 'gif|jpg|png|pdf|doc|xdoc|xls|zip|gz|rar|ppt|pptx|xlsx',
 	),
 
 	// application-level parameters that can be accessed
