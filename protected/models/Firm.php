@@ -24,4 +24,17 @@ class Firm extends BaseFirm
         }
         return 'N/A';
     }
+    
+    public function beforeSave() {
+        if ($this->isNewRecord)
+            $this->created = new CDbExpression('NOW()');
+        else
+            $this->modified = new CDbExpression('NOW()');
+        return parent::beforeSave();
+    }
+    
+    public function updateModified() {
+        $this->modified = new CDbExpression('NOW()');
+        $this->save();
+    }
 }

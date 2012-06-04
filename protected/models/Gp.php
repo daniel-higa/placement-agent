@@ -14,4 +14,10 @@ class Gp extends BaseGp
         }
         return 'N/A';
     }
+
+    public function beforeSave() {
+        $this->firm->updateModified();
+        return parent::beforeSave();
+    }
+
 }

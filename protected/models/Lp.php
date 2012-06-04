@@ -54,7 +54,7 @@ class Lp extends BaseLp
             $this->created = new CDbExpression('NOW()');
         else
             $this->modified = new CDbExpression('NOW()');
-     
+        $this->firm->updateModified();
         return parent::beforeSave();
     }
     

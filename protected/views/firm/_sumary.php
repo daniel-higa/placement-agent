@@ -64,6 +64,8 @@
         </div>
         
         <div class="clearfix"> </div>
+        <p>Created: <?php echo $model->created; ?>
+        Modified: <?php echo $model->modified; ?> </p>
         <?php
             if (($model->firmtype_id == 1 and !$model->gp) or ($model->firmtype_id == 2 and !$model->lp)) { 
                 echo '<h2>Missing second step!</h2>';
