@@ -60,6 +60,7 @@ abstract class BaseCommunication extends GxActiveRecord {
           'employee' => array(self::BELONGS_TO, 'Employees', 'employees_id'),
           'tags' => array(self::MANY_MANY, 'Tag', 'communication_tag(communication_id, tag_id)'),
           'lp' => array(self::BELONGS_TO, 'Lp', 'lp_id'),
+          'gp' => array(self::BELONGS_TO, 'Gp', 'gp_id'),
 		);
 	}
 
