@@ -77,4 +77,20 @@ class ClientMandate extends BaseClientMandate
             }
         }
     }
+    
+    public function search2($firm) {
+		$criteria = new CDbCriteria;
+
+		$criteria->compare('id', $this->id);
+		$criteria->compare('name', $this->name, true);
+		$criteria->compare('description', $this->description, true);
+        if (($firm->firmtype_id == 1) and $firm->gp) {
+            $criteria->compare('gp_id', $firm->gp->id, false);
+        } else {
+            $criteria->compare('gp_id', -9999);
+        }
+		return new CActiveDataProvider($this, array(
+			'criteria' => $criteria,
+		));
+	}
 }

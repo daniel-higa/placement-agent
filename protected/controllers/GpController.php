@@ -36,9 +36,8 @@ class GpController extends GxController {
 	}
 
 	public function actionView($id) {
-		$this->render('view', array(
-			'model' => $this->loadModel($id, 'Gp'),
-		));
+        $model = Gp::model()->findByPk($id);
+        $this->redirect(array('/firm/view', 'id' => $model->firm_id));
 	}
 
 	public function actionCreate() {

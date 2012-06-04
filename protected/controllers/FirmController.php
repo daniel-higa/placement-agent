@@ -56,8 +56,14 @@ class FirmController extends GxController {
 	}
     
 	public function actionProjects($id) {
+   		$clientmandate = new ClientMandate('search');
+		$clientmandate->unsetAttributes();
+
+		if (isset($_GET['ClientMandate']))
+			$clientmandate->setAttributes($_GET['ClientMandate']);
 		$this->render('projects', array(
 			'model' => $this->loadModel($id, 'Firm'),
+            'clientmandate' => $clientmandate,
 		));
 	}
     

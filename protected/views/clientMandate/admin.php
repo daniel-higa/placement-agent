@@ -45,7 +45,10 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 		'id',
 		array('name' => 'name', 'type' => 'raw', 'value' => 'CHTML::link($data->name, array("clientMandate/view", "id" => $data->id))'),
 		'description',
-		'gp_id',
+		array(
+            'name' => 'gp_id',
+            'value' => 'FirmHelper::getGpName($data->gp_id)',
+        ),
 		array(
 			'class' => 'CButtonColumn',
 		),
