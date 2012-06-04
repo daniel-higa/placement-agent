@@ -41,10 +41,7 @@
                         'visible'=>!Yii::app()->user->isGuest,
                     ),
 				array('label'=>'Firm', 'url'=>array('/firm/admin'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Office', 'url'=>array('/office/admin'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Employees', 'url'=>array('/employees/admin'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'GP', 'url'=>array('/gp/admin'), 'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'LP', 'url'=>array('/lp/admin'), 'visible'=>!Yii::app()->user->isGuest),
+
                 array('label'=> 'Config', 'items' => array(
                             array('label' => 'User', 'url' => array('/user/admin')),
                             array('label' => 'Tag', 'url' => array('/tag/admin')),
