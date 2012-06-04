@@ -75,6 +75,11 @@ class FirmController extends GxController {
 
 	public function actionCreate() {
 		$model = new Firm;
+        
+        if (isset($_GET['type'])) {
+            $model->firmtype_id = $_GET['type'];
+        }
+        
 		if (isset($_POST['Firm'])) {
 		
 		$firms = Firm::model()->findAll(array('condition' => 'name = :ID', 'params' => array(':ID' => $_POST["Firm"]["name"])));
@@ -125,7 +130,13 @@ class FirmController extends GxController {
 					if (Yii::app()->getRequest()->getIsAjaxRequest())
 						Yii::app()->end();
 					else
-						$this->redirect(array('view', 'id' => $model->id));
+                        if ($model->firmtype_id == 1) {
+                            $this->redirect(array('/gp/create', 'firm_id' => $model->id));
+                        } elseif ($model->firmtype_id == 2) {
+                            $this->redirect(array('/lp/create', 'firm_id' => $model->id));
+                        } else {
+                            $this->redirect(array('view', 'id' => $model->id));
+                        }
 				}
 			}
 		
@@ -184,8 +195,21 @@ class FirmController extends GxController {
 						Firmdocument::model()->deleteAll(array('condition' => 'id = :ID', 'params' => array(':ID' => $arrs[$i])));
 					}
 				}
-			
-				$this->redirect(array('view', 'id' => $model->id));
+                if ($model->firmtype_id == 1) {
+                    if ($model->gp) {
+                        $this->redirect(array('/gp/update', 'id' => $model->gp->id));
+                    } else {
+                        $this->redirect(array('/gp/create', 'firm_id' => $model->id));
+                    }
+                } elseif ($model->firmtype_id == 2) {
+                    if ($model->lp) {
+                        $this->redirect(array('/lp/update', 'id' => $model->lp->id));
+                    } else {
+                        $this->redirect(array('/lp/create', 'firm_id' => $model->id));
+                    }
+                } else {
+                    $this->redirect(array('view', 'id' => $model->id));
+                }
 			}
 		}
 

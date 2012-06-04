@@ -36,14 +36,19 @@ class LpController extends GxController {
 	}
 
 	public function actionView($id) {
-		$this->render('view', array(
-			'model' => $this->loadModel($id, 'Lp'),
-		));
+		$model = Lp::model()->findByPk($id);
+        $this->redirect(array('/firm/view', 'id' => $model->firm_id));
 	}
 
 	public function actionCreate() {
 		$model = new Lp;
 
+        if (isset($_GET['firm_id'])) {
+            $model->firm_id = $_GET['firm_id'];
+            $model->rank = $model->firm->rank;
+        } else {
+            $this->redirect(array('firm/create', 'type' => 2));
+        }
 
 		if (isset($_POST['Lp'])) {
 			$model->setAttributes($_POST['Lp']);
@@ -141,18 +146,6 @@ class LpController extends GxController {
 						$model_t->lp_id = $model->id;
 						$model_t->segment_id = $model_segments[$i];
 						$model_t->save();
-					}
-				}
-				
-				$limit=count($_FILES['lpfiles']['name']);
-				for($i=0;$i<$limit;$i++){
-					$ext = end(explode(".", $_FILES['lpfiles']['name'][$i]));
-					$nm = $model->id.'_'.date("YmdHis").'_'.($i+1).'.'.$ext;
-					if(move_uploaded_file($_FILES['lpfiles']['tmp_name'][$i], "upload/".$nm)){
-						$model_d=new Lpdocument;
-						$model_d->lp_id = $model->id;
-						$model_d->file = $nm;
-						$model_d->save();
 					}
 				}
 			
@@ -266,19 +259,7 @@ class LpController extends GxController {
 						$model_t->save();
 					}
 				}
-				
-				$limit=count($_FILES['lpfiles']['name']);
-				for($i=0;$i<$limit;$i++){
-					$ext = end(explode(".", $_FILES['lpfiles']['name'][$i]));
-					$nm = $model->id.'_'.date("YmdHis").'_'.($i+1).'.'.$ext;
-					if(move_uploaded_file($_FILES['lpfiles']['tmp_name'][$i], "upload/".$nm)){
-						$model_d=new Lpdocument;
-						$model_d->lp_id = $model->id;
-						$model_d->file = $nm;
-						$model_d->save();
-					}
-				}
-			
+
 				$this->redirect(array('view', 'id' => $model->id));
 			}
 		}

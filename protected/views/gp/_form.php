@@ -14,71 +14,7 @@
 
 	<?php echo $form->errorSummary($model); ?>
 	
-		<div class="row"><h2>Description</h2></div>
-		
-		<div class="row">
-		<?php echo $form->labelEx($model,'firm_id'); ?>
-		<?php echo $form->dropDownList($model, 'firm_id', GxHtml::listDataEx(Firm::model()->findAllAttributes(null, true))); ?>
-		<?php echo $form->error($model,'firm_id'); ?>
-		</div>
-		<!--
-			<div class="row">
-			<?php echo $form->labelEx($model,'name'); ?>
-			<?php echo $form->textField($model, 'name', array('maxlength' => 50, 'readOnly' =>'true', 'disabled'=> 'true')); ?>
-			</div>
-			
-			<div class="row">
-			<?php echo $form->labelEx($model,'description'); ?>
-			<?php echo $form->textArea($model, 'description', array('readOnly' =>'true', 'disabled'=> 'true')); ?>
-			</div>
-			<div class="row">
-			<?php echo $form->labelEx($model,'website'); ?>
-			<?php echo $form->textField($model, 'website', array('maxlength' => 100, 'readOnly' =>'true', 'disabled'=> 'true')); ?>
-			</div>
-		-->
-		
-		<br />
-		
-		<script type="text/javascript">
-		function documentDelete(id){
-			E('HD_deleteDocuments').value += (E('HD_deleteDocuments').value != '' ? ';' : '') + id;
-			E('div_doc'+id).style.display = 'none';
-		}
-		function E(id){
-			return document.getElementById(id);
-		}
-		</script>
-		
-		<label>Documents</label>
-		<input type="hidden" id="HD_deleteDocuments" name="HD_deleteDocuments" value="" />
-		<?php
-		
-		$arr = $model->gpdocuments;
-		for( $i = 0; $i < count($arr); $i++)
-		{
-			echo '<div id="div_doc'.$arr[$i]['id'].'"><b>'.($i+1).')&nbsp; </b><a target="_blank" href="upload/'.$arr[$i]['file'].'">'.$arr[$i]['file'].'</a>&nbsp;<img style="cursor:pointer" onclick="documentDelete('.$arr[$i]['id'].')" src="assets/460db63c/gridview/delete.png"></div><br>';
-		}
-		
-		?>
-		<br />
-		Add Document
-		<?php
-		  $this->widget('CMultiFileUpload', array(
-			 'name'=>'gpfiles',
-			 'attribute'=>'gpfiles',
-			 'accept'=>'jpg|gif',
-			 'options'=>array(
-				'onFileSelect'=>'function(e, v, m){  }',
-				'afterFileSelect'=>'function(e, v, m){  }',
-				'onFileAppend'=>'function(e, v, m){  }',
-				'afterFileAppend'=>'function(e, v, m){  }',
-				'onFileRemove'=>'function(e, v, m){  }',
-				'afterFileRemove'=>'function(e, v, m){  }',
-			 ),
-		  ));
-		?>
-		<br />
-		<hr />
+        <?php echo $form->hiddenField($model, 'firm_id', array('value' => $model->firm_id) ); ?>
 		
 		<div class="row"><h2>Volume And Interests</h2></div>
 		

@@ -11,7 +11,7 @@
             <div class="clearfix"></div>
         </div>
 
-        <?php if ($model->firmtype_id == 1) { ?>
+        <?php if ($model->firmtype_id == 1 and $model->gp) { ?>
             <?php $gp = $model->gp; ?>
             <div class="left append-1">
                 <label>Continents</label>
@@ -26,7 +26,7 @@
                 </div>
             </div>
 
-        <?php } elseif ($model->firmtype_id == 2) { ?>
+        <?php } elseif ($model->firmtype_id == 2 and $model->lp) { ?>
             <?php $lp = $model->lp;?>
             <div class="left append-1">
                 <label>Continents</label>

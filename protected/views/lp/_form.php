@@ -14,7 +14,7 @@
 
 	<?php echo $form->errorSummary($model); ?>
 	
-		<div class="row"><h2>Description</h2></div>
+		 <?php echo $form->hiddenField($model, 'firm_id', array('value' => $model->firm_id) ); ?>
 		
 		<div class="row">
 		<?php echo $form->labelEx($model,'firm_id'); ?>
@@ -54,48 +54,6 @@
 		<?php echo $form->error($model,'website'); ?>
 		</div>-->
 		
-		<br />
-		
-		<script type="text/javascript">
-		function documentDelete(id){
-			E('HD_deleteDocuments').value += (E('HD_deleteDocuments').value != '' ? ';' : '') + id;
-			E('div_doc'+id).style.display = 'none';
-		}
-		function E(id){
-			return document.getElementById(id);
-		}
-		</script>
-		
-		<label>Documents</label>
-		<input type="hidden" id="HD_deleteDocuments" name="HD_deleteDocuments" value="" />
-		<?php
-		
-		$arr = $model->lpdocuments;
-		for( $i = 0; $i < count($arr); $i++)
-		{
-			echo '<div id="div_doc'.$arr[$i]['id'].'"><b>'.($i+1).')&nbsp; </b><a target="_blank" href="upload/'.$arr[$i]['file'].'">'.$arr[$i]['file'].'</a>&nbsp;<img style="cursor:pointer" onclick="documentDelete('.$arr[$i]['id'].')" src="assets/460db63c/gridview/delete.png"></div><br>';
-		}
-		
-		?>
-		<br />
-		Add Document
-		<?php
-		  $this->widget('CMultiFileUpload', array(
-			 'name'=>'lpfiles',
-			 'attribute'=>'lpfiles',
-			 'accept'=>'jpg|gif',
-			 'options'=>array(
-				'onFileSelect'=>'function(e, v, m){  }',
-				'afterFileSelect'=>'function(e, v, m){  }',
-				'onFileAppend'=>'function(e, v, m){  }',
-				'afterFileAppend'=>'function(e, v, m){  }',
-				'onFileRemove'=>'function(e, v, m){  }',
-				'afterFileRemove'=>'function(e, v, m){  }',
-			 ),
-		  ));
-		?>
-		
-		<br />
 		<hr />
 		
 		<div class="row"><h2>Volume And Interests</h2></div>

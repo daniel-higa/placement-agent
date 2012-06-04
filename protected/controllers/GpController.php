@@ -42,7 +42,13 @@ class GpController extends GxController {
 
 	public function actionCreate() {
 		$model = new Gp;
-
+        
+        if (isset($_GET['firm_id'])) {
+            $model->firm_id = $_GET['firm_id'];
+            $model->rank = $model->firm->rank;
+        } else {
+            $this->redirect(array('firm/create', 'type' => 1));
+        }
 
 		if (isset($_POST['Gp'])) {
 			$model->setAttributes($_POST['Gp']);
@@ -90,18 +96,6 @@ class GpController extends GxController {
 					}
 				}
 				
-				$limit=count($_FILES['gpfiles']['name']);
-				for($i=0;$i<$limit;$i++){
-					$ext = end(explode(".", $_FILES['gpfiles']['name'][$i]));
-					$nm = $model->id.'_'.date("YmdHis").'_'.($i+1).'.'.$ext;
-					if(move_uploaded_file($_FILES['gpfiles']['tmp_name'][$i], "upload/".$nm)){
-						$model_d=new Gpdocument;
-						$model_d->gp_id = $model->id;
-						$model_d->file = $nm;
-						$model_d->save();
-					}
-				}
-			
 				if (Yii::app()->getRequest()->getIsAjaxRequest())
 					Yii::app()->end();
 				else
@@ -109,7 +103,9 @@ class GpController extends GxController {
 			}
 		}
 
-		$this->render('create', array( 'model' => $model));
+		$this->render('create', array(
+            'model' => $model,
+        ));
 	}
 
 	public function actionUpdate($id) {
@@ -157,25 +153,6 @@ class GpController extends GxController {
 					}
 				}
 				
-				$limit=count($_FILES['gpfiles']['name']);
-				for($i=0;$i<$limit;$i++){
-					$ext = end(explode(".", $_FILES['gpfiles']['name'][$i]));
-					$nm = $model->id.'_'.date("YmdHis").'_'.($i+1).'.'.$ext;
-					if(move_uploaded_file($_FILES['gpfiles']['tmp_name'][$i], "upload/".$nm)){
-						$model_d=new Gpdocument;
-						$model_d->gp_id = $model->id;
-						$model_d->file = $nm;
-						$model_d->save();
-					}
-				}
-				
-				if(isset($_POST['HD_deleteDocuments'])){
-					$arrs = explode(';',$_POST['HD_deleteDocuments']);
-					for ($i=0;$i<count($arrs);$i++){
-						Gpdocument::model()->deleteAll(array('condition' => 'id = :ID', 'params' => array(':ID' => $arrs[$i])));
-					}
-				}
-			
 				$this->redirect(array('view', 'id' => $model->id));
 			}
 		}
