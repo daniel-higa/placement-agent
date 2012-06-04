@@ -41,7 +41,8 @@
                         'visible'=>!Yii::app()->user->isGuest,
                     ),
 				array('label'=>'Firm', 'url'=>array('/firm/admin'), 'visible'=>!Yii::app()->user->isGuest),
-
+                array('label' => 'Office', 'url' => array('/office/admin')),
+                array('label' => 'Employees', 'url' => array('/employees/admin')),
                 array('label'=> 'Config', 'items' => array(
                             array('label' => 'User', 'url' => array('/user/admin')),
                             array('label' => 'Tag', 'url' => array('/tag/admin')),

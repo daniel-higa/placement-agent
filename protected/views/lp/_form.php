@@ -15,14 +15,7 @@
 	<?php echo $form->errorSummary($model); ?>
 	
 		 <?php echo $form->hiddenField($model, 'firm_id', array('value' => $model->firm_id) ); ?>
-		
-		<div class="row">
-		<?php echo $form->labelEx($model,'firm_id'); ?>
-		<?php echo $form->dropDownList($model, 'firm_id', GxHtml::listDataEx(Firm::model()->findAllAttributes(null, true))); ?>
-		<?php echo $form->error($model,'firm_id'); ?>
-		</div>
-        
-        
+		       
         <?php echo $form->labelEx($model,'average_ticket'); ?>
 		<?php echo $form->textField($model, 'average_ticket', array('maxlength' => 2)); ?>
 		<?php echo $form->error($model,'average_ticket'); ?>

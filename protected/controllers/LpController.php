@@ -287,14 +287,15 @@ class LpController extends GxController {
 	}
 
 	public function actionIndex() {
-		$dataProvider = new CActiveDataProvider('Lp');
+		/*$dataProvider = new CActiveDataProvider('Lp');
 		$this->render('index', array(
 			'dataProvider' => $dataProvider,
-		));
+		));*/
+        $this->redirect(array('/firm/admin'));
 	}
 
 	public function actionAdmin() {
-		$model = new Lp('search');
+		/*$model = new Lp('search');
 		$model->unsetAttributes();
 
 		if (isset($_GET['Lp']))
@@ -302,7 +303,8 @@ class LpController extends GxController {
 
 		$this->render('admin', array(
 			'model' => $model,
-		));
+		));*/
+        $this->redirect(array('/firm/admin'));
 	}
 
 }

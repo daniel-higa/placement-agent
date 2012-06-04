@@ -179,14 +179,15 @@ class GpController extends GxController {
 	}
 
 	public function actionIndex() {
-		$dataProvider = new CActiveDataProvider('Gp');
+		/*$dataProvider = new CActiveDataProvider('Gp');
 		$this->render('index', array(
 			'dataProvider' => $dataProvider,
-		));
+		));*/
+        $this->redirect(array('/firm/admin'));
 	}
 
 	public function actionAdmin() {
-		$model = new Gp('search');
+		/*$model = new Gp('search');
 		$model->unsetAttributes();
 
 		if (isset($_GET['Gp']))
@@ -194,7 +195,8 @@ class GpController extends GxController {
 
 		$this->render('admin', array(
 			'model' => $model,
-		));
+		));*/
+        $this->redirect(array('/firm/admin'));
 	}
 
 }
