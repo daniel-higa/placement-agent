@@ -22,7 +22,7 @@ class FirmController extends GxController {
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'admin', 'funds', 'communications', 'projects'),
+				'actions'=>array('create','update', 'admin', 'funds', 'communications', 'projects', 'chooseType'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -35,6 +35,9 @@ class FirmController extends GxController {
 		);
 	}
 
+    public function actionChooseType() {
+		$this->render('choose_type');
+	}
 
 	public function actionView($id) {
 		$this->render('view', array(

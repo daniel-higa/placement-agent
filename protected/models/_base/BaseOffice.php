@@ -42,16 +42,16 @@ abstract class BaseOffice extends GxActiveRecord {
 	}
 
 	public static function representingColumn() {
-		return 'name';
+		return 'id';
 	}
 
 	public function rules() {
 		return array(
-			array('name, country_id, main_office, phone, address, city, state, sync_gmaps, firm_id', 'required'),
+			array('name, country_id, main_office, phone, streetname, streetnumber, city, firm_id', 'required'),
 			array('main_office, sync_gmaps', 'numerical', 'integerOnly'=>true),
 			array('name, phone', 'length', 'max'=>50),
 			array('country_id, firm_id', 'length', 'max'=>10),
-			array('address, city, state', 'length', 'max'=>100),
+			array('streetname, streetnumber, city, state, floor, building', 'length', 'max'=>100),
 			array('description', 'safe'),
 			array('description', 'default', 'setOnEmpty' => true, 'value' => null),
 			array('id, name, country_id, main_office, phone, address, city, state, description, sync_gmaps, firm_id', 'safe', 'on'=>'search'),
@@ -85,7 +85,11 @@ abstract class BaseOffice extends GxActiveRecord {
 			'state' => Yii::t('app', 'State'),
 			'description' => Yii::t('app', 'Description'),
 			'sync_gmaps' => Yii::t('app', 'Sync Gmaps'),
-			'firm_id' => null,
+			'firm_id' => Yii::t('app', 'Firm'),
+            'streetname' => Yii::t('app', 'Street name'),
+            'streetnumber' => Yii::t('app', 'street number'),
+            'floor' => Yii::t('app', 'Floor'),
+            'building' => Yii::t('app', 'Building'),
 			'employees' => null,
 			'country' => null,
 			'firm' => null,
@@ -98,11 +102,13 @@ abstract class BaseOffice extends GxActiveRecord {
 		$criteria = new CDbCriteria;
 
 		$criteria->compare('id', $this->id, true);
-		$criteria->compare('name', $this->name, true);
 		$criteria->compare('country_id', $this->country_id);
 		$criteria->compare('main_office', $this->main_office);
 		$criteria->compare('phone', $this->phone, true);
-		$criteria->compare('address', $this->address, true);
+		$criteria->compare('streetname', $this->streetname, true);
+        $criteria->compare('streetnumber', $this->streetnumber, false);
+        $criteria->compare('floor', $this->floor, false);
+        $criteria->compare('building', $this->building, false);
 		$criteria->compare('city', $this->city, true);
 		$criteria->compare('state', $this->state, true);
 		$criteria->compare('description', $this->description, true);

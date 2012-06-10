@@ -42,9 +42,8 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 	'dataProvider' => $model->search(),
 	'columns' => array(
 		'id',
-		'name',
 		array(
-				'name'=>'country_id',
+				'name'=>'country',
 				'value'=>'GxHtml::valueEx($data->country)',
 				'filter'=>GxHtml::listDataEx(Country::model()->findAllAttributes(null, true)),
 				),/*
@@ -54,8 +53,10 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 					'filter' => array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')),
 					),
 		'phone',*/
-		'address',
-		
+		'streetname',
+		'streetnumber',
+        'floor',
+        'building',
 		'city',
 		'state',/*
 		'description',

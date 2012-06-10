@@ -10,12 +10,7 @@
 		<?php echo $form->textField($model, 'id', array('maxlength' => 10)); ?>
 	</div>
 	
-	<div class="row">
-		<?php echo $form->label($model, 'office_id'); ?>
-		<?php echo $form->dropDownList($model, 'office_id', GxHtml::listDataEx(Office::model()->findAllAttributes(null, true)), array('prompt' => Yii::t('app', 'All'))); ?>
-	</div>
-	
-	<div class="row">
+    <div class="row">
 		<?php echo $form->label($model, 'first_name'); ?>
 		<?php echo $form->textField($model, 'first_name', array('maxlength' => 50)); ?>
 	</div>
