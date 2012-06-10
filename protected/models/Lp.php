@@ -47,7 +47,46 @@ class Lp extends BaseLp
         else
             $this->modified = new CDbExpression('NOW()');
         $this->firm->updateModified();
+        $this->firm->rank = $this->getAttribute('rank');
+        $this->firm->save();
         return parent::beforeSave();
     }
     
+    public function countTops() {
+        $continents = $this->topContinents();
+        $regions = $this->topRegions();
+        $sectors = $this->topSectors();
+        return count($continents) + count($regions) + count($sectors);
+    }
+    
+    public function topContinents() {
+        $top = array();
+        foreach ($this->lpcontinents as $lpc) {
+            if ($lpc->top) {
+                $top[] = $lpc;
+            }
+        }
+        return $top;
+    }
+
+    public function topRegions() {
+        $top = array();
+        foreach ($this->lpregions as $lpr) {
+            if ($lpr->top) {
+                $top[] = $lpr;
+            }
+        }
+        return $top;
+    }    
+
+    public function topSectors() {
+        $top = array();
+        foreach ($this->lpsectors as $lps) {
+            if ($lps->top) {
+                $top[] = $lps;
+            }
+        }
+        return $top;
+    }    
+
 }

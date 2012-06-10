@@ -42,11 +42,13 @@ abstract class BaseLpfundsize extends GxActiveRecord {
 
 	public function relations() {
 		return array(
+            'lps' => array(self::MANY_MANY, 'Lp', 'lpfundsize(fundsize_id, lp_id)'),
 		);
 	}
 
 	public function pivotModels() {
 		return array(
+            'lps' => 'Lpfundsize',
 		);
 	}
 

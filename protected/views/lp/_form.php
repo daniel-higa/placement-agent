@@ -22,7 +22,7 @@
         
         <div class="row">
 		<?php echo $form->labelEx($model,'rank'); ?>
-		<?php echo CHtml::radioButtonList('rank', $model->rank, Firm::getRankItems(), array( 'separator' => '&nbsp;', 'labelOptions'=>array('style'=>'display:inline'))); ?>
+		<?php echo CHtml::radioButtonList('Lp[rank]', $model->rank, Firm::getRankItems(), array( 'separator' => '&nbsp;', 'labelOptions'=>array('style'=>'display:inline'))); ?>
 		<?php echo $form->error($model,'rank'); ?>
 		</div>
 
@@ -61,7 +61,7 @@
         
         <div class="row">
 		<?php echo $form->labelEx($model,'fund_size'); ?>
-		<?php echo $form->checkBoxList($model, 'fund_size', Fundsize::model()->getFundSizeItems(), array('labelOptions'=>array('style'=>'display:inline'))); ?>
+		<?php echo $form->checkBoxList($model, 'fundsizes', Fundsize::model()->getFundSizeItems(), array('labelOptions'=>array('style'=>'display:inline'))); ?>
 		<?php echo $form->error($model,'fund_size'); ?>
 		</div>
         
@@ -99,6 +99,8 @@
         <h2>General investment strategy</h2>
 		
 		<script type="text/javascript">
+            var count = 5 - <?php echo $model->countTops(); ?>;
+            
             function continentClick(c){
                 $('input[name=lpregions\\[\\]]').each(function(i,e) {
                    if ($(e).attr('data') == $(c).val()) {
@@ -107,6 +109,21 @@
                 }
                 );
             }
+            
+            function interestClick(i) {
+                if ($(i).attr('checked')) {
+                    if (count > 0) {
+                        count--;
+                    } else {
+                        $(i).attr('checked', false);
+                    }
+                } else {
+                    count++;
+                }
+                $('#count').html(count);
+            }
+            
+            
 		</script>
 		<div style="float:left; position:relative; width: 120px;">
 			<label>Continents</label>
@@ -155,14 +172,14 @@
 		
 		<hr />
 		<div class="row"><h3>Top Interests</h3></div>
-		
+		<div id ="count"></div>
 		<div style="float:left; position:relative; width: 200px;">
 			<label>Continents</label>
 			<div id="divcontainers">
 			<?php
 			$c_tops = array();
 			for ($i=0;$i<count($model->lpcontinents);$i++){ if($model->lpcontinents[$i]->top == 1){	array_push($c_tops, $model->lpcontinents[$i]); } }
-			echo CHtml::checkBoxList("lpcontinents2", CHtml::listData($c_tops,'continent_id','continent_id'), CHtml::listData(Continent::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
+			echo CHtml::checkBoxList("lpcontinents2", CHtml::listData($c_tops,'continent_id','continent_id'), CHtml::listData(Continent::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>', 'onclick' => 'interestClick(this)')); ?>
 			</div>
 		</div>
 		
@@ -172,7 +189,7 @@
 			<?php
 			$r_tops = array();
 			for ($i=0;$i<count($model->lpregions);$i++){ if($model->lpregions[$i]->top == 1){	array_push($r_tops, $model->lpregions[$i]); } }
-			echo CHtml::checkBoxList("lpregions2", CHtml::listData($r_tops,'region_id','region_id'), CHtml::listData(Region::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
+			echo CHtml::checkBoxList("lpregions2", CHtml::listData($r_tops,'region_id','region_id'), CHtml::listData(Region::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>', 'onclick' => 'interestClick(this)')); ?>
 			</div>
 		</div>
 		
@@ -182,7 +199,7 @@
 			<?php
 			$s_tops = array();
 			for ($i=0;$i<count($model->lpsectors);$i++){ if($model->lpsectors[$i]->top == 1){	array_push($s_tops, $model->lpsectors[$i]); } }
-			echo CHtml::checkBoxList("lpsectors2", CHtml::listData($s_tops,'sector_id','sector_id'), CHtml::listData(Sector::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
+			echo CHtml::checkBoxList("lpsectors2", CHtml::listData($s_tops,'sector_id','sector_id'), CHtml::listData(Sector::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>', 'onclick' => 'interestClick(this)')); ?>
 			</div>
 		</div>
 		

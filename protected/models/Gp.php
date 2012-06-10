@@ -17,6 +17,8 @@ class Gp extends BaseGp
 
     public function beforeSave() {
         $this->firm->updateModified();
+        $this->firm->rank = $this->getAttribute('rank');
+        $this->firm->save();
         return parent::beforeSave();
     }
 

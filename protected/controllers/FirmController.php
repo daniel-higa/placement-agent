@@ -82,12 +82,12 @@ class FirmController extends GxController {
         
 		if (isset($_POST['Firm'])) {
 		
-		$firms = Firm::model()->findAll(array('condition' => 'name = :ID', 'params' => array(':ID' => $_POST["Firm"]["name"])));
-		
-		if(count($firms) > 0){
-			Yii::app()->clientScript->registerScript('alert', "alert('The firm name is being used.');");
-			
-		} else {
+            $firms = Firm::model()->findAll(array('condition' => 'name = :ID', 'params' => array(':ID' => $_POST["Firm"]["name"])));
+            
+            if(count($firms) > 0){
+                Yii::app()->clientScript->registerScript('alert', "alert('The firm name is being used.');");
+                
+            } else {
 		
 				$model->setAttributes($_POST['Firm']);
 	
@@ -142,6 +142,7 @@ class FirmController extends GxController {
 		
 		}
 
+        $model->rank = 'E';
 		$this->render('create', array( 'model' => $model));
 	}
 

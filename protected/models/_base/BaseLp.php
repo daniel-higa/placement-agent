@@ -66,16 +66,19 @@ abstract class BaseLp extends GxActiveRecord {
 			'lpcontinents' => array(self::HAS_MANY, 'Lpcontinent', 'lp_id'),
 			'lpdocuments' => array(self::HAS_MANY, 'Lpdocument', 'lp_id'),
 			'lpregions' => array(self::HAS_MANY, 'Lpregion', 'lp_id'),
+            'lpfundsizes' => array(self::HAS_MANY, 'Lpfundsize', 'lp_id'),
 			'lpsectors' => array(self::HAS_MANY, 'Lpsector', 'lp_id'),
 			'lptargets' => array(self::HAS_MANY, 'Lptarget', 'lp_id'),
             'lpsegments' => array(self::HAS_MANY, 'Lpsegment', 'lp_id'),
             'segments' => array(self::MANY_MANY, 'Segment', 'lpsegment(lp_id, segment_id)'),
+            'fundsizes' => array(self::MANY_MANY, 'Fundsize', 'lpfundsize(lp_id, fundsize_id)'),
             'lptype' => array(self::HAS_ONE, 'Lptype', 'lptype_id'),
 		);
 	}
 
 	public function pivotModels() {
 		return array(
+            'fundsizes' => 'Lpfundsize',
 		);
 	}
 
