@@ -12,6 +12,7 @@ class RegionTest extends CDbTestCase
        $this->assertEquals(get_class($obj), 'Region');
        
        $obj->name = 'Region 1';
+       $obj->continent_id = 1;
        $this->assertTrue($obj->save());
     }
 
