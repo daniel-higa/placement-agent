@@ -14,87 +14,57 @@
 
 	<?php echo $form->errorSummary($model); ?>
 	
-		 <?php echo $form->hiddenField($model, 'firm_id', array('value' => $model->firm_id) ); ?>
-		       
-        <?php echo $form->labelEx($model,'average_ticket'); ?>
-		<?php echo $form->textField($model, 'average_ticket', array('maxlength' => 2)); ?>
-		<?php echo $form->error($model,'average_ticket'); ?>
-        
-        <?php echo $form->labelEx($model,'average_inv'); ?>
-		<?php echo $form->textField($model, 'average_inv', array('maxlength' => 2)); ?>
-		<?php echo $form->error($model,'average_inv'); ?>
-        
         <div class="row">
 		<?php echo $form->labelEx($model,'lptype_id'); ?>
 		<?php echo $form->dropDownList($model, 'lptype_id', GxHtml::listDataEx(Lptype::model()->findAllAttributes(null, true))); ?>
 		<?php echo $form->error($model,'lptype_id'); ?>
 		</div>
         
-<!--
-		<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model, 'name', array('maxlength' => 50)); ?>
-		<?php echo $form->error($model,'name'); ?>
-		</div>
-		<div class="row">
-		<?php echo $form->labelEx($model,'description'); ?>
-		<?php echo $form->textArea($model, 'description'); ?>
-		<?php echo $form->error($model,'description'); ?>
-		
-		<div class="row">
-		<?php echo $form->labelEx($model,'website'); ?>
-		<?php echo $form->textField($model, 'website', array('maxlength' => 100)); ?>
-		<?php echo $form->error($model,'website'); ?>
-		</div>-->
-		
-		<hr />
-		
-		<div class="row"><h2>Volume And Interests</h2></div>
-		
-		<div class="row">
+        <div class="row">
 		<?php echo $form->labelEx($model,'rank'); ?>
-		
-		<input type="radio" id="Lp_rank" name="Lp[rank]" value="A" <?php echo $model->rank == 'A' ? 'checked="checked"' : ''; ?> />A
-		<input type="radio" id="Lp_rank" name="Lp[rank]" value="B" <?php echo $model->rank == 'B' ? 'checked="checked"' : ''; ?> />B
-		<input type="radio" id="Lp_rank" name="Lp[rank]" value="C" <?php echo $model->rank == 'C' ? 'checked="checked"' : ''; ?> />C
-		<input type="radio" id="Lp_rank" name="Lp[rank]" value="D" <?php echo $model->rank == 'D' ? 'checked="checked"' : ''; ?> />D
-		<input type="radio" id="Lp_rank" name="Lp[rank]" value="E" <?php echo $model->rank == 'E' ? 'checked="checked"' : ''; ?> />E
-		
+		<?php echo CHtml::radioButtonList('rank', $model->rank, Firm::getRankItems(), array( 'separator' => '&nbsp;', 'labelOptions'=>array('style'=>'display:inline'))); ?>
 		<?php echo $form->error($model,'rank'); ?>
 		</div>
-		
-		
-		
+
 		<div class="row">
-		<?php echo $form->labelEx($model,'assets under management'); ?>
+		<?php echo $form->labelEx($model,'assets_umgmt'); ?>
 		<?php echo $form->textField($model, 'assets_umgmt'); ?>
 		<?php echo $form->error($model,'assets_umgmt'); ?>
 		</div><!-- row -->
         
+
+        <div class="row">
+        <?php echo $form->labelEx($model,'pe_allocation'); ?>
+        <?php echo $form->textField($model, 'pe_allocation'); ?>
+        <?php echo $form->error($model,'pe_allocation'); ?>
+        </div>
+
+        <div class="row">
+        <?php echo $form->labelEx($model,'commited_pe'); ?>
+        <?php echo $form->textField($model, 'commited_pe'); ?>
+        <?php echo $form->error($model,'commited_pe'); ?>
+        </div>
+
+        <?php echo $form->labelEx($model,'average_inv'); ?>
+		<?php echo $form->textField($model, 'average_inv', array('maxlength' => 2)); ?>
+		<?php echo $form->error($model,'average_inv'); ?>
+
+		 <?php echo $form->hiddenField($model, 'firm_id', array('value' => $model->firm_id) ); ?>
+		       
+        <?php echo $form->labelEx($model,'average_ticket'); ?>
+		<?php echo $form->textField($model, 'average_ticket', array('maxlength' => 2)); ?>
+		<?php echo $form->error($model,'average_ticket'); ?>
+		
         <!--original currency-->
 		<?php echo $form->hiddenField($model, 'assets_umgmt_ori', array('maxlength' => 100, 'value' =>'1')); ?>
 		<!-- row -->
         
         <div class="row">
 		<?php echo $form->labelEx($model,'fund_size'); ?>
-		<?php echo $form->dropDownList($model, 'fund_size', Lp::model()->getFundSizeItems()); ?>
+		<?php echo $form->checkBoxList($model, 'fund_size', Fundsize::model()->getFundSizeItems(), array('labelOptions'=>array('style'=>'display:inline'))); ?>
 		<?php echo $form->error($model,'fund_size'); ?>
 		</div>
         
-        <div>
-            <div class="left append-1">
-            <?php echo $form->labelEx($model,'pe_allocation'); ?>
-            <?php echo $form->checkbox($model, 'pe_allocation'); ?>
-            <?php echo $form->error($model,'pe_allocation'); ?>
-            </div>
-
-            <div class="left">
-            <?php echo $form->labelEx($model,'commited_pe'); ?>
-            <?php echo $form->checkbox($model, 'commited_pe'); ?>
-            <?php echo $form->error($model,'commited_pe'); ?>
-            </div>        
-        </div>
-        <div class="clearfix"></div>
         
         <script type="text/javascript">
             function toggle_appetite(s) {

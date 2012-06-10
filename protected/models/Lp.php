@@ -29,15 +29,7 @@ class Lp extends BaseLp
         return $employees;
     }
     
-    public function getFundSizeItems() {
-        return array(
-            '1' => '0-100',
-            '2' => '100-250',
-            '3' => '250-500',
-            '4' => '500-1 billion',
-            '5' => '1 billion and more',
-        );
-    }
+
     
     public function getAppetiteItems() {
         return array(

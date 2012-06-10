@@ -46,7 +46,7 @@ abstract class BaseLp extends GxActiveRecord {
 
 	public function rules() {
 		return array(
-			array('rank, firm_id, assets_umgmt, assets_umgmt_ori, top_interests', 'required'),
+			array('rank, firm_id, assets_umgmt, assets_umgmt_ori, top_interests, lptype_id', 'required'),
 			array('top_interests, average_ticket, average_inv, segment_id, lptype_id, fund_size, appetite', 'numerical', 'integerOnly'=>true),
 			array('assets_umgmt', 'numerical'),
             array('commited_pe, pe_allocation, actively', 'numerical'),
@@ -87,7 +87,7 @@ abstract class BaseLp extends GxActiveRecord {
 			'website' => Yii::t('app', 'Website'),
 			'rank' => Yii::t('app', 'Rank'),
 			'firm_id' => null,
-			'assets_umgmt' => Yii::t('app', 'Assets Under Managment'),
+			'assets_umgmt' => Yii::t('app', 'Assets Under Managment (€Billion)'),
 			'assets_umgmt_ori' => Yii::t('app', 'Assets Under Managment (original currency)'),
 			'top_interests' => Yii::t('app', 'Top Interests'),
 			'firm' => null,
@@ -97,8 +97,8 @@ abstract class BaseLp extends GxActiveRecord {
 			'lpsectors' => null,
 			'lptargets' => null,
 			'lptype_id' => Yii::t('app', 'LP Type'),
-            'average_ticket' => Yii::t('app', 'Average Ticket'),
-            'average_inv' => Yii::t('app', 'Average Annual Investment'),
+            'average_ticket' => Yii::t('app', 'Average Ticket Size (€Million)'),
+            'average_inv' => Yii::t('app', 'Average Annual Investment (€Million)'),
             'fund_size' => Yii::t('app', 'Fund size'),
             'pe_allocation' => Yii::t('app', 'PE allocation'),
             'commited_pe' => Yii::t('app', 'Commited to PE'),
