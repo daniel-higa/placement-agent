@@ -74,17 +74,17 @@
             </div>
             <div class="clearfix"> </div>
 		<?php } ?>
-		<div class="row">
-		<?php echo $form->labelEx($model,'rank'); ?>
-		
-		<input type="radio" id="Firm_rank" name="Firm[rank]" value="A" <?php echo $model->rank == 'A' ? 'checked="checked"' : ''; ?> />A
-		<input type="radio" id="Firm_rank" name="Firm[rank]" value="B" <?php echo $model->rank == 'B' ? 'checked="checked"' : ''; ?> />B
-		<input type="radio" id="Firm_rank" name="Firm[rank]" value="C" <?php echo $model->rank == 'C' ? 'checked="checked"' : ''; ?> />C
-		<input type="radio" id="Firm_rank" name="Firm[rank]" value="D" <?php echo $model->rank == 'D' ? 'checked="checked"' : ''; ?> />D
-		<input type="radio" id="Firm_rank" name="Firm[rank]" value="E" <?php echo $model->rank == 'E' ? 'checked="checked"' : ''; ?> />E
-		
-		<?php echo $form->error($model,'rank'); ?>
-		</div><!-- row -->
+        
+        <? if ($model->firmtype_id == 3) { ?>
+            <div class="row">
+            <?php echo $form->labelEx($model,'rank'); ?>
+            <?php echo CHtml::radioButtonList('Firm[rank]', $model->rank, Firm::getRankItems(), array( 'separator' => '&nbsp;', 'labelOptions'=>array('style'=>'display:inline'))); ?>
+            <?php echo $form->error($model,'rank'); ?>
+            </div><!-- row -->
+        <?php } else { ?>
+            <?php echo $form->hiddenField($model, 'rank'); ?>
+        <?php } ?>
+        
 		<div class="row">
 		<?php echo $form->label($model,'description'); ?>
 		<?php echo $form->textArea($model, 'description', array('rows' => 12, 'cols' => 90)); ?>
@@ -108,36 +108,6 @@
 			return document.getElementById(id);
 		}
 		</script>
-		
-		<label>Documents</label>
-		<input type="hidden" id="HD_deleteDocuments" name="HD_deleteDocuments" value="" />
-		<?php
-		
-		$arr = $model->firmdocuments;
-		for( $i = 0; $i < count($arr); $i++)
-		{
-			echo '<div id="div_doc'.$arr[$i]['id'].'"><b>'.($i+1).')&nbsp; </b><a target="_blank" href="upload/'.$arr[$i]['file'].'">'.$arr[$i]['file'].'</a>&nbsp;<img style="cursor:pointer" onclick="documentDelete('.$arr[$i]['id'].')" src="assets/460db63c/gridview/delete.png"></div><br>';
-		}
-		
-		?>
-		<br />
-		Add Document
-		<?php
-            //$accepted_files = (string) Yii::app()->accepted_files;
-            $this->widget('CMultiFileUpload', array(
-                 'name'=>'firmfiles',
-                 'attribute'=>'firmfiles',
-                 'accept'=> 'gif|jpg|png|pdf|doc|xdoc|xls|zip|gz|rar|ppt|pptx|xlsx',
-                 'options'=>array(
-                    'onFileSelect'=>'function(e, v, m){  }',
-                    'afterFileSelect'=>'function(e, v, m){  }',
-                    'onFileAppend'=>'function(e, v, m){  }',
-                    'afterFileAppend'=>'function(e, v, m){  }',
-                    'onFileRemove'=>'function(e, v, m){  }',
-                    'afterFileRemove'=>'function(e, v, m){  }',
-                 ),
-              ));
-		?>
 
 <?php
 echo GxHtml::submitButton(Yii::t('app', 'Save'));

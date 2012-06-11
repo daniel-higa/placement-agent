@@ -22,7 +22,7 @@ class EmployeesController extends GxController {
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'updateoffice', 'listRegions', 'admin'),
+				'actions'=>array('create','update', 'updateoffice', 'listRegions', 'admin', 'updateOfficeLink'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -41,12 +41,19 @@ class EmployeesController extends GxController {
 		));
 	}
 	
+    public function actionUpdateOfficeLink() {
+        
+        $this->renderPartial('updateOffice', array('post' => $_POST,
+            'office' => $this->actionUpdateOffice()
+        ));
+    }
+    
 	public function actionUpdateOffice()
     {
             //Offices
             $data = Office::model()->findAll('firm_id=:firm_id', array(':firm_id'=>(int) $_POST['firm_id']));
             foreach($data as $item) {
-                echo CHtml::tag('option', array('value'=>$item->id),CHtml::encode($item->name),true);
+                return CHtml::tag('option', array('value'=>$item->id),CHtml::encode($item->name),true);
             }
     }
 	
@@ -61,9 +68,7 @@ class EmployeesController extends GxController {
             foreach($data as $value=>$name){
 				array_push($arr, $value);
 			}
-				
-			
- 
+
             // return data (JSON formatted)
             echo CJSON::encode(array(
               'regions'=>$arr
@@ -73,15 +78,14 @@ class EmployeesController extends GxController {
 	public function actionCreate() {
 		$model = new Employees;
         
-        if (isset($_GET['office_id'])) {
-            $model->office_id = $_GET['office_id'];
-        }
-
-
 		if (isset($_POST['Employees'])) {
 			$model->setAttributes($_POST['Employees']);
 
-			if ($model->save()) {
+			$relatedData = array(
+				'fundsizes' => $_POST['Employees']['fundsizes'] === '' ? null : $_POST['Employees']['fundsizes'],
+				);
+
+			if ($model->saveWithRelated($relatedData)) {
 				
 				if(isset($_POST['employeesregions']))
                 {
@@ -121,10 +125,12 @@ class EmployeesController extends GxController {
 				if (Yii::app()->getRequest()->getIsAjaxRequest())
 					Yii::app()->end();
 				else
-					$this->redirect(array('view', 'id' => $model->id));
+					$this->redirect(array('/firm/view', 'id' => $model->office->firm->id));
 			}
 		}
-
+        if (isset($_GET['office_id'])) {
+            $model->office_id = $_GET['office_id'];
+        }
 		$this->render('create', array( 'model' => $model));
 	}
 
@@ -134,8 +140,12 @@ class EmployeesController extends GxController {
 
 		if (isset($_POST['Employees'])) {
 			$model->setAttributes($_POST['Employees']);
-
-			if ($model->save()) {
+            
+			$relatedData = array(
+				'fundsizes' => $_POST['Employees']['fundsizes'] === '' ? null : $_POST['Employees']['fundsizes'],
+				);
+                
+			if ($model->saveWithRelated($relatedData)) {
 			
 				Employeesregion::model()->deleteAll(array('condition' => 'employees_id = :ID', 'params' => array(':ID' => $model->id)));
 				if(isset($_POST['employeesregions']))
@@ -197,10 +207,7 @@ class EmployeesController extends GxController {
 	}
 
 	public function actionIndex() {
-		$dataProvider = new CActiveDataProvider('Employees');
-		$this->render('index', array(
-			'dataProvider' => $dataProvider,
-		));
+		$this->redirect(array('admin'));
 	}
 
 	public function actionAdmin() {
@@ -209,6 +216,10 @@ class EmployeesController extends GxController {
 
 		if (isset($_GET['Employees']))
 			$model->setAttributes($_GET['Employees']);
+        
+        if (isset($_GET['firm_name'])) {
+            $model->firm_name = $_GET['firm_name'];
+        }
 
 		$this->render('admin', array(
 			'model' => $model,

@@ -14,9 +14,11 @@ $this->menu=array(
 	array('label'=>Yii::t('app', 'Manage') . ' ' . $model->label(2), 'url'=>array('admin')),
 );
 ?>
-
-<?php $this->renderPartial('_sumary', array('model' => $model)); ?>
+<h1><?php echo Yii::t('app', 'View') . ' ' . GxHtml::encode($model->firmtype->name) . ': ' . GxHtml::encode(GxHtml::valueEx($model)); ?></h1>
+<?php echo '<p> created:' . $model->created . ' - Modified:' . $model->modified . '</p>'; ?>
 <?php $this->renderPartial('_sections', array('model' => $model)); ?>
+<?php $this->renderPartial('_sumary', array('model' => $model)); ?>
+
 
 <h2>Description</h2>
 <div class="description">
@@ -30,17 +32,18 @@ $this->menu=array(
         echo "<a href='$model->website'>$model->website</a>";
     ?>
 </div>
+<?php echo '<a href="' . Yii::app()->createUrl('/firm/update', array('id' => $model->id)) . '"><button>Edit</button></a>'; ?>
 
-<h2>Documents<!--<?php echo GxHtml::encode($model->getRelationLabel('firmdocuments')); ?>--></h2>
+<h2>Documents</h2><a href="<?php echo Yii::app()->createUrl('/firmdocument/create', array('firm_id' => $model->id)); ?>"><button>add document</button></a>
 
 <?php
-	echo GxHtml::openTag('ul');
-	foreach($model->firmdocuments as $relatedModel) {
-		echo GxHtml::openTag('li');
-		echo GxHtml::link(GxHtml::valueEx($relatedModel), 'upload/'.GxHtml::valueEx($relatedModel), array('target'=>'_blank'));
-		echo GxHtml::closeTag('li');
-	}
-	echo GxHtml::closeTag('ul');
+    $fd = new Firmdocument('search');
+    $fd->unsetAttributes();
+    $fd->firm_id = $model->id;
+
+    $this->renderPartial('admin_documents', array(
+            'model' => $fd,
+            'buttons' => 'create'));
 ?>
 
 

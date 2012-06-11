@@ -11,11 +11,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model, 'name'); ?>
-		<?php echo $form->textField($model, 'name', array('maxlength' => 50)); ?>
-	</div>
-	
-	<div class="row">
 		<?php echo $form->label($model, 'firm_id'); ?>
 		<?php echo $form->dropDownList($model, 'firm_id', GxHtml::listDataEx(Firm::model()->findAllAttributes(null, true)), array('prompt' => Yii::t('app', 'All'))); ?>
 	</div>
@@ -31,8 +26,13 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model, 'address'); ?>
-		<?php echo $form->textField($model, 'address', array('maxlength' => 100)); ?>
+		<?php echo $form->label($model, 'streetname'); ?>
+		<?php echo $form->textField($model, 'streetname', array('maxlength' => 100)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model, 'streetnumber'); ?>
+		<?php echo $form->textField($model, 'streetnumber', array('maxlength' => 100)); ?>
 	</div>
 
 	<div class="row">
@@ -43,6 +43,11 @@
 	<div class="row">
 		<?php echo $form->label($model, 'state'); ?>
 		<?php echo $form->textField($model, 'state', array('maxlength' => 100)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model, 'description'); ?>
+		<?php echo $form->textField($model, 'description', array('maxlength' => 100)); ?>
 	</div>
 
 	<div class="row buttons">

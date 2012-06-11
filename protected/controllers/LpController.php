@@ -58,8 +58,12 @@ class LpController extends GxController {
 			$model->name = $f->name;
 			$model->description = $f->description;
 			$model->website = $f->website;
+            
+            $relatedData = array(
+				'fundsizes' => $_POST['Lp']['fundsizes'] === '' ? null : $_POST['Lp']['fundsizes'],
+			);
 
-			if ($model->save()) {
+			if ($model->saveWithRelated($relatedData)) {
 			
 				if(isset($_POST['lpregions']))
                 {
@@ -165,8 +169,12 @@ class LpController extends GxController {
 
 		if (isset($_POST['Lp'])) {
 			$model->setAttributes($_POST['Lp']);
+            
+            $relatedData = array(
+				'fundsizes' => $_POST['Lp']['fundsizes'] === '' ? null : $_POST['Lp']['fundsizes'],
+			);
 
-			if ($model->save()) {
+			if ($model->saveWithRelated($relatedData)) {
 			
 				Lpregion::model()->deleteAll(array('condition' => 'lp_id = :ID', 'params' => array(':ID' => $model->id)));
 				if(isset($_POST['lpregions']))

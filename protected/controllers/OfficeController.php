@@ -77,7 +77,7 @@ class OfficeController extends GxController {
 				if (Yii::app()->getRequest()->getIsAjaxRequest())
 					Yii::app()->end();
 				else
-					$this->redirect(array('view', 'id' => $model->id));
+					$this->redirect(array('/firm/view', 'id' => $model->firm_id));
 			}
 		}
 
@@ -139,10 +139,7 @@ class OfficeController extends GxController {
 	}
 
 	public function actionIndex() {
-		$dataProvider = new CActiveDataProvider('Office');
-		$this->render('index', array(
-			'dataProvider' => $dataProvider,
-		));
+        $this->redirect(array('admin'));
 	}
 
 	public function actionAdmin() {

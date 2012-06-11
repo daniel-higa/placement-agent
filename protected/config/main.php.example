@@ -16,7 +16,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
-		'ext.giix-components.*',
+		'ext.giix.components.*',
 	),
 
 	'modules'=>array(
@@ -28,7 +28,7 @@ return array(
 		 	// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 			'generatorPaths' => array(
-				'ext.giix-core', // giix generators
+				'ext.giix.generators', // giix generators
 			),
 		),
 		
@@ -80,6 +80,9 @@ return array(
 			),
 		),
         'accepted_files' => 'gif|jpg|png|pdf|doc|xdoc|xls|zip|gz|rar|ppt|pptx|xlsx',
+        'extensionBasePaths' => array(
+			'giix' => 'ext.giix.messages', // giix messages directory.
+		),
 	),
 
 	// application-level parameters that can be accessed

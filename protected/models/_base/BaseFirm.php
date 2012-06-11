@@ -104,6 +104,9 @@ abstract class BaseFirm extends GxActiveRecord {
 		$criteria->compare('rank', $this->rank, true);
 
 		return new CActiveDataProvider($this, array(
+            'pagination'=>array(
+                    'pageSize'=> Yii::app()->user->getState('pageSize',Yii::app()->params['defaultPageSize']),
+            ),
 			'criteria' => $criteria,
 		));
 	}

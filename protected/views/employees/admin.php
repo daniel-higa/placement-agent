@@ -42,34 +42,16 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 	'dataProvider' => $model->search(),
 	'columns' => array(
 		'id',
+        array(
+            'name' => 'firm.name',
+            'value' => '$data->office->firm->name',
+            'header' => 'Firm',
+        ),
 		'first_name',
 		'last_name',
 		'email',
 		'phone_office',
 		'phone_office_ext',
-		/*
-		'phone_home',
-		'phone_mobile',
-		'fax',
-		'position',
-		array(
-					'name' => 'current_position',
-					'value' => '($data->current_position === 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
-					'filter' => array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')),
-					),
-		array(
-					'name' => 'archived_position',
-					'value' => '($data->archived_position === 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
-					'filter' => array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')),
-					),
-		'skype',
-		'personal_note',
-		array(
-				'name'=>'office_id',
-				'value'=>'GxHtml::valueEx($data->office)',
-				'filter'=>GxHtml::listDataEx(Office::model()->findAllAttributes(null, true)),
-				),
-		*/
 		array(
 			'class' => 'CButtonColumn',
 		),

@@ -5,8 +5,7 @@
     foreach($model->offices as $o) {
         echo '<table>';
         echo '<tr>';
-        echo '<td>'. $o->name .'</td>';
-        echo '<td>'. $o->address .'</td>';
+        echo '<td>'. $o->getName() .'</td>';
         echo '<td>'. CHtml::link('view', array('office/view', 'id' => $o->id )) . ' ' 
             . CHtml::link('edit', array('office/update', 'id' => $o->id ))  . ' ' 
             . CHtml::link('add employee', array('employees/create', 'office_id' => $o->id ))  . ' ' 

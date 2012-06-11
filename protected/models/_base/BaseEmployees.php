@@ -32,6 +32,8 @@
  */
 abstract class BaseEmployees extends GxActiveRecord {
 
+    public $firm_name;
+
 	public static function model($className=__CLASS__) {
 		return parent::model($className);
 	}
@@ -50,13 +52,13 @@ abstract class BaseEmployees extends GxActiveRecord {
 
 	public function rules() {
 		return array(
-			array('first_name, last_name, email, current_position, archived_position, office_id', 'required'),
+			array('first_name, last_name, current_position, archived_position, office_id', 'required'),
 			array('current_position, archived_position', 'numerical', 'integerOnly'=>true),
 			array('first_name, last_name, phone_office, phone_home, phone_mobile, fax, skype', 'length', 'max'=>50),
 			array('email, position', 'length', 'max'=>100),
 			array('phone_office_ext', 'length', 'max'=>20),
 			array('office_id', 'length', 'max'=>10),
-			array('personal_note', 'safe'),
+			array('personal_note, biography', 'safe'),
 			array('phone_office, phone_office_ext, phone_home, phone_mobile, fax, position, skype, personal_note', 'default', 'setOnEmpty' => true, 'value' => null),
 			array('id, first_name, last_name, email, phone_office, phone_office_ext, phone_home, phone_mobile, fax, position, current_position, archived_position, skype, personal_note, office_id', 'safe', 'on'=>'search'),
 		);
@@ -69,11 +71,14 @@ abstract class BaseEmployees extends GxActiveRecord {
 			'employeesregions' => array(self::HAS_MANY, 'Employeesregion', 'employees_id'),
 			'employeessectors' => array(self::HAS_MANY, 'Employeessector', 'employees_id'),
             'communications' => array(self::HAS_MANY, 'Communication', 'employees_id'),
+            'employeesfundsize' => array(self::HAS_MANY, 'Employeesfundsize', 'employees_id'),
+            'fundsizes' => array(self::MANY_MANY, 'Fundsize', 'employeesfundsize(employees_id, fundsize_id)'),
 		);
 	}
 
 	public function pivotModels() {
 		return array(
+            'fundsizes' => 'Employeesfundsize',
 		);
 	}
 
@@ -83,7 +88,7 @@ abstract class BaseEmployees extends GxActiveRecord {
 			'first_name' => Yii::t('app', 'First Name'),
 			'last_name' => Yii::t('app', 'Last Name'),
 			'email' => Yii::t('app', 'Email'),
-			'phone_office' => Yii::t('app', 'Phone Office'),
+			'phone_office' => Yii::t('app', 'Office Direct Line '),
 			'phone_office_ext' => Yii::t('app', 'Phone Office Ext'),
 			'phone_home' => Yii::t('app', 'Phone Home'),
 			'phone_mobile' => Yii::t('app', 'Phone Mobile'),
@@ -92,6 +97,7 @@ abstract class BaseEmployees extends GxActiveRecord {
 			'current_position' => Yii::t('app', 'Current Position'),
 			'archived_position' => Yii::t('app', 'Archived Position'),
 			'skype' => Yii::t('app', 'Skype'),
+            'biography' => Yii::t('app', 'Biography'),
 			'personal_note' => Yii::t('app', 'Personal Note'),
 			'office_id' => null,
 			'office' => null,
@@ -104,7 +110,10 @@ abstract class BaseEmployees extends GxActiveRecord {
 	public function search() {
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('id', $this->id, true);
+        $criteria->join = ' INNER JOIN office on (office.id = office_id)
+                            INNER JOIN firm on (office.firm_id = firm.id)';
+        $criteria->compare('firm.name', $this->firm_name, true);
+		$criteria->compare('id', $this->id, false);
 		$criteria->compare('first_name', $this->first_name, true);
 		$criteria->compare('last_name', $this->last_name, true);
 		$criteria->compare('email', $this->email, true);
@@ -118,6 +127,7 @@ abstract class BaseEmployees extends GxActiveRecord {
 		$criteria->compare('archived_position', $this->archived_position);
 		$criteria->compare('skype', $this->skype, true);
 		$criteria->compare('personal_note', $this->personal_note, true);
+        $criteria->compare('biography', $this->biography, true);
 		$criteria->compare('office_id', $this->office_id);
 
 		return new CActiveDataProvider($this, array(

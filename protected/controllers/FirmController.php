@@ -22,7 +22,7 @@ class FirmController extends GxController {
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'admin', 'funds', 'communications', 'projects'),
+				'actions'=>array('create','update', 'admin', 'funds', 'communications', 'projects', 'chooseType'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -35,6 +35,9 @@ class FirmController extends GxController {
 		);
 	}
 
+    public function actionChooseType() {
+		$this->render('choose_type');
+	}
 
 	public function actionView($id) {
 		$this->render('view', array(
@@ -82,12 +85,12 @@ class FirmController extends GxController {
         
 		if (isset($_POST['Firm'])) {
 		
-		$firms = Firm::model()->findAll(array('condition' => 'name = :ID', 'params' => array(':ID' => $_POST["Firm"]["name"])));
-		
-		if(count($firms) > 0){
-			Yii::app()->clientScript->registerScript('alert', "alert('The firm name is being used.');");
-			
-		} else {
+            $firms = Firm::model()->findAll(array('condition' => 'name = :ID', 'params' => array(':ID' => $_POST["Firm"]["name"])));
+            
+            if(count($firms) > 0){
+                Yii::app()->clientScript->registerScript('alert', "alert('The firm name is being used.');");
+                
+            } else {
 		
 				$model->setAttributes($_POST['Firm']);
 	
@@ -115,18 +118,6 @@ class FirmController extends GxController {
 						}
 					}
 					
-					$limit=count($_FILES['firmfiles']['name']);
-					for($i=0;$i<$limit;$i++){
-						$ext = end(explode(".", $_FILES['firmfiles']['name'][$i]));
-						$nm = $model->id.'_'.date("YmdHis").'_'.($i+1).'.'.$ext;
-						if(move_uploaded_file($_FILES['firmfiles']['tmp_name'][$i], "upload/".$nm)){
-							$model_d=new Firmdocument;
-							$model_d->firm_id = $model->id;
-							$model_d->file = $nm;
-							$model_d->save();
-						}
-					}
-					
 					if (Yii::app()->getRequest()->getIsAjaxRequest())
 						Yii::app()->end();
 					else
@@ -142,6 +133,7 @@ class FirmController extends GxController {
 		
 		}
 
+        $model->rank = 'E';
 		$this->render('create', array( 'model' => $model));
 	}
 
@@ -174,18 +166,6 @@ class FirmController extends GxController {
 						$model_c->firm_id = $model->id;
 						$model_c->continent_id = $model_continents[$i];
 						$model_c->save();
-					}
-				}
-				
-				$limit=count($_FILES['firmfiles']['name']);
-				for($i=0;$i<$limit;$i++){
-					$ext = end(explode(".", $_FILES['firmfiles']['name'][$i]));
-					$nm = $model->id.'_'.date("YmdHis").'_'.($i+1).'.'.$ext;
-					if(move_uploaded_file($_FILES['firmfiles']['tmp_name'][$i], "upload/".$nm)){
-						$model_d=new Firmdocument;
-						$model_d->firm_id = $model->id;
-						$model_d->file = $nm;
-						$model_d->save();
 					}
 				}
 				
@@ -245,6 +225,7 @@ class FirmController extends GxController {
 	}
 
 	public function actionAdmin() {
+        Yii::app()->user->setState('pageSize', 200);
 		$model = new Firm('search');
 		$model->unsetAttributes();
 

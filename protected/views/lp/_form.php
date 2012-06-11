@@ -14,87 +14,57 @@
 
 	<?php echo $form->errorSummary($model); ?>
 	
-		 <?php echo $form->hiddenField($model, 'firm_id', array('value' => $model->firm_id) ); ?>
-		       
-        <?php echo $form->labelEx($model,'average_ticket'); ?>
-		<?php echo $form->textField($model, 'average_ticket', array('maxlength' => 2)); ?>
-		<?php echo $form->error($model,'average_ticket'); ?>
-        
-        <?php echo $form->labelEx($model,'average_inv'); ?>
-		<?php echo $form->textField($model, 'average_inv', array('maxlength' => 2)); ?>
-		<?php echo $form->error($model,'average_inv'); ?>
-        
         <div class="row">
 		<?php echo $form->labelEx($model,'lptype_id'); ?>
 		<?php echo $form->dropDownList($model, 'lptype_id', GxHtml::listDataEx(Lptype::model()->findAllAttributes(null, true))); ?>
 		<?php echo $form->error($model,'lptype_id'); ?>
 		</div>
         
-<!--
-		<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model, 'name', array('maxlength' => 50)); ?>
-		<?php echo $form->error($model,'name'); ?>
-		</div>
-		<div class="row">
-		<?php echo $form->labelEx($model,'description'); ?>
-		<?php echo $form->textArea($model, 'description'); ?>
-		<?php echo $form->error($model,'description'); ?>
-		
-		<div class="row">
-		<?php echo $form->labelEx($model,'website'); ?>
-		<?php echo $form->textField($model, 'website', array('maxlength' => 100)); ?>
-		<?php echo $form->error($model,'website'); ?>
-		</div>-->
-		
-		<hr />
-		
-		<div class="row"><h2>Volume And Interests</h2></div>
-		
-		<div class="row">
+        <div class="row">
 		<?php echo $form->labelEx($model,'rank'); ?>
-		
-		<input type="radio" id="Lp_rank" name="Lp[rank]" value="A" <?php echo $model->rank == 'A' ? 'checked="checked"' : ''; ?> />A
-		<input type="radio" id="Lp_rank" name="Lp[rank]" value="B" <?php echo $model->rank == 'B' ? 'checked="checked"' : ''; ?> />B
-		<input type="radio" id="Lp_rank" name="Lp[rank]" value="C" <?php echo $model->rank == 'C' ? 'checked="checked"' : ''; ?> />C
-		<input type="radio" id="Lp_rank" name="Lp[rank]" value="D" <?php echo $model->rank == 'D' ? 'checked="checked"' : ''; ?> />D
-		<input type="radio" id="Lp_rank" name="Lp[rank]" value="E" <?php echo $model->rank == 'E' ? 'checked="checked"' : ''; ?> />E
-		
+		<?php echo CHtml::radioButtonList('Lp[rank]', $model->rank, Firm::getRankItems(), array( 'separator' => '&nbsp;', 'labelOptions'=>array('style'=>'display:inline'))); ?>
 		<?php echo $form->error($model,'rank'); ?>
 		</div>
-		
-		
-		
+
 		<div class="row">
-		<?php echo $form->labelEx($model,'assets under management'); ?>
+		<?php echo $form->labelEx($model,'assets_umgmt'); ?>
 		<?php echo $form->textField($model, 'assets_umgmt'); ?>
 		<?php echo $form->error($model,'assets_umgmt'); ?>
 		</div><!-- row -->
         
+
+        <div class="row">
+        <?php echo $form->labelEx($model,'pe_allocation'); ?>
+        <?php echo $form->textField($model, 'pe_allocation'); ?>
+        <?php echo $form->error($model,'pe_allocation'); ?>
+        </div>
+
+        <div class="row">
+        <?php echo $form->labelEx($model,'commited_pe'); ?>
+        <?php echo $form->textField($model, 'commited_pe'); ?>
+        <?php echo $form->error($model,'commited_pe'); ?>
+        </div>
+
+        <?php echo $form->labelEx($model,'average_inv'); ?>
+		<?php echo $form->textField($model, 'average_inv', array('maxlength' => 2)); ?>
+		<?php echo $form->error($model,'average_inv'); ?>
+
+		 <?php echo $form->hiddenField($model, 'firm_id', array('value' => $model->firm_id) ); ?>
+		       
+        <?php echo $form->labelEx($model,'average_ticket'); ?>
+		<?php echo $form->textField($model, 'average_ticket', array('maxlength' => 2)); ?>
+		<?php echo $form->error($model,'average_ticket'); ?>
+		
         <!--original currency-->
 		<?php echo $form->hiddenField($model, 'assets_umgmt_ori', array('maxlength' => 100, 'value' =>'1')); ?>
 		<!-- row -->
         
         <div class="row">
 		<?php echo $form->labelEx($model,'fund_size'); ?>
-		<?php echo $form->dropDownList($model, 'fund_size', Lp::model()->getFundSizeItems()); ?>
+		<?php echo $form->checkBoxList($model, 'fundsizes', Fundsize::model()->getFundSizeItems(), array('labelOptions'=>array('style'=>'display:inline'))); ?>
 		<?php echo $form->error($model,'fund_size'); ?>
 		</div>
         
-        <div>
-            <div class="left append-1">
-            <?php echo $form->labelEx($model,'pe_allocation'); ?>
-            <?php echo $form->checkbox($model, 'pe_allocation'); ?>
-            <?php echo $form->error($model,'pe_allocation'); ?>
-            </div>
-
-            <div class="left">
-            <?php echo $form->labelEx($model,'commited_pe'); ?>
-            <?php echo $form->checkbox($model, 'commited_pe'); ?>
-            <?php echo $form->error($model,'commited_pe'); ?>
-            </div>        
-        </div>
-        <div class="clearfix"></div>
         
         <script type="text/javascript">
             function toggle_appetite(s) {
@@ -129,6 +99,8 @@
         <h2>General investment strategy</h2>
 		
 		<script type="text/javascript">
+            var count = 5 - <?php echo $model->countTops(); ?>;
+            
             function continentClick(c){
                 $('input[name=lpregions\\[\\]]').each(function(i,e) {
                    if ($(e).attr('data') == $(c).val()) {
@@ -137,6 +109,21 @@
                 }
                 );
             }
+            
+            function interestClick(i) {
+                if ($(i).attr('checked')) {
+                    if (count > 0) {
+                        count--;
+                    } else {
+                        $(i).attr('checked', false);
+                    }
+                } else {
+                    count++;
+                }
+                $('#count').html(count);
+            }
+            
+            
 		</script>
 		<div style="float:left; position:relative; width: 120px;">
 			<label>Continents</label>
@@ -185,14 +172,14 @@
 		
 		<hr />
 		<div class="row"><h3>Top Interests</h3></div>
-		
+		<div id ="count"></div>
 		<div style="float:left; position:relative; width: 200px;">
 			<label>Continents</label>
 			<div id="divcontainers">
 			<?php
 			$c_tops = array();
 			for ($i=0;$i<count($model->lpcontinents);$i++){ if($model->lpcontinents[$i]->top == 1){	array_push($c_tops, $model->lpcontinents[$i]); } }
-			echo CHtml::checkBoxList("lpcontinents2", CHtml::listData($c_tops,'continent_id','continent_id'), CHtml::listData(Continent::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
+			echo CHtml::checkBoxList("lpcontinents2", CHtml::listData($c_tops,'continent_id','continent_id'), CHtml::listData(Continent::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>', 'onclick' => 'interestClick(this)')); ?>
 			</div>
 		</div>
 		
@@ -202,7 +189,7 @@
 			<?php
 			$r_tops = array();
 			for ($i=0;$i<count($model->lpregions);$i++){ if($model->lpregions[$i]->top == 1){	array_push($r_tops, $model->lpregions[$i]); } }
-			echo CHtml::checkBoxList("lpregions2", CHtml::listData($r_tops,'region_id','region_id'), CHtml::listData(Region::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
+			echo CHtml::checkBoxList("lpregions2", CHtml::listData($r_tops,'region_id','region_id'), CHtml::listData(Region::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>', 'onclick' => 'interestClick(this)')); ?>
 			</div>
 		</div>
 		
@@ -212,7 +199,7 @@
 			<?php
 			$s_tops = array();
 			for ($i=0;$i<count($model->lpsectors);$i++){ if($model->lpsectors[$i]->top == 1){	array_push($s_tops, $model->lpsectors[$i]); } }
-			echo CHtml::checkBoxList("lpsectors2", CHtml::listData($s_tops,'sector_id','sector_id'), CHtml::listData(Sector::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>')); ?>
+			echo CHtml::checkBoxList("lpsectors2", CHtml::listData($s_tops,'sector_id','sector_id'), CHtml::listData(Sector::model()->findAll(),'id','name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>', 'onclick' => 'interestClick(this)')); ?>
 			</div>
 		</div>
 		

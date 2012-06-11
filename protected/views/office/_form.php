@@ -12,13 +12,6 @@
 	</p>
 
 	<?php echo $form->errorSummary($model); ?>
-
-		<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model, 'name', array('maxlength' => 50)); ?>
-		<?php echo $form->error($model,'name'); ?>
-		</div><!-- row -->
-		
 		<div class="row">
 		<?php echo $form->labelEx($model,'firm_id'); ?>
 		<?php echo $form->dropDownList($model, 'firm_id', GxHtml::listDataEx(Firm::model()->findAllAttributes(null, true))); ?>
@@ -61,9 +54,19 @@
 		<?php echo $form->error($model,'state'); ?>
 		</div><!-- row -->
 		<div class="row">
-		<?php echo $form->labelEx($model,'address'); ?>
-		<?php echo $form->textField($model, 'address', array('maxlength' => 100, 'onchange' => 'changeAddress()')); ?>
-		<?php echo $form->error($model,'address'); ?>
+		<?php echo $form->labelEx($model,'streetname'); ?>
+		<?php echo $form->textField($model, 'streetname', array('maxlength' => 100, 'onchange' => 'changeAddress()')); ?>
+		<?php echo $form->error($model,'streetname'); ?>
+		</div><!-- row -->
+		<div class="row">
+		<?php echo $form->labelEx($model,'streetnumber'); ?>
+		<?php echo $form->textField($model, 'streetnumber', array('maxlength' => 100, 'onchange' => 'changeAddress()')); ?>
+		<?php echo $form->error($model,'streetnumber'); ?>
+		</div><!-- row -->
+        <div class="row">
+		<?php echo $form->labelEx($model,'floor'); ?>
+		<?php echo $form->textField($model, 'floor', array('maxlength' => 100, 'onchange' => 'changeAddress()')); ?>
+		<?php echo $form->error($model,'floor'); ?>
 		</div><!-- row -->
 		<div class="row">
 		<?php echo $form->labelEx($model,'phone'); ?>
