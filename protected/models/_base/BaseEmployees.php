@@ -60,7 +60,7 @@ abstract class BaseEmployees extends GxActiveRecord {
 			array('office_id', 'length', 'max'=>10),
 			array('personal_note, biography', 'safe'),
 			array('phone_office, phone_office_ext, phone_home, phone_mobile, fax, position, skype, personal_note', 'default', 'setOnEmpty' => true, 'value' => null),
-			array('id, lalala, first_name, last_name, email, phone_office, phone_office_ext, phone_home, phone_mobile, fax, position, current_position, archived_position, skype, personal_note, office_id', 'safe', 'on'=>'search'),
+			array('id, first_name, last_name, email, phone_office, phone_office_ext, phone_home, phone_mobile, fax, position, current_position, archived_position, skype, personal_note, office_id', 'safe', 'on'=>'search'),
 		);
 	}
 
