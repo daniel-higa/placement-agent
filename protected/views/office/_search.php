@@ -45,6 +45,11 @@
 		<?php echo $form->textField($model, 'state', array('maxlength' => 100)); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->label($model, 'description'); ?>
+		<?php echo $form->textField($model, 'description', array('maxlength' => 100)); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo GxHtml::submitButton(Yii::t('app', 'Search')); ?>
 	</div>

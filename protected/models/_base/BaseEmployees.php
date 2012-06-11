@@ -32,6 +32,8 @@
  */
 abstract class BaseEmployees extends GxActiveRecord {
 
+    public $firm_name;
+
 	public static function model($className=__CLASS__) {
 		return parent::model($className);
 	}
@@ -58,7 +60,7 @@ abstract class BaseEmployees extends GxActiveRecord {
 			array('office_id', 'length', 'max'=>10),
 			array('personal_note, biography', 'safe'),
 			array('phone_office, phone_office_ext, phone_home, phone_mobile, fax, position, skype, personal_note', 'default', 'setOnEmpty' => true, 'value' => null),
-			array('id, first_name, last_name, email, phone_office, phone_office_ext, phone_home, phone_mobile, fax, position, current_position, archived_position, skype, personal_note, office_id', 'safe', 'on'=>'search'),
+			array('id, lalala, first_name, last_name, email, phone_office, phone_office_ext, phone_home, phone_mobile, fax, position, current_position, archived_position, skype, personal_note, office_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -108,7 +110,10 @@ abstract class BaseEmployees extends GxActiveRecord {
 	public function search() {
 		$criteria = new CDbCriteria;
 
-		$criteria->compare('id', $this->id, true);
+        $criteria->join = ' INNER JOIN office on (office.id = office_id)
+                            INNER JOIN firm on (office.firm_id = firm.id)';
+        $criteria->compare('firm.name', $this->firm_name, true);
+		$criteria->compare('id', $this->id, false);
 		$criteria->compare('first_name', $this->first_name, true);
 		$criteria->compare('last_name', $this->last_name, true);
 		$criteria->compare('email', $this->email, true);
@@ -122,6 +127,7 @@ abstract class BaseEmployees extends GxActiveRecord {
 		$criteria->compare('archived_position', $this->archived_position);
 		$criteria->compare('skype', $this->skype, true);
 		$criteria->compare('personal_note', $this->personal_note, true);
+        $criteria->compare('biography', $this->biography, true);
 		$criteria->compare('office_id', $this->office_id);
 
 		return new CActiveDataProvider($this, array(

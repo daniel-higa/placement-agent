@@ -216,6 +216,10 @@ class EmployeesController extends GxController {
 
 		if (isset($_GET['Employees']))
 			$model->setAttributes($_GET['Employees']);
+        
+        if (isset($_GET['firm_name'])) {
+            $model->firm_name = $_GET['firm_name'];
+        }
 
 		$this->render('admin', array(
 			'model' => $model,

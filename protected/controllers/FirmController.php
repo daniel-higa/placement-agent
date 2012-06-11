@@ -249,6 +249,7 @@ class FirmController extends GxController {
 	}
 
 	public function actionAdmin() {
+        Yii::app()->user->setState('pageSize', 200);
 		$model = new Firm('search');
 		$model->unsetAttributes();
 

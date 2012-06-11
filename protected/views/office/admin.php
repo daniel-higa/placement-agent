@@ -43,29 +43,21 @@ You may optionally enter a comparison operator (&lt;, &lt;=, &gt;, &gt;=, &lt;&g
 	'columns' => array(
 		'id',
 		array(
+				'name'=>'Firm',
+				'value'=>'GxHtml::valueEx($data->firm)',
+				'filter'=>GxHtml::listDataEx(Country::model()->findAllAttributes(null, true)),
+				),        
+		array(
 				'name'=>'country',
 				'value'=>'GxHtml::valueEx($data->country)',
 				'filter'=>GxHtml::listDataEx(Country::model()->findAllAttributes(null, true)),
-				),/*
-		array(
-					'name' => 'main_office',
-					'value' => '($data->main_office === 0) ? Yii::t(\'app\', \'No\') : Yii::t(\'app\', \'Yes\')',
-					'filter' => array('0' => Yii::t('app', 'No'), '1' => Yii::t('app', 'Yes')),
-					),
-		'phone',*/
+				),
+		'city',
 		'streetname',
 		'streetnumber',
         'floor',
         'building',
-		'city',
-		'state',/*
-		'description',
-		array(
-				'name'=>'firm_id',
-				'value'=>'GxHtml::valueEx($data->firm)',
-				'filter'=>GxHtml::listDataEx(Firm::model()->findAllAttributes(null, true)),
-				),
-		*/
+		'state',
 		array(
 			'class' => 'CButtonColumn',
 		),
