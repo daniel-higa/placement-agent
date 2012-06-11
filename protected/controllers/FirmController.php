@@ -118,18 +118,6 @@ class FirmController extends GxController {
 						}
 					}
 					
-					$limit=count($_FILES['firmfiles']['name']);
-					for($i=0;$i<$limit;$i++){
-						$ext = end(explode(".", $_FILES['firmfiles']['name'][$i]));
-						$nm = $model->id.'_'.date("YmdHis").'_'.($i+1).'.'.$ext;
-						if(move_uploaded_file($_FILES['firmfiles']['tmp_name'][$i], "upload/".$nm)){
-							$model_d=new Firmdocument;
-							$model_d->firm_id = $model->id;
-							$model_d->file = $nm;
-							$model_d->save();
-						}
-					}
-					
 					if (Yii::app()->getRequest()->getIsAjaxRequest())
 						Yii::app()->end();
 					else
@@ -178,18 +166,6 @@ class FirmController extends GxController {
 						$model_c->firm_id = $model->id;
 						$model_c->continent_id = $model_continents[$i];
 						$model_c->save();
-					}
-				}
-				
-				$limit=count($_FILES['firmfiles']['name']);
-				for($i=0;$i<$limit;$i++){
-					$ext = end(explode(".", $_FILES['firmfiles']['name'][$i]));
-					$nm = $model->id.'_'.date("YmdHis").'_'.($i+1).'.'.$ext;
-					if(move_uploaded_file($_FILES['firmfiles']['tmp_name'][$i], "upload/".$nm)){
-						$model_d=new Firmdocument;
-						$model_d->firm_id = $model->id;
-						$model_d->file = $nm;
-						$model_d->save();
 					}
 				}
 				

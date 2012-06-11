@@ -125,7 +125,7 @@ class EmployeesController extends GxController {
 				if (Yii::app()->getRequest()->getIsAjaxRequest())
 					Yii::app()->end();
 				else
-					$this->redirect(array('view', 'id' => $model->id));
+					$this->redirect(array('/firm/view', 'id' => $model->office->firm->id));
 			}
 		}
         if (isset($_GET['office_id'])) {

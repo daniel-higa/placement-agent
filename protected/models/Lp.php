@@ -87,6 +87,15 @@ class Lp extends BaseLp
             }
         }
         return $top;
-    }    
+    }
+    
+    public function actively() {
+        return $this->actively?'Yes':'No';
+    }
+    
+    public function appetite() {
+        $appetite = $this->getAppetiteItems();
+        return $this->appetite?$appetite[$this->appetite]:'N/A';
+    }
 
 }

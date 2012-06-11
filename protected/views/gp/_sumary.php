@@ -1,18 +1,18 @@
-<h1><?php echo Yii::t('app', 'View') . ' ' . GxHtml::encode($model->firmtype->name) . ': ' . GxHtml::encode(GxHtml::valueEx($model)); ?></h1>
+<h1><?php echo Yii::t('app', 'View') . ' ' . GxHtml::encode($firm->firmtype->name) . ': ' . GxHtml::encode(GxHtml::valueEx($firm)); ?></h1>
 
 <div class="sumary">
     <div class="margin-20">
         <div class="row">
-            <h1><?php echo $model->name; ?></h1>
+            <h1><?php echo $firm->name; ?></h1>
         </div>
         <div class="row">
             <?php echo CHtml::label('Rank:', '', array('class' => 'left')); ?>
-            <?php echo CHtml::radioButtonList('rank', $model->rank, Firm::getRankItems(), array('class' => 'left', 'template' => '<span class="left">{input}</span><span class="left">{label}</span>', 'disabled' => true, 'separator' => '&nbsp;')); ?>
+            <?php echo CHtml::radioButtonList('rank', $firm->rank, Firm::getRankItems(), array('class' => 'left', 'template' => '<span class="left">{input}</span><span class="left">{label}</span>', 'disabled' => true, 'separator' => '&nbsp;')); ?>
             <div class="clearfix"></div>
         </div>
 
-        <?php if ($model->gp) { ?>
-            <?php $gp = $model->gp; ?>
+        <?php if ($firm->gp) { ?>
+            <?php $gp = $firm->gp; ?>
             <div class="left append-1">
                 <label>Continents</label>
                 <div id="divcontainers">
@@ -30,14 +30,14 @@
         <div class="left">
             <label>Responsible</label>
             <div id="containers">
-                <?php echo $model->responsible(); ?>
+                <?php echo $firm->responsible(); ?>
             </div>
         </div>
         
         <div class="clearfix"> </div>
 
         <?php
-            if (!$model->gp) { 
+            if (!$firm->gp) { 
                 echo '<h2>Missing second step!</h2>';
             }
         ?>

@@ -14,9 +14,11 @@ $this->menu=array(
 	array('label'=>Yii::t('app', 'Manage') . ' ' . $model->label(2), 'url'=>array('admin')),
 );
 ?>
-
-<?php $this->renderPartial('_sumary', array('model' => $model)); ?>
+<h1><?php echo Yii::t('app', 'View') . ' ' . GxHtml::encode($model->firmtype->name) . ': ' . GxHtml::encode(GxHtml::valueEx($model)); ?></h1>
+<?php echo '<p> created:' . $model->created . ' - Modified:' . $model->modified . '</p>'; ?>
 <?php $this->renderPartial('_sections', array('model' => $model)); ?>
+<?php $this->renderPartial('_sumary', array('model' => $model)); ?>
+
 
 <h2>Description</h2>
 <div class="description">

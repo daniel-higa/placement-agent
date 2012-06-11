@@ -108,36 +108,6 @@
 			return document.getElementById(id);
 		}
 		</script>
-		
-		<label>Documents</label>
-		<input type="hidden" id="HD_deleteDocuments" name="HD_deleteDocuments" value="" />
-		<?php
-		
-		$arr = $model->firmdocuments;
-		for( $i = 0; $i < count($arr); $i++)
-		{
-			echo '<div id="div_doc'.$arr[$i]['id'].'"><b>'.($i+1).')&nbsp; </b><a target="_blank" href="upload/'.$arr[$i]['file'].'">'.$arr[$i]['file'].'</a>&nbsp;<img style="cursor:pointer" onclick="documentDelete('.$arr[$i]['id'].')" src="assets/460db63c/gridview/delete.png"></div><br>';
-		}
-		
-		?>
-		<br />
-		Add Document
-		<?php
-            //$accepted_files = (string) Yii::app()->accepted_files;
-            $this->widget('CMultiFileUpload', array(
-                 'name'=>'firmfiles',
-                 'attribute'=>'firmfiles',
-                 'accept'=> 'gif|jpg|png|pdf|doc|xdoc|xls|zip|gz|rar|ppt|pptx|xlsx',
-                 'options'=>array(
-                    'onFileSelect'=>'function(e, v, m){  }',
-                    'afterFileSelect'=>'function(e, v, m){  }',
-                    'onFileAppend'=>'function(e, v, m){  }',
-                    'afterFileAppend'=>'function(e, v, m){  }',
-                    'onFileRemove'=>'function(e, v, m){  }',
-                    'afterFileRemove'=>'function(e, v, m){  }',
-                 ),
-              ));
-		?>
 
 <?php
 echo GxHtml::submitButton(Yii::t('app', 'Save'));
