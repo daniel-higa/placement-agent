@@ -1,5 +1,3 @@
-<h1><?php echo Yii::t('app', 'View') . ' ' . GxHtml::encode($firm->firmtype->name) . ': ' . GxHtml::encode(GxHtml::valueEx($firm)); ?></h1>
-
 <div class="sumary">
     <div class="margin-20">
         <div class="row">
@@ -25,6 +23,12 @@
                 <?php echo CHtml::checkBoxList("firmregions", CHtml::listData($gp->gpregions,'region_id','region_id'), CHtml::listData($gp->gpregions,'region_id','region.name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>', 'disabled' => 'true')); ?>
                 </div>
             </div>
+            <div class="left append-1">
+                <label>Sectors</label>
+                <div id="divcontainers">
+                <?php echo CHtml::checkBoxList("firmsectors", CHtml::listData($gp->gpsectors,'sector_id','sector_id'), CHtml::listData($gp->gpsectors,'sector_id','sector.name'),array('separator'=>'', 'template'=>'<span>{input} {label}</span>', 'disabled' => 'true')); ?>
+                </div>
+            </div>
         <?php } ?>
         
         <div class="left">
@@ -39,6 +43,8 @@
         <?php
             if (!$firm->gp) { 
                 echo '<h2>Missing second step!</h2>';
+            } else {
+                echo '<a href="' . Yii::app()->createUrl('/gp/update', array('id' => $gp->id)) . '"><button>Edit</button></a>';
             }
         ?>
     </div>

@@ -89,6 +89,8 @@
         <?php
             if (!$firm->lp) {
                 echo '<h2>Missing second step!</h2>';
+            } else {
+                echo '<a href="' . Yii::app()->createUrl('/lp/update', array('id' => $lp->id)) . '"><button>Edit</button></a>';
             }
         ?>
     </div>

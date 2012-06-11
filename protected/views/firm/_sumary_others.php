@@ -1,5 +1,3 @@
-<h1><?php echo Yii::t('app', 'View') . ' ' . GxHtml::encode($model->firmtype->name) . ': ' . GxHtml::encode(GxHtml::valueEx($model)); ?></h1>
-
 <div class="sumary">
     <div class="margin-20">
         <div class="row">

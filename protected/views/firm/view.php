@@ -32,17 +32,18 @@ $this->menu=array(
         echo "<a href='$model->website'>$model->website</a>";
     ?>
 </div>
+<?php echo '<a href="' . Yii::app()->createUrl('/firm/update', array('id' => $model->id)) . '"><button>Edit</button></a>'; ?>
 
-<h2>Documents<!--<?php echo GxHtml::encode($model->getRelationLabel('firmdocuments')); ?>--></h2>
+<h2>Documents</h2><a href="<?php echo Yii::app()->createUrl('/firmdocument/create', array('firm_id' => $model->id)); ?>"><button>add document</button></a>
 
 <?php
-	echo GxHtml::openTag('ul');
-	foreach($model->firmdocuments as $relatedModel) {
-		echo GxHtml::openTag('li');
-		echo GxHtml::link(GxHtml::valueEx($relatedModel), 'upload/'.GxHtml::valueEx($relatedModel), array('target'=>'_blank'));
-		echo GxHtml::closeTag('li');
-	}
-	echo GxHtml::closeTag('ul');
+    $fd = new Firmdocument('search');
+    $fd->unsetAttributes();
+    $fd->firm_id = $model->id;
+
+    $this->renderPartial('admin_documents', array(
+            'model' => $fd,
+            'buttons' => 'create'));
 ?>
 
 
