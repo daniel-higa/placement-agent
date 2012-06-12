@@ -103,8 +103,8 @@ abstract class BaseLp extends GxActiveRecord {
             'average_ticket' => Yii::t('app', 'Average Ticket Size (€Million)'),
             'average_inv' => Yii::t('app', 'Average Annual Investment (€Million)'),
             'fund_size' => Yii::t('app', 'Fund size'),
-            'pe_allocation' => Yii::t('app', 'PE allocation'),
-            'commited_pe' => Yii::t('app', 'Commited to PE'),
+            'pe_allocation' => Yii::t('app', 'PE allocation (€Million)'),
+            'commited_pe' => Yii::t('app', 'Commited to PE (€Million)'),
             'actively' => Yii::t('app', 'Actively investing'),
             'appetite' => Yii::t('app', 'Appetite'),
 		);
